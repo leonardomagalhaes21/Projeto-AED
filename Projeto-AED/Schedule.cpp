@@ -4,6 +4,7 @@
 using namespace std;
 
 
-Schedule(){
+Schedule::Schedule(){
+
 
 }

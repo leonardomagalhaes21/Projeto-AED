@@ -8,7 +8,10 @@ add_executable(project main.cpp
         Schedule.h
         Student.cpp
         Student.h
-        Class.cpp
-        Class.h
+        Lesson.cpp
+        Lesson.h
         UC.cpp
-        UC.h)
+        UC.h
+        Data.cpp
+        Data.h
+)
