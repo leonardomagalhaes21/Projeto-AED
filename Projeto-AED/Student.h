@@ -7,12 +7,12 @@
 
 class Student {
     public:
-        Student(int StudentCode, std::string StudentName);
+        Student(int studentCode, std::string studentName);
         int get_StudentCode() const;
         std::string get_StudentName();
     private:
-        int StudentCode_;
-        std::string StudentName_;
+        int studentCode_;
+        std::string studentName_;
 };
 
 

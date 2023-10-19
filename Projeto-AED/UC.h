@@ -7,18 +7,18 @@
 class UC {
 public:
     UC();
-    UC(std::string UcCode, std::string ClassCode, std::list<Lesson> Lesson);
-    UC(std::string UcCode, std::string ClassCode);
+    UC(std::string ucCode, std::string classCode, std::list<Lesson> lesson);
+    UC(std::string ucCode, std::string classCode);
     std::string getUcCode() const;
     std::string getClassCode() const;
     int getNumberStudents() const;
     void setNumberStudents(int newValue);
-    void addLesson(Lesson Lesson_);
+    void addLesson(Lesson lesson);
 private:
-    std::string UcCode_;
-    std::string ClassCode_;
-    int NumberStudents_;
-    std::list<Lesson> Lesson_;
+    std::string ucCode_;
+    std::string classCode_;
+    int numberStudents_;
+    std::list<Lesson> lesson_;
 
 };
 

@@ -5,7 +5,7 @@
 #include "Data.h"
 using namespace std;
 
-void Data::ReadClasses(){
+void Data::readClasses(){
     string f = "schedule/classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
@@ -31,10 +31,10 @@ void Data::ReadClasses(){
         pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, sh, d, Type));
         aux.push_back(p);
     }
-    ListClasses_ = aux;
+    listClasses_ = aux;
     file.close();
 }
-void Data::ReadClasses_Per_Uc(){
+void Data::readClasses_Per_Uc(){
     string f = "schedule/classes_per_uc.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
@@ -50,11 +50,11 @@ void Data::ReadClasses_Per_Uc(){
         getline(iss, UcCode, ',');
         aux.push_back(UC(UcCode, ClassCode, Lesson));
     }
-    ListClasses_Per_Uc_ = aux;
+    listClasses_Per_Uc_ = aux;
     file.close();
 }
 
-void Data::ReadStudents_Classes(){
+void Data::readStudents_Classes(){
     string f = "schedule/students_classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
@@ -77,6 +77,6 @@ void Data::ReadStudents_Classes(){
         aux.push_back(p);
 
     }
-    ListStudents_Classes_ = aux;
+    listStudents_Classes_ = aux;
     file.close();
 }

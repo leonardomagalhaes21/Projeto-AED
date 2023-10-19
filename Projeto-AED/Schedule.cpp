@@ -5,21 +5,21 @@ using namespace std;
 Schedule::Schedule(){
 }
 
-Schedule::Schedule(vector<Lesson> Schedule) {
-    Schedule_ = Schedule;
+Schedule::Schedule(vector<Lesson> schedule) {
+    schedule_ = schedule;
 }
 
 std::vector<Lesson> Schedule::getSchedule() {
-    return Schedule_;
+    return schedule_;
 }
 
-void Schedule::setSchedule(vector<Lesson> Schedule) {
-    Schedule_ = Schedule;
+void Schedule::setSchedule(vector<Lesson> schedule) {
+    schedule_ = schedule;
 }
 
 
-void Schedule::addLesson(const Lesson& Lesson) {
-    Schedule_.push_back(Lesson);
+void Schedule::addLesson(const Lesson& lesson) {
+    schedule_.push_back(lesson);
 }
 
 

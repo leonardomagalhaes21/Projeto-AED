@@ -6,31 +6,31 @@ UC::UC(){
 
 }
 
-UC::UC(string UcCode,string ClassCode){
-    UcCode_ = UcCode;
-    ClassCode_ = ClassCode;
+UC::UC(string ucCode,string classCode){
+    ucCode_ = ucCode;
+    classCode_ = classCode;
 }
 
 
-UC::UC(std::string UcCode, std::string ClassCode, list<Lesson> Lesson ) {
-    UcCode_=UcCode;
-    ClassCode_=ClassCode;
-    NumberStudents_=0;
-    Lesson_=Lesson;
+UC::UC(std::string ucCode, std::string classCode, list<Lesson> lesson ) {
+    ucCode_=ucCode;
+    classCode_=classCode;
+    numberStudents_=0;
+    lesson_=lesson;
 }
 
 string UC::getUcCode() const {
-    return UcCode_;
+    return ucCode_;
 }
 string UC::getClassCode() const {
-    return ClassCode_;
+    return classCode_;
 }
 int UC::getNumberStudents() const {
-    return NumberStudents_;
+    return numberStudents_;
 }
 void UC::setNumberStudents(int newValue){
-    NumberStudents_=newValue;
+    numberStudents_=newValue;
 }
-void UC::addLesson(Lesson Lesson) {
-    Lesson_.push_back(Lesson);
+void UC::addLesson(Lesson lesson) {
+    lesson_.push_back(lesson);
 }

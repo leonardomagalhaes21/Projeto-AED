@@ -7,15 +7,15 @@
 class Schedule {
     public:
     Schedule();
-    Schedule(std::vector<Lesson> Schedule);
+    Schedule(std::vector<Lesson> schedule);
     std::vector<Lesson> getSchedule();
-    void setSchedule(std::vector<Lesson> Schedule);
-    void addLesson(const Lesson& Lesson);
+    void setSchedule(std::vector<Lesson> schedule);
+    void addLesson(const Lesson& lesson);
 
 
 
     private:
-    std::vector<Lesson> Schedule_;
+    std::vector<Lesson> schedule_;
 
 
 

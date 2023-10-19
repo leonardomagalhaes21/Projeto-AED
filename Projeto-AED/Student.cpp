@@ -3,15 +3,15 @@
 #include <string>
 using namespace std;
 
-Student::Student(int StudentCode, string StudentName){
-    StudentCode_ = StudentCode;
-    StudentName_ = StudentName;
+Student::Student(int studentCode, string studentName){
+    studentCode_ = studentCode;
+    studentName_ = studentName;
 }
 
 int Student::get_StudentCode() const {
-    return StudentCode_;
+    return studentCode_;
 }
 
 std::string Student::get_StudentName() {
-    return StudentName_;
+    return studentName_;
 }

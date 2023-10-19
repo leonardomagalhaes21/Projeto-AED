@@ -6,15 +6,15 @@
 
 class Data {
 private:
-    std::list<std::pair<UC,Lesson>> ListClasses_;
-    std::list<UC> ListClasses_Per_Uc_;
-    std::list<std::pair<Student, UC>> ListStudents_Classes_;
+    std::list<std::pair<UC,Lesson>> listClasses_;
+    std::list<UC> listClasses_Per_Uc_;
+    std::list<std::pair<Student, UC>> listStudents_Classes_;
 
 public:
 
-    void ReadClasses();
-    void ReadClasses_Per_Uc();
-    void ReadStudents_Classes();
+    void readClasses();
+    void readClasses_Per_Uc();
+    void readStudents_Classes();
 
 };
 
