@@ -31,6 +31,7 @@ void Data::ReadClasses(){
         pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, sh, d, Type));
         aux.push_back(p);
     }
+    ListClasses_ = aux;
     file.close();
 }
 void Data::ReadClasses_Per_Uc(){
@@ -49,6 +50,7 @@ void Data::ReadClasses_Per_Uc(){
         getline(iss, UcCode, ',');
         aux.push_back(UC(UcCode, ClassCode, Lesson));
     }
+    ListClasses_Per_Uc_ = aux;
     file.close();
 }
 
@@ -75,5 +77,6 @@ void Data::ReadStudents_Classes(){
         aux.push_back(p);
 
     }
+    ListStudents_Classes_ = aux;
     file.close();
 }

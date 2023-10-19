@@ -6,7 +6,7 @@
 
 class Data {
 private:
-    std::pair<UC,Lesson> ListClasses_;
+    std::list<std::pair<UC,Lesson>> ListClasses_;
     std::list<UC> ListClasses_Per_Uc_;
     std::list<std::pair<Student, UC>> ListStudents_Classes_;
 
