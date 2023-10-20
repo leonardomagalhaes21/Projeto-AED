@@ -4,6 +4,7 @@
 #include "Student.h"
 #include "Lesson.h"
 
+
 class Data {
 private:
     std::list<std::pair<UC,Lesson>> listClasses_;
@@ -11,7 +12,10 @@ private:
     std::list<std::pair<Student, UC>> listStudents_Classes_;
 
 public:
-
+    Data();
+    std::list<std::pair<UC,Lesson>> getListClasses_();
+    std::list<UC> getListClasses_Per_Uc_();
+    std::list<std::pair<Student, UC>> getListStudents_Classes_();
     void readClasses();
     void readClasses_Per_Uc();
     void readStudents_Classes();

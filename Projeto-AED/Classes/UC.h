@@ -14,6 +14,7 @@ public:
     int getNumberStudents() const;
     void setNumberStudents(int newValue);
     void addLesson(Lesson lesson);
+    //bool operator<(const UC Uc) const;
 private:
     std::string ucCode_;
     std::string classCode_;

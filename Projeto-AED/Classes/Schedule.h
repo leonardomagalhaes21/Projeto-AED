@@ -13,7 +13,6 @@ class Schedule {
     void addLesson(const Lesson& lesson);
 
 
-
     private:
     std::vector<Lesson> schedule_;
 

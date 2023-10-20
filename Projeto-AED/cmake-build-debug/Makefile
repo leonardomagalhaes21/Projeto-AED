@@ -128,125 +128,125 @@ project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
-Data.obj: Data.cpp.obj
-.PHONY : Data.obj
+Classes/Data.obj: Classes/Data.cpp.obj
+.PHONY : Classes/Data.obj
 
 # target to build an object file
-Data.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Data.cpp.obj
-.PHONY : Data.cpp.obj
+Classes/Data.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Data.cpp.obj
+.PHONY : Classes/Data.cpp.obj
 
-Data.i: Data.cpp.i
-.PHONY : Data.i
+Classes/Data.i: Classes/Data.cpp.i
+.PHONY : Classes/Data.i
 
 # target to preprocess a source file
-Data.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Data.cpp.i
-.PHONY : Data.cpp.i
+Classes/Data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Data.cpp.i
+.PHONY : Classes/Data.cpp.i
 
-Data.s: Data.cpp.s
-.PHONY : Data.s
+Classes/Data.s: Classes/Data.cpp.s
+.PHONY : Classes/Data.s
 
 # target to generate assembly for a file
-Data.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Data.cpp.s
-.PHONY : Data.cpp.s
+Classes/Data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Data.cpp.s
+.PHONY : Classes/Data.cpp.s
 
-Lesson.obj: Lesson.cpp.obj
-.PHONY : Lesson.obj
+Classes/Lesson.obj: Classes/Lesson.cpp.obj
+.PHONY : Classes/Lesson.obj
 
 # target to build an object file
-Lesson.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Lesson.cpp.obj
-.PHONY : Lesson.cpp.obj
+Classes/Lesson.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Lesson.cpp.obj
+.PHONY : Classes/Lesson.cpp.obj
 
-Lesson.i: Lesson.cpp.i
-.PHONY : Lesson.i
+Classes/Lesson.i: Classes/Lesson.cpp.i
+.PHONY : Classes/Lesson.i
 
 # target to preprocess a source file
-Lesson.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Lesson.cpp.i
-.PHONY : Lesson.cpp.i
+Classes/Lesson.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Lesson.cpp.i
+.PHONY : Classes/Lesson.cpp.i
 
-Lesson.s: Lesson.cpp.s
-.PHONY : Lesson.s
+Classes/Lesson.s: Classes/Lesson.cpp.s
+.PHONY : Classes/Lesson.s
 
 # target to generate assembly for a file
-Lesson.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Lesson.cpp.s
-.PHONY : Lesson.cpp.s
+Classes/Lesson.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Lesson.cpp.s
+.PHONY : Classes/Lesson.cpp.s
 
-Schedule.obj: Schedule.cpp.obj
-.PHONY : Schedule.obj
+Classes/Schedule.obj: Classes/Schedule.cpp.obj
+.PHONY : Classes/Schedule.obj
 
 # target to build an object file
-Schedule.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Schedule.cpp.obj
-.PHONY : Schedule.cpp.obj
+Classes/Schedule.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Schedule.cpp.obj
+.PHONY : Classes/Schedule.cpp.obj
 
-Schedule.i: Schedule.cpp.i
-.PHONY : Schedule.i
+Classes/Schedule.i: Classes/Schedule.cpp.i
+.PHONY : Classes/Schedule.i
 
 # target to preprocess a source file
-Schedule.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Schedule.cpp.i
-.PHONY : Schedule.cpp.i
+Classes/Schedule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Schedule.cpp.i
+.PHONY : Classes/Schedule.cpp.i
 
-Schedule.s: Schedule.cpp.s
-.PHONY : Schedule.s
+Classes/Schedule.s: Classes/Schedule.cpp.s
+.PHONY : Classes/Schedule.s
 
 # target to generate assembly for a file
-Schedule.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Schedule.cpp.s
-.PHONY : Schedule.cpp.s
+Classes/Schedule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Schedule.cpp.s
+.PHONY : Classes/Schedule.cpp.s
 
-Student.obj: Student.cpp.obj
-.PHONY : Student.obj
+Classes/Student.obj: Classes/Student.cpp.obj
+.PHONY : Classes/Student.obj
 
 # target to build an object file
-Student.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Student.cpp.obj
-.PHONY : Student.cpp.obj
+Classes/Student.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Student.cpp.obj
+.PHONY : Classes/Student.cpp.obj
 
-Student.i: Student.cpp.i
-.PHONY : Student.i
+Classes/Student.i: Classes/Student.cpp.i
+.PHONY : Classes/Student.i
 
 # target to preprocess a source file
-Student.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Student.cpp.i
-.PHONY : Student.cpp.i
+Classes/Student.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Student.cpp.i
+.PHONY : Classes/Student.cpp.i
 
-Student.s: Student.cpp.s
-.PHONY : Student.s
+Classes/Student.s: Classes/Student.cpp.s
+.PHONY : Classes/Student.s
 
 # target to generate assembly for a file
-Student.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Student.cpp.s
-.PHONY : Student.cpp.s
+Classes/Student.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/Student.cpp.s
+.PHONY : Classes/Student.cpp.s
 
-UC.obj: UC.cpp.obj
-.PHONY : UC.obj
+Classes/UC.obj: Classes/UC.cpp.obj
+.PHONY : Classes/UC.obj
 
 # target to build an object file
-UC.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/UC.cpp.obj
-.PHONY : UC.cpp.obj
+Classes/UC.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/UC.cpp.obj
+.PHONY : Classes/UC.cpp.obj
 
-UC.i: UC.cpp.i
-.PHONY : UC.i
+Classes/UC.i: Classes/UC.cpp.i
+.PHONY : Classes/UC.i
 
 # target to preprocess a source file
-UC.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/UC.cpp.i
-.PHONY : UC.cpp.i
+Classes/UC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/UC.cpp.i
+.PHONY : Classes/UC.cpp.i
 
-UC.s: UC.cpp.s
-.PHONY : UC.s
+Classes/UC.s: Classes/UC.cpp.s
+.PHONY : Classes/UC.s
 
 # target to generate assembly for a file
-UC.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/UC.cpp.s
-.PHONY : UC.cpp.s
+Classes/UC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Classes/UC.cpp.s
+.PHONY : Classes/UC.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -281,21 +281,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... project
-	@echo ... Data.obj
-	@echo ... Data.i
-	@echo ... Data.s
-	@echo ... Lesson.obj
-	@echo ... Lesson.i
-	@echo ... Lesson.s
-	@echo ... Schedule.obj
-	@echo ... Schedule.i
-	@echo ... Schedule.s
-	@echo ... Student.obj
-	@echo ... Student.i
-	@echo ... Student.s
-	@echo ... UC.obj
-	@echo ... UC.i
-	@echo ... UC.s
+	@echo ... Classes/Data.obj
+	@echo ... Classes/Data.i
+	@echo ... Classes/Data.s
+	@echo ... Classes/Lesson.obj
+	@echo ... Classes/Lesson.i
+	@echo ... Classes/Lesson.s
+	@echo ... Classes/Schedule.obj
+	@echo ... Classes/Schedule.i
+	@echo ... Classes/Schedule.s
+	@echo ... Classes/Student.obj
+	@echo ... Classes/Student.i
+	@echo ... Classes/Student.s
+	@echo ... Classes/UC.obj
+	@echo ... Classes/UC.i
+	@echo ... Classes/UC.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

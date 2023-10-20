@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Data.cpp" "CMakeFiles/project.dir/Data.cpp.obj" "gcc" "CMakeFiles/project.dir/Data.cpp.obj.d"
-  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Lesson.cpp" "CMakeFiles/project.dir/Lesson.cpp.obj" "gcc" "CMakeFiles/project.dir/Lesson.cpp.obj.d"
-  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Schedule.cpp" "CMakeFiles/project.dir/Schedule.cpp.obj" "gcc" "CMakeFiles/project.dir/Schedule.cpp.obj.d"
-  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Student.cpp" "CMakeFiles/project.dir/Student.cpp.obj" "gcc" "CMakeFiles/project.dir/Student.cpp.obj.d"
-  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/UC.cpp" "CMakeFiles/project.dir/UC.cpp.obj" "gcc" "CMakeFiles/project.dir/UC.cpp.obj.d"
+  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Data.cpp" "CMakeFiles/project.dir/Classes/Data.cpp.obj" "gcc" "CMakeFiles/project.dir/Classes/Data.cpp.obj.d"
+  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Lesson.cpp" "CMakeFiles/project.dir/Classes/Lesson.cpp.obj" "gcc" "CMakeFiles/project.dir/Classes/Lesson.cpp.obj.d"
+  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Schedule.cpp" "CMakeFiles/project.dir/Classes/Schedule.cpp.obj" "gcc" "CMakeFiles/project.dir/Classes/Schedule.cpp.obj.d"
+  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Student.cpp" "CMakeFiles/project.dir/Classes/Student.cpp.obj" "gcc" "CMakeFiles/project.dir/Classes/Student.cpp.obj.d"
+  "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/UC.cpp" "CMakeFiles/project.dir/Classes/UC.cpp.obj" "gcc" "CMakeFiles/project.dir/Classes/UC.cpp.obj.d"
   "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/main.cpp" "CMakeFiles/project.dir/main.cpp.obj" "gcc" "CMakeFiles/project.dir/main.cpp.obj.d"
   )
 

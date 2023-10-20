@@ -5,8 +5,11 @@
 #include "Data.h"
 using namespace std;
 
+Data::Data() {};
+
+
 void Data::readClasses(){
-    string f = "schedule/classes.csv";
+    string f = "../schedule/classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
         std::cerr << "Failed to open file: " << f << std::endl;
@@ -35,7 +38,7 @@ void Data::readClasses(){
     file.close();
 }
 void Data::readClasses_Per_Uc(){
-    string f = "schedule/classes_per_uc.csv";
+    string f = "../schedule/classes_per_uc.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
         std::cerr << "Failed to open file: " << f << std::endl;
@@ -55,7 +58,7 @@ void Data::readClasses_Per_Uc(){
 }
 
 void Data::readStudents_Classes(){
-    string f = "schedule/students_classes.csv";
+    string f = "../schedule/students_classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
         std::cerr << "Failed to open file: " << f << std::endl;
@@ -79,4 +82,16 @@ void Data::readStudents_Classes(){
     }
     listStudents_Classes_ = aux;
     file.close();
+}
+
+std::list<std::pair<UC, Lesson>> Data::getListClasses_() {
+    return listClasses_;
+}
+
+std::list<UC> Data::getListClasses_Per_Uc_() {
+    return listClasses_Per_Uc_;
+}
+
+std::list<std::pair<Student, UC>> Data::getListStudents_Classes_() {
+    return listStudents_Classes_;
 }

@@ -1,12 +1,12 @@
 #include "Schedule.h"
+#include <algorithm>
 using namespace std;
 
 
 Schedule::Schedule(){
 }
 
-Schedule::Schedule(vector<Lesson> schedule) {
-    schedule_ = schedule;
+Schedule::Schedule(vector<Lesson> schedule) : schedule_(schedule) {
 }
 
 std::vector<Lesson> Schedule::getSchedule() {
@@ -14,9 +14,8 @@ std::vector<Lesson> Schedule::getSchedule() {
 }
 
 void Schedule::setSchedule(vector<Lesson> schedule) {
-    schedule_ = schedule;
+    copy(schedule.begin(),schedule.end(),schedule_.begin());
 }
-
 
 void Schedule::addLesson(const Lesson& lesson) {
     schedule_.push_back(lesson);

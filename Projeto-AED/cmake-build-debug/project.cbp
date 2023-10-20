@@ -82,34 +82,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Data.cpp">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Data.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Data.h">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Data.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Lesson.cpp">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Lesson.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Lesson.h">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Lesson.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Schedule.cpp">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Schedule.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Schedule.h">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Schedule.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Student.cpp">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Student.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Student.h">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/Student.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/UC.cpp">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/UC.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/UC.h">
+		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/Classes/UC.h">
 			<Option target="project"/>
 		</Unit>
 		<Unit filename="C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/main.cpp">
