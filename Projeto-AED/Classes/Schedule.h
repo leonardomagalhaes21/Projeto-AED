@@ -3,19 +3,19 @@
 #include <string>
 #include <vector>
 #include "Lesson.h"
+#include "UC.h"
 
 class Schedule {
     public:
     Schedule();
-    Schedule(std::vector<Lesson> schedule);
-    std::vector<Lesson> getSchedule();
-    void setSchedule(std::vector<Lesson> schedule);
-    void addLesson(const Lesson& lesson);
-
+    Schedule(std::vector<std::pair<UC,Lesson>> schedule);
+    std::vector<std::pair<UC,Lesson>> getSchedule();
+    void setSchedule(std::vector<std::pair<UC,Lesson>> schedule);
+    void addLesson(const UC& uc, const Lesson& lesson);
+    void printSchedule();
 
     private:
-    std::vector<Lesson> schedule_;
-
+    std::vector<std::pair<UC,Lesson>> schedule_;
 
 
 };

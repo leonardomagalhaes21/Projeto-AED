@@ -5,13 +5,10 @@ using namespace std;
 
 Lesson::Lesson(){};
 
-Lesson::Lesson(int weekday, float duration, float start_hour, std::string type)
+Lesson::Lesson(int weekday, float duration, float start_hour, string type)
         : weekday_(weekday), duration_(duration), start_hour_(start_hour), type_(type){
 }
 
-Lesson::Lesson(int weekday, float duration, float start_hour, std::string type, UC uc)
-        : weekday_(weekday), duration_(duration), start_hour_(start_hour), type_(type), uc_(uc) {
-}
 
 
 int Lesson::getWeekday() const{
@@ -39,10 +36,4 @@ bool Lesson::Coincide_T(const Lesson lesson) const{
     return false;
 }
 
-void Lesson::setUc(UC uc) {
-    uc_ = uc;
-}
-UC Lesson::getUc() const {
-    return uc_;
-}
 

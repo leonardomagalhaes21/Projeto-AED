@@ -11,14 +11,7 @@ int main() {
 
     Student s = Student(202054812, "Manuel Mauro");
 
-    /*for (const auto& c :s.getStudentSchedule().getSchedule()){
-        cout << c.getWeekday() << " ";
-        cout << c.getDuration() << " ";
-        cout << c.getStartHour() << " ";
-        cout << c.getType() << " ";
-        cout << c.getUc().getUcCode() << " ";
-        cout << c.getUc().getClassCode() << endl;
-    }
+    s.getStudentSchedule().printSchedule();
 
     /*
     Lesson l = Lesson(1,1.5,12.5,"T");

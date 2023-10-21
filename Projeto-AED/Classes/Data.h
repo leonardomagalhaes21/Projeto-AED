@@ -4,6 +4,8 @@
 #include "Student.h"
 #include "Lesson.h"
 
+class Student;
+class UC;
 
 class Data {
 private:

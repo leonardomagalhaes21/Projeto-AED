@@ -1,7 +1,6 @@
 #ifndef PROJECT_LESSON_H
 #define PROJECT_LESSON_H
 #include <string>
-#include "UC.h"
 
 
 class Lesson {
@@ -9,9 +8,6 @@ class Lesson {
 public:
     Lesson();
     Lesson(int weekday, float duration, float start_hour, std::string type);
-    Lesson(int weekday, float duration, float start_hour, std::string type, UC uc);
-    UC getUc() const;
-    void setUc(UC uc);
 
     int getWeekday() const;
     float getDuration() const;
@@ -24,7 +20,6 @@ private:
     float duration_;
     int weekday_;
     std::string type_;
-    UC uc_;
 };
 
 

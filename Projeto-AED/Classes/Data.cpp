@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <list>
+#include <map>
 #include "Data.h"
 using namespace std;
 
@@ -17,6 +18,15 @@ void Data::readClasses(){
     string line, ClassCode, UcCode, Weekday, Type, StartHour, Duration;
     list<pair<UC,Lesson>> aux;
     getline(file, line);
+
+    map<string, int> WeekdayToNum = {
+            {"Monday", 1},
+            {"Tuesday", 2},
+            {"Wednesday", 3},
+            {"Thursday", 4},
+            {"Friday", 5}
+    };
+
     while (getline(file, line)) {
         istringstream iss(line);
         getline(iss, ClassCode, ',');
@@ -26,12 +36,14 @@ void Data::readClasses(){
         getline(iss, Duration, ',');
         getline(iss, Type, ',');
 
-        int w = stoi(Weekday);
+
+
+        int w = WeekdayToNum[Weekday];
         float sh = stof(StartHour);
         float d = stof(Duration);
 
 
-        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, sh, d, Type));
+        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, d, sh, Type));
         aux.push_back(p);
     }
     listClasses_ = aux;
