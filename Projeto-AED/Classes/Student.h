@@ -15,11 +15,11 @@ class Student {
         Student();
         Student(int studentCode, std::string studentName);
         int get_StudentCode() const;
-        std::string get_StudentName();
+        std::string get_StudentName() const;
         void set_StudentName(std::string studentName);
         void set_StudentCode(int studentCode);
         //bool operator< (const Student & student) const;
-        Schedule getStudentSchedule();
+        Schedule getStudentSchedule() const;
 
     private:
         int studentCode_;

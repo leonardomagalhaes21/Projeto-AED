@@ -17,7 +17,7 @@ int Student::get_StudentCode() const {
     return studentCode_;
 }
 
-std::string Student::get_StudentName() {
+std::string Student::get_StudentName() const {
     return studentName_;
 }
 void Student::set_StudentCode(int StudentCode) {
@@ -31,7 +31,7 @@ void Student::set_StudentName(string StudentName) {
     return studentCode_ < Student.studentCode_;
 }*/
 
-Schedule Student::getStudentSchedule() {
+Schedule Student::getStudentSchedule() const {
     Schedule s = Schedule();
     Data d = Data();
     d.readStudents_Classes();
