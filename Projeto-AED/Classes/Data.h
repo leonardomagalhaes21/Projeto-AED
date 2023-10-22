@@ -21,7 +21,6 @@ public:
     void readClasses();
     void readClasses_Per_Uc();
     void readStudents_Classes();
-
     void printClassTableSchedule(std::string classCode) const;
 };
 
