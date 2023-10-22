@@ -47,7 +47,7 @@ Schedule Student::getStudentSchedule() const {
     for (const auto& c : d.getListClasses_()){
         if (ucs.find(c.first) != ucs.end()){
             s.addLesson(c.first,c.second);
-        }
+    }
     }
 
     return s;

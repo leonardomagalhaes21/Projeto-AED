@@ -3,6 +3,9 @@
 #include <string>
 #include <list>
 #include "Lesson.h"
+#include <iostream>
+#include <map>
+#include <set>
 
 class UC {
 public:
@@ -15,6 +18,7 @@ public:
     void setNumberStudents(int newValue);
     void addLesson(Lesson lesson);
     bool operator<(const UC& Uc) const;
+    void printLessons() const;
 private:
     std::string ucCode_;
     std::string classCode_;
