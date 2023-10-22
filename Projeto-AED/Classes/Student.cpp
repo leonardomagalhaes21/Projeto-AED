@@ -43,6 +43,9 @@ void Student::set_Ucs(list<UC> ucs) {
 bool Student::operator<(const Student &Student) const {
     return studentCode_ < Student.studentCode_;
 }
+void Student::add_UC(UC uc) {
+    ucs_.push_back(uc);
+}
 bool Student::has_Class(string classCode) const {
     for(UC uc: ucs_){
         if(uc.getClassCode()==classCode){
