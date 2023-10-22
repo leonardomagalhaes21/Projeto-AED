@@ -22,5 +22,7 @@ int main() {
     list<Lesson> ll ={l,l2,l3,l4,l5};
     UC uc= UC("L.EIC001","1LEIC01",ll);
     uc.printLessons();
+    Data data;
+    data.printClassTableSchedule("1LEIC02");
     return 0;
 }

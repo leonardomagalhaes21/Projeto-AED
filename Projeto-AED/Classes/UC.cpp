@@ -6,7 +6,7 @@ UC::UC(){
 }
 
 UC::UC(string ucCode,string classCode){
-    ucCode_ = ucCode;
+    ucCode_= ucCode;
     classCode_ = classCode;
     numberStudents_ = 0;
 }
@@ -30,7 +30,7 @@ void UC::setNumberStudents(int newValue){
 void UC::addLesson(Lesson lesson) {
     lesson_.push_back(lesson);
 }
-List<Lesson> Uc::getLessons() const{
+list<Lesson> UC::getLessons() const{
     return lesson_;
 }
 

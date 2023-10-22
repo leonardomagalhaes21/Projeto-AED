@@ -55,7 +55,7 @@ Schedule Student::getStudentSchedule() const {
 }
 
 void Student::printStudentTableSchedule() const {
-    
+
 }
 
 
