@@ -114,10 +114,10 @@ void Data::printClassTableSchedule(string classCode) const{
                        "|________________________________________________________________________________________|\n";
 
 
-    vector<string> periodOfTime;
+    vector<string> scheduleVector;
     for (int i = 0; i < 24 * 5 * 2; i += 2) {
-        periodOfTime.push_back("              |");
-        periodOfTime.push_back("______________|");
+        scheduleVector.push_back("              |");
+        scheduleVector.push_back("______________|");
     }
     for (const UC& ucClass_ : listClasses_Per_Uc_) {
         if (ucClass_.getClassCode() == classCode) {
@@ -125,41 +125,42 @@ void Data::printClassTableSchedule(string classCode) const{
                 int weekDayPosition=lesson.getWeekday() -1;
 
                 float duration = lesson.getDuration();
-                int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 2;
+                int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 4;
 
-                periodOfTime[lessonStartPosition] = " " + ucClass_.getUcCode() + "(" + lesson.getType() + ")";
+                scheduleVector[lessonStartPosition] = " " + ucClass_.getUcCode() + "(" + lesson.getType() + ")";
 
                 if (ucClass_.getUcCode().length() + lesson.getType().length() + 2 < 15)
-                    periodOfTime[lessonStartPosition] += string(15 - ucClass_.getUcCode().length() - lesson.getType().length(), ' ');
+                    scheduleVector[lessonStartPosition] += string(15 - ucClass_.getUcCode().length() - lesson.getType().length(), ' ');
 
-                periodOfTime[lessonStartPosition] += "|";
+                scheduleVector[lessonStartPosition] += "|";
 
-                periodOfTime[++lessonStartPosition] = "   " + ucClass_.getClassCode() + "    |";
+                scheduleVector[++lessonStartPosition] = "   " + ucClass_.getClassCode() + "    |";
 
                 duration -= 0.5;
                 while (duration > 0.5) {
                     duration -= 0.5;
-                    periodOfTime[++lessonStartPosition] = "              |";
-                    periodOfTime[++lessonStartPosition] = "              |";
+                    scheduleVector[++lessonStartPosition] = "              |";
+                    scheduleVector[++lessonStartPosition] = "              |";
                 }
-                periodOfTime[++lessonStartPosition] = "              |";
+                scheduleVector[++lessonStartPosition] = "              |";
             }
         }
     }
-    cout<<schedule_;
+
     float time = 8.0;
     for (int i = 0; i < 24 * 2; i += 2) {
-        if (time < 10 || (time + 0.5 < 10)) cout << "|  ";
-        else cout << "| ";
+        if (time < 10 || (time + 0.5 < 10)) schedule_ += "|  ";
+        else schedule_ += "| ";
 
-        cout << to_string(static_cast<int>(time)) << ':' << to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) << "0-";
+        schedule_ +=to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) + "0-";
 
         time += 0.5;
 
-        cout << to_string(static_cast<int>(time)) << ':' << to_string(static_cast<int>(time - static_cast<int>(time)) * 6) << "0";
+        schedule_ +=to_string(static_cast<int>(time)) + ':' +to_string(static_cast<int>(time - static_cast<int>(time)) * 6) + "0";
 
-        if (time < 10 && (time - 0.5 < 10)) cout << ' ';
-        cout << " |" << periodOfTime[i] << periodOfTime[48 * 1 + i] << periodOfTime[48 * 2 + i] << periodOfTime[48 * 3 + i] << periodOfTime[48 * 4 + i] << '\n';
-        cout << "|_____________|" << periodOfTime[i + 1] << periodOfTime[48 * 1 + i + 1] << periodOfTime[48 * 2 + i + 1] << periodOfTime[48 * 3 + i + 1] << periodOfTime[48 * 4 + i + 1] << '\n';
+        if (time < 10 && (time - 0.5 < 10)) schedule_ += ' ';
+        schedule_ += " |" + scheduleVector[i] + scheduleVector[48 * 1 + i] + scheduleVector[48 * 2 + i] + scheduleVector[48 * 3 + i] + scheduleVector[48 * 4 + i] + '\n';
+        schedule_ += "|_____________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
     }
+    cout << schedule_;
 }

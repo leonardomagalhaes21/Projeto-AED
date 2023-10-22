@@ -23,6 +23,7 @@ int main() {
     UC uc= UC("L.EIC001","1LEIC01",ll);
     uc.printLessons();
     Data data;
-    data.printClassTableSchedule("1LEIC02");
+    data.readClasses_Per_Uc();
+    data.printClassTableSchedule("1LEIC03");
     return 0;
 }
