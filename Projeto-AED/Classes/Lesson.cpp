@@ -23,7 +23,7 @@ float Lesson::getStartHour() const{
 string Lesson::getType() const{
     return type_;
 }
-bool Lesson::Coincide_T(const Lesson lesson) const{
+bool Lesson::Coincide_T(const Lesson& lesson) const{
     if (type_ == lesson.getType()) {
         if (weekday_ == lesson.getWeekday()) {
             if (start_hour_ + duration_ > getStartHour() && start_hour_ + duration_ <= getStartHour() + getDuration()){

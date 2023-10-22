@@ -5,6 +5,12 @@ UC::UC(){
     numberStudents_ = 0;
 }
 
+UC::UC(string ucCode){
+    numberStudents_ = 0;
+    ucCode_ = ucCode;
+}
+
+
 UC::UC(string ucCode,string classCode){
     ucCode_= ucCode;
     classCode_ = classCode;
@@ -27,7 +33,7 @@ int UC::getNumberStudents() const {
 void UC::setNumberStudents(int newValue){
     numberStudents_=newValue;
 }
-void UC::addLesson(Lesson lesson) {
+void UC::addLesson(const Lesson& lesson) {
     lesson_.push_back(lesson);
 }
 list<Lesson> UC::getLessons() const{
@@ -48,6 +54,19 @@ bool UC::operator<(const UC& UC) const{
     }
     return false;
 }
+
+void UC::addClassLessons(){
+    Data d = Data();
+    d.readClasses();
+    for (const auto& c : d.getListClasses_()){
+        if (c.first.ucCode_ == ucCode_ && c.first.classCode_ == classCode_){
+            addLesson(c.second);
+        }
+    }
+}
+
+
+
 
 void UC::printLessons() const {
     map<int, string> NumToWeekday = {
@@ -86,7 +105,7 @@ void UC::printLessons() const {
             {"UP001", "PUP"}
     };
     cout << UcCodeToName[ucCode_] << ":\n";
-    for (Lesson lesson : lesson_) {
+    for (const Lesson& lesson : lesson_) {
         cout << "\t" << NumToWeekday[lesson.getWeekday()] << "| Start: " << (int)lesson.getStartHour();
         if (lesson.getDuration() == 1){
             cout << " -> " << lesson.getStartHour() + lesson.getDuration() << " hours " << "(" << lesson.getDuration() << " hour" << ")"  "| ";
@@ -96,4 +115,20 @@ void UC::printLessons() const {
         }
         cout << lesson.getType() << endl;
     }
+}
+
+Schedule UC::getSchedule() {
+    Schedule s = Schedule();
+    Data d = Data();
+    d.readClasses();
+
+    for (const auto& c : d.getListClasses_()){
+        if (c.first.ucCode_ == ucCode_){
+            s.addLesson(c.first,c.second);
+        }
+    }
+
+    return s;
+
+
 }

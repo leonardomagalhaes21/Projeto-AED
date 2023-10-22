@@ -5,6 +5,8 @@
 #include "Lesson.h"
 #include "UC.h"
 
+class UC;
+
 class Schedule {
     public:
     Schedule();

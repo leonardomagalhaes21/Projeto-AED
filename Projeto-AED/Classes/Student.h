@@ -2,14 +2,16 @@
 #ifndef PROJECT_STUDENT_H
 #define PROJECT_STUDENT_H
 
-
-
 #include <string>
 #include "Schedule.h"
 #include "UC.h"
 #include "Data.h"
 #include "Lesson.h"
 #include <list>
+
+class UC;
+class Schedule;
+
 
 class Student {
     public:

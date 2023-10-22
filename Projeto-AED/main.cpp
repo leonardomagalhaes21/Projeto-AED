@@ -9,19 +9,22 @@ using namespace std;
 
 int main() {
 
+//teste 0 -> print ao horario de um aluno
     Student s = Student(202054812, "Manuel Mauro");
 
     s.getStudentSchedule().printSchedule();
 
 
-    Lesson l = Lesson(1,1.5,12.5,"T");
-    Lesson l2 =Lesson(2,2,14.5,"TP");
-    Lesson l3=Lesson(3,2.5,10,"T");
-    Lesson l4=Lesson(4,2.5,16,"TP");
-    Lesson l5=Lesson(5,1,9.5,"T");
-    list<Lesson> ll ={l,l2,l3,l4,l5};
-    UC uc= UC("L.EIC001","1LEIC01",ll);
+//teste 1 -> print a horario de cadeira da turma
+    UC uc= UC("L.EIC001","1LEIC06");
+    uc.addClassLessons();
     uc.printLessons();
+
+//teste 2 -> print a horario de cadeira
+    UC u = UC("L.EIC001");
+    uc.getSchedule().printSchedule();
+
+//teste 3 -> print a horario de turma
     Data data;
     data.readClasses_Per_Uc();
     data.printClassTableSchedule("1LEIC03");

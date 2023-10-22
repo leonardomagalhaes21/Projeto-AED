@@ -13,7 +13,7 @@ public:
     float getDuration() const;
     float getStartHour() const;
     std::string getType() const;
-    bool Coincide_T(const Lesson Lesson) const;
+    bool Coincide_T(const Lesson& Lesson) const;
 
 private:
     float start_hour_;
