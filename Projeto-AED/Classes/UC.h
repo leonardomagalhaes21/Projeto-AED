@@ -19,6 +19,7 @@ public:
     void addLesson(Lesson lesson);
     bool operator<(const UC& Uc) const;
     void printLessons() const;
+    List<Lesson> getLessons() const
 private:
     std::string ucCode_;
     std::string classCode_;

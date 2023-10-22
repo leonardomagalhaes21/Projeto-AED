@@ -27,9 +27,9 @@ void Student::set_StudentCode(int StudentCode) {
 void Student::set_StudentName(string StudentName) {
     studentName_ = StudentName;
 }
-/*bool Student::operator<(const Student &Student) const {
+bool Student::operator<(const Student &Student) const {
     return studentCode_ < Student.studentCode_;
-}*/
+}
 
 Schedule Student::getStudentSchedule() const {
     Schedule s = Schedule();
@@ -53,5 +53,11 @@ Schedule Student::getStudentSchedule() const {
     return s;
 
 }
+
+void Student::printStudentTableSchedule() const {
+    
+}
+
+
 
 

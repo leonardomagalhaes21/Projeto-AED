@@ -30,6 +30,10 @@ void UC::setNumberStudents(int newValue){
 void UC::addLesson(Lesson lesson) {
     lesson_.push_back(lesson);
 }
+List<Lesson> Uc::getLessons() const{
+    return lesson_;
+}
+
 bool UC::operator<(const UC& UC) const{
     if(ucCode_ < UC.ucCode_){
         return true;

@@ -18,6 +18,7 @@ public:
     std::list<std::pair<UC,Lesson>> getListClasses_();
     std::list<UC> getListClasses_Per_Uc_();
     std::list<std::pair<Student, UC>> getListStudents_Classes_();
+    void printClassTableSchedule() const;
     void readClasses();
     void readClasses_Per_Uc();
     void readStudents_Classes();
