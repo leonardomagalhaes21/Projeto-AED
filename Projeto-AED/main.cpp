@@ -31,13 +31,16 @@ int main() {
     UC u = UC("L.EIC001");
     uc.getSchedule(d.getListClasses_()).printSchedule();
 
-//teste 3 -> print a horario de turma
+//teste 3 -> print a horario de turma (table)
     d.printClassTableSchedule("1LEIC03");
 
 
     Menu m= Menu();
     m.showMenu();
     cout << "\n";
+
+//teste 5 print a horario de turma
+    d.printClassSchedule("1LEIC03",d.getListClasses_Per_Uc_(),d.getListClasses_());
 
 //teste 4 -> métodos adicionais
     //d.printStudentsByYear(2019,d.getListStudents_Classes_());

@@ -249,3 +249,17 @@ void Data::printClassTableSchedule(string classCode) const{
     }
     cout << schedule_;
 }
+
+
+
+void Data::printClassSchedule(const string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) {
+    Schedule s = Schedule();
+
+    for (const auto& c : getListClasses){
+        if (c.first.getClassCode() == classCode){
+            s.addLesson(c.first,c.second);
+        }
+    }
+    s.printSchedule();
+
+}

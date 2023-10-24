@@ -28,6 +28,8 @@ public:
     void studentsWithNUcs(int x,std::list<std::pair<Student, UC>> val);
     void numberStudentsWithNUcs(int n,std::list<std::pair<Student, UC>> val);
     void printClassTableSchedule(std::string classCode) const;
+
+    static void printClassSchedule(const std::string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) ;
 };
 
 
