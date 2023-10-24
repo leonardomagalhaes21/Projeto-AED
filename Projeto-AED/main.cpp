@@ -4,12 +4,14 @@
 #include "Classes/Schedule.h"
 #include "Classes/Lesson.h"
 #include <iostream>
+#include "Classes/Menu.h"
 
 using namespace std;
 
 int main() {
 
 //teste 0 -> print ao horario de um aluno
+    Data d = Data();
     Student s = Student(202054812, "Manuel Mauro");
 
     s.getStudentSchedule().printSchedule();
@@ -25,8 +27,9 @@ int main() {
     uc.getSchedule().printSchedule();
 
 //teste 3 -> print a horario de turma
-    Data data;
-    data.readClasses_Per_Uc();
-    data.printClassTableSchedule("1LEIC03");
+    d.printClassTableSchedule("1LEIC03");
     return 0;
+
+//showMenu()
+//
 }

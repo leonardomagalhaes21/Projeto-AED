@@ -14,4 +14,6 @@ add_executable(project main.cpp
         Classes/Student.h
         Classes/Data.cpp
         Classes/Data.h
+        Classes/Menu.cpp
+        Classes/Menu.h
 )

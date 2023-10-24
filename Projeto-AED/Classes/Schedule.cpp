@@ -85,17 +85,15 @@ void Schedule::printSchedule() {
     for (const auto &p : schedule_) {
         UC uc = p.first;
         Lesson l = p.second;
-
         cout << NumToWeekday[l.getWeekday()] << " | ";
         cout << uc.getUcCode() <<" (" << UcCodeToName[uc.getUcCode()] << ")" << " (" << uc.getClassCode() << ") | ";
         cout << l.getStartHour() << " hours";
-        if (l.getDuration() == 1){
-            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hour" << ")"  "| ";
+        if (l.getDuration() == 1.0){
+            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hour" << ")"  "| " << l.getType() << endl;
         }
         else{
-            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hours" << ")"  "| ";
+            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hours" << ")"  "| " <<l.getType() << endl;
         }
-        cout << l.getType() << endl;
     }
 
     cout << "--------------------------------------------------------------------" << endl;

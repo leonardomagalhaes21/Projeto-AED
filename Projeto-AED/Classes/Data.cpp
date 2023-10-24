@@ -3,6 +3,7 @@
 #include <sstream>
 #include <list>
 #include <map>
+#include <iomanip>
 #include "Data.h"
 using namespace std;
 
@@ -41,9 +42,10 @@ void Data::readClasses(){
         int w = WeekdayToNum[Weekday];
         float sh = stof(StartHour);
         float d = stof(Duration);
+        string t = (string) Type;
 
 
-        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, d, sh, Type));
+        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, d, sh, t));
         aux.push_back(p);
     }
     listClasses_ = aux;
@@ -155,9 +157,12 @@ void Data::printClassTableSchedule(string classCode) const{
         schedule_ +=to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) + "0-";
 
         time += 0.5;
-
-        schedule_ +=to_string(static_cast<int>(time)) + ':' +to_string(static_cast<int>(time - static_cast<int>(time)) * 6) + "0";
-
+        if (time-static_cast<int>(time)==0){
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6))+ "0";
+        }
+        else {
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6 * 10));
+        }
         if (time < 10 && (time - 0.5 < 10)) schedule_ += ' ';
         schedule_ += " |" + scheduleVector[i] + scheduleVector[48 * 1 + i] + scheduleVector[48 * 2 + i] + scheduleVector[48 * 3 + i] + scheduleVector[48 * 4 + i] + '\n';
         schedule_ += "|_____________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
