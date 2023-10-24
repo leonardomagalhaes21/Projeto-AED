@@ -104,16 +104,30 @@ void UC::printLessons() const {
     };
     cout << UcCodeToName[ucCode_] << ":\n";
     for (const Lesson& lesson : lesson_) {
-        cout << "\t" << NumToWeekday[lesson.getWeekday()] << "| Start: " << (int)lesson.getStartHour();
+        cout << "\t" << NumToWeekday[lesson.getWeekday()] << "| Start: " << toTime(lesson.getStartHour());
         if (lesson.getDuration() == 1){
-            cout << " -> " << lesson.getStartHour() + lesson.getDuration() << " hours " << "(" << lesson.getDuration() << " hour" << ")"  "| ";
+            cout << " -> " << toTime(lesson.getStartHour() + lesson.getDuration()) << " hours " << "(" << toTime(lesson.getDuration()) << " hour" << ")"  "| ";
         }
         else{
-            cout << " -> " << lesson.getStartHour() + lesson.getDuration() << " hours " << "(" << lesson.getDuration() << " hours" << ")"  "| ";
+            cout << " -> " << toTime(lesson.getStartHour() + lesson.getDuration()) << " hours " << "(" << toTime(lesson.getDuration()) << " hours" << ")"  "| ";
         }
         cout << lesson.getType() << endl;
     }
 }
+
+
+std::string UC::toTime(float hour) {
+    int hrs = (int) hour;
+    int mins = (int) ((hour-hrs)*60);
+    if (mins > 10){
+        return to_string(hrs) + ":" + to_string(mins);
+    }
+    else{
+        return to_string(hrs) + ":" + "0" + to_string(mins);
+    }
+}
+
+
 
 Schedule UC::getSchedule(const std::list<std::pair<UC, Lesson>>& l1) {
     Schedule s = Schedule();

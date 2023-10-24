@@ -87,16 +87,27 @@ void Schedule::printSchedule() {
         Lesson l = p.second;
         cout << NumToWeekday[l.getWeekday()] << " | ";
         cout << uc.getUcCode() <<" (" << UcCodeToName[uc.getUcCode()] << ")" << " (" << uc.getClassCode() << ") | ";
-        cout << l.getStartHour() << " hours";
+        cout << toTime(l.getStartHour()) << " hours";
         if (l.getDuration() == 1.0){
-            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hour" << ")"  "| " << l.getType() << endl;
+            cout << " -> " << toTime(l.getStartHour() + l.getDuration()) << " hours " << "(" << toTime(l.getDuration()) << " hour" << ")"  "| " << l.getType() << endl;
         }
         else{
-            cout << " -> " << l.getStartHour() + l.getDuration() << " hours " << "(" << l.getDuration() << " hours" << ")"  "| " <<l.getType() << endl;
+            cout << " -> " << toTime(l.getStartHour() + l.getDuration()) << " hours " << "(" << toTime(l.getDuration()) << " hours" << ")"  "| " << l.getType() << endl;
         }
     }
 
     cout << "--------------------------------------------------------------------" << endl;
+}
+
+std::string Schedule::toTime(float hour) {
+    int hrs = (int) hour;
+    int mins = (int) ((hour-hrs)*60);
+    if (mins > 10){
+        return to_string(hrs) + ":" + to_string(mins);
+    }
+    else{
+        return to_string(hrs) + ":" + "0" + to_string(mins);
+    }
 }
 
 
