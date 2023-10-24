@@ -12,6 +12,7 @@ int main() {
 
     Data d = Data();
     d.readStudents_Classes();
+    d.readClasses_Per_Uc();
     d.readClasses();
 
 
@@ -32,8 +33,12 @@ int main() {
 
 //teste 3 -> print a horario de turma
     d.printClassTableSchedule("1LEIC03");
-    return 0;
 
-//showMenu()
-//
+
+    Menu m= Menu();
+    m.showMenu();
+
+    //list<Student> student = d.getStudentsByYear(2019,d.getListStudents_Classes_());
+    //list<Student> student = d.getStudentsByClass("3LEIC08",d.getListStudents_Classes_());
+    return 0;
 }

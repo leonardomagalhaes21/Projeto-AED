@@ -1,7 +1,8 @@
 #include "Menu.h"
 
 using namespace std;
-void showMenu() {
+Menu::Menu() {}
+void Menu::showMenu() {
 
     const int largura = 40;
     const int altura = 8;
@@ -12,16 +13,17 @@ void showMenu() {
     }
     cout << endl;
 
-    // Exibe o conteúdo do menu com margens
-    cout << "| " << setw(largura - 4) << "Menu de Consulta de Horário" << " |" << endl;
-    cout << "| " << setw(largura - 4) << "1. Consultar Horário" << " |" << endl;
-    cout << "| " << setw(largura - 4) << "2. Sair" << " |" << endl;
 
-    // Exibe a parte inferior do quadro
+    cout << "| " << setw(largura -8) << "Menu de Consulta de Horário" <<setw(7)<< "|" << endl;
+    cout << "| " << setw(largura - 12) << "1. Consultar Horário" << setw(11)<< "|" << endl;
+    cout << "| " << setw(largura - 19) << "2. Sair" << setw(17) << " |" << endl;
+    //if (ucClass_.getUcCode().length() + lesson.getType().length() + 2 < 15)
+    //    scheduleVector[lessonStartPosition] += string(15 - ucClass_.getUcCode().length() - lesson.getType().length(), ' ');
+
     for (int i = 0; i < largura; i++) {
         std::cout << "_";
     }
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Escolha uma opção: ";
+    cout << "Escolha uma opção: ";
 }

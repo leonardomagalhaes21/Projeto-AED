@@ -21,6 +21,8 @@ public:
     void readClasses();
     void readClasses_Per_Uc();
     void readStudents_Classes();
+    std::list<Student> getStudentsByYear(int x,std::list<std::pair<Student, UC>> val);
+    std::list<Student> getStudentsByClass(std::string x,std::list<std::pair<Student, UC>> val);
     void printClassTableSchedule(std::string classCode) const;
 };
 

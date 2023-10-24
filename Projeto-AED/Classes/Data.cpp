@@ -62,7 +62,7 @@ void Data::readClasses_Per_Uc(){
     while (getline(file, line)) {
         istringstream iss(line);
         getline(iss, ClassCode, ',');
-        getline(iss, UcCode, ',');
+        iss >> UcCode;
         aux.push_back(UC(UcCode, ClassCode, Lesson));
     }
     listClasses_Per_Uc_ = aux;
@@ -84,7 +84,7 @@ void Data::readStudents_Classes(){
         getline(inn, StCode, ',');
         getline(inn, StName, ',');
         getline(inn, UcCode, ',');
-        getline(inn, ClassCode, ',');
+        inn >> ClassCode;
 
         int stc = stoi(StCode);
 
@@ -107,7 +107,32 @@ std::list<UC> Data::getListClasses_Per_Uc_() {
 std::list<std::pair<Student, UC>> Data::getListStudents_Classes_() {
     return listStudents_Classes_;
 }
+std::list<Student> Data::getStudentsByYear(int x,list<pair<Student, UC>> val){
+    list<Student> res;
+    for(pair<Student,UC> s: val){
+        if (x == (s.first.get_StudentCode()/100000)){
+            res.push_back(s.first);
+        }
+    }
+    for(Student s: res){
+        cout << s.get_StudentName() << '\n';
+    }
+    return res;
+}
+list<Student> Data::getStudentsByClass(string x,list<pair<Student, UC>> val){
+    list<Student> res;
+    for(pair<Student,UC> s: val){
+        if (x == (s.second.getClassCode())){
+            res.push_back(s.first);
+        }
+    }
+    for(Student s: res){
+        cout << s.get_StudentName() << '\n';
+    }
+    return res;
+}
 void Data::printClassTableSchedule(string classCode) const{
+
     cout << classCode + " schedule\n";
     string schedule_ = " ________________________________________________________________________________________\n"
                        "|     Hour    |    Monday    |   Tuesday    |   Wednesday  |   Thursday   |    Friday    |\n"
@@ -119,8 +144,13 @@ void Data::printClassTableSchedule(string classCode) const{
         scheduleVector.push_back("              |");
         scheduleVector.push_back("______________|");
     }
+    Data d=Data ();
+    d.readClasses_Per_Uc();
+    list<Lesson> lesson= {};
     for (const UC& ucClass_ : listClasses_Per_Uc_) {
         if (ucClass_.getClassCode() == classCode) {
+            UC c= UC (ucClass_.getUcCode(),classCode,lesson);
+            c.addClassLessons(listClasses_);
             for (const Lesson& lesson : ucClass_.getLessons()) {
                 int weekDayPosition=lesson.getWeekday() -1;
 
