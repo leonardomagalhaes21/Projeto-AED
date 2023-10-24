@@ -25,6 +25,8 @@ public:
     void printStudentsByClass(std::string x,std::list<std::pair<Student, UC>> val);
     void numberOfStudentsByYear(int x,std::list<std::pair<Student, UC>> val);
     void numberOfStudentsInClass(std::string x,std::list<std::pair<Student, UC>> val);
+    void studentsWithNUcs(int x,std::list<std::pair<Student, UC>> val);
+    void numberStudentsWithNUcs(int n,std::list<std::pair<Student, UC>> val);
     void printClassTableSchedule(std::string classCode) const;
 };
 

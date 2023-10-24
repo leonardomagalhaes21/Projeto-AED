@@ -147,6 +147,42 @@ void Data::numberOfStudentsInClass(string x,list<pair<Student, UC>> val) {
     }
     cout << res.size() << '\n';
 }
+void Data::studentsWithNUcs(int n,list<pair<Student, UC>> val){
+    map<Student,int> m;
+    for(pair<Student,UC> s: val){
+
+        if (m.count(s.first) > 0){
+            m[s.first]++;
+        }
+        else{
+            m[s.first]=1;
+        }
+    }
+    for(const auto par: m){
+        if(par.second >=n) {
+            cout << par.first.get_StudentName() << '\n';
+        }
+    }
+}
+void Data::numberStudentsWithNUcs(int n,list<pair<Student, UC>> val){
+    map<Student,int> m;
+    for(pair<Student,UC> s: val){
+
+        if (m.count(s.first) > 0){
+            m[s.first]++;
+        }
+        else{
+            m[s.first]=1;
+        }
+    }
+    int sum =0;
+    for(const auto par: m){
+        if(par.second >=n) {
+            sum++;
+        }
+    }
+    cout << sum;
+}
 void Data::printClassTableSchedule(string classCode) const{
 
     cout << classCode + " schedule\n";

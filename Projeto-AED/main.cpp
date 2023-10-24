@@ -43,6 +43,8 @@ int main() {
     //d.printStudentsByYear(2019,d.getListStudents_Classes_());
     //d.numberOfStudentsByYear(2019,d.getListStudents_Classes_());
     //d.printStudentsByClass("3LEIC08",d.getListStudents_Classes_());
-    //d.numberOfStudentsInClass("3LEIC08",d.getListStudents_Classes_());
+    //d.numberOfStudentsInClass("3LEIC08",);
+    //d.studentsWithNUcs(7,d.getListStudents_Classes_());
+    //d.numberStudentsWithNUcs(7,d.getListStudents_Classes_());
     return 0;
 }
