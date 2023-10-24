@@ -107,29 +107,45 @@ std::list<UC> Data::getListClasses_Per_Uc_() {
 std::list<std::pair<Student, UC>> Data::getListStudents_Classes_() {
     return listStudents_Classes_;
 }
-std::list<Student> Data::getStudentsByYear(int x,list<pair<Student, UC>> val){
-    list<Student> res;
+void Data::printStudentsByYear(int x,list<pair<Student, UC>> val){
+    set<Student> res;
     for(pair<Student,UC> s: val){
         if (x == (s.first.get_StudentCode()/100000)){
-            res.push_back(s.first);
+            res.insert(s.first);
         }
     }
-    for(Student s: res){
-        cout << s.get_StudentName() << '\n';
+    for(auto i = res.begin();i!=res.end();i++){
+        cout << i->get_StudentName() << '\n';
     }
-    return res;
 }
-list<Student> Data::getStudentsByClass(string x,list<pair<Student, UC>> val){
-    list<Student> res;
+void Data::numberOfStudentsByYear(int x,list<pair<Student, UC>> val){
+    set<Student> res;
+    for(pair<Student,UC> s: val){
+        if (x == (s.first.get_StudentCode()/100000)){
+            res.insert(s.first);
+        }
+    }
+    cout << res.size() << '\n';
+}
+void Data::printStudentsByClass(string x,list<pair<Student, UC>> val){
+    set<Student> res;
     for(pair<Student,UC> s: val){
         if (x == (s.second.getClassCode())){
-            res.push_back(s.first);
+            res.insert(s.first);
         }
     }
-    for(Student s: res){
-        cout << s.get_StudentName() << '\n';
+    for(auto i = res.begin();i!=res.end();i++){
+        cout << i->get_StudentName() << '\n';
     }
-    return res;
+}
+void Data::numberOfStudentsInClass(string x,list<pair<Student, UC>> val) {
+    set<Student> res;
+    for (pair<Student, UC> s: val) {
+        if (x == (s.second.getClassCode())) {
+            res.insert(s.first);
+        }
+    }
+    cout << res.size() << '\n';
 }
 void Data::printClassTableSchedule(string classCode) const{
 

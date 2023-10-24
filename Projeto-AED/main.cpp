@@ -37,8 +37,12 @@ int main() {
 
     Menu m= Menu();
     m.showMenu();
+    cout << "\n";
 
-    //list<Student> student = d.getStudentsByYear(2019,d.getListStudents_Classes_());
-    //list<Student> student = d.getStudentsByClass("3LEIC08",d.getListStudents_Classes_());
+//teste 4 -> métodos adicionais
+    d.printStudentsByYear(2019,d.getListStudents_Classes_());
+    d.numberOfStudentsByYear(2019,d.getListStudents_Classes_());
+    d.printStudentsByClass("3LEIC08",d.getListStudents_Classes_());
+    d.numberOfStudentsInClass("3LEIC08",d.getListStudents_Classes_());
     return 0;
 }
