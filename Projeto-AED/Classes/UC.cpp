@@ -55,10 +55,8 @@ bool UC::operator<(const UC& UC) const{
     return false;
 }
 
-void UC::addClassLessons(){
-    Data d = Data();
-    d.readClasses();
-    for (const auto& c : d.getListClasses_()){
+void UC::addClassLessons(const std::list<std::pair<UC, Lesson>>& l1){
+    for (const auto& c : l1){
         if (c.first.ucCode_ == ucCode_ && c.first.classCode_ == classCode_){
             addLesson(c.second);
         }
@@ -117,12 +115,10 @@ void UC::printLessons() const {
     }
 }
 
-Schedule UC::getSchedule() {
+Schedule UC::getSchedule(const std::list<std::pair<UC, Lesson>>& l1) {
     Schedule s = Schedule();
-    Data d = Data();
-    d.readClasses();
 
-    for (const auto& c : d.getListClasses_()){
+    for (const auto& c : l1){
         if (c.first.ucCode_ == ucCode_){
             s.addLesson(c.first,c.second);
         }

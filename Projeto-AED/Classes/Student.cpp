@@ -63,20 +63,17 @@ bool Student::has_Uc(string ucCode) const {
     return false;
 }
 
-Schedule Student::getStudentSchedule() const {
+Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1,const std::list<std::pair<UC, Lesson>>& l2) const {
     Schedule s = Schedule();
-    Data d = Data();
-    d.readStudents_Classes();
-    d.readClasses();
     set<UC> ucs;
 
-    for (const auto& c : d.getListStudents_Classes_()){
+    for (const auto& c : l1){
         if (c.first.get_StudentCode() == studentCode_){
             ucs.insert(c.second);
         }
     }
 
-    for (const auto& c : d.getListClasses_()){
+    for (const auto& c : l2){
         if (ucs.find(c.first) != ucs.end()){
             s.addLesson(c.first,c.second);
         }

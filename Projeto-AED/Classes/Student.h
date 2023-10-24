@@ -28,7 +28,7 @@ class Student {
         void add_UC(UC uc);
         bool has_Class(std::string classCode) const;
         bool has_Uc(std::string ucCode) const;
-        Schedule getStudentSchedule() const;
+        Schedule getStudentSchedule(const std::list<std::pair<Student, UC>>& l1, const std::list<std::pair<UC, Lesson>>& l2) const ;
         void printStudentTableSchedule() const;
 
     private:

@@ -26,8 +26,8 @@ public:
     bool operator<(const UC& Uc) const;
     void printLessons() const;
     std::list<Lesson> getLessons() const;
-    void addClassLessons();
-    Schedule getSchedule();
+    void addClassLessons(const std::list<std::pair<UC, Lesson>>&);
+    Schedule getSchedule(const std::list<std::pair<UC, Lesson>>& l1);
 private:
     std::string ucCode_;
     std::string classCode_;

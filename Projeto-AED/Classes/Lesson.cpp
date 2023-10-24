@@ -5,8 +5,11 @@ using namespace std;
 
 Lesson::Lesson(){};
 
-Lesson::Lesson(int weekday, float duration, float start_hour, string type)
-        : weekday_(weekday), duration_(duration), start_hour_(start_hour), type_(type){
+Lesson::Lesson(int weekday, float duration, float start_hour, string type){
+    weekday_=weekday;
+    duration_ = duration;
+    start_hour_ = start_hour;
+    type_=type;
 }
 
 

@@ -35,17 +35,15 @@ void Data::readClasses(){
         getline(iss, Weekday, ',');
         getline(iss, StartHour, ',');
         getline(iss, Duration, ',');
-        getline(iss, Type, ',');
-
+        iss >> Type;
 
 
         int w = WeekdayToNum[Weekday];
         float sh = stof(StartHour);
         float d = stof(Duration);
-        string t = (string) Type;
 
 
-        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, d, sh, t));
+        pair<UC,Lesson> p (UC(UcCode,ClassCode), Lesson(w, d, sh, Type));
         aux.push_back(p);
     }
     listClasses_ = aux;
