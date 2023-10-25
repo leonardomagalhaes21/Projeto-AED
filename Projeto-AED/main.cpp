@@ -44,10 +44,10 @@ int main() {
 
 //teste 4 -> métodos adicionais
     //d.printStudentsByYear(2019,d.getListStudents_Classes_());
-    //d.numberOfStudentsByYear(2019,d.getListStudents_Classes_());
+    //cout << d.numberOfStudentsByYear(2019,d.getListStudents_Classes_());
     //d.printStudentsByClass("3LEIC08",d.getListStudents_Classes_());
-    //d.numberOfStudentsInClass("3LEIC08",);
-    //d.studentsWithNUcs(7,d.getListStudents_Classes_());
-    //d.numberStudentsWithNUcs(7,d.getListStudents_Classes_());
+    //cout << d.numberOfStudentsInClass("3LEIC08",d.getListStudents_Classes_());
+    //d.printStudentsWithNUcs(7,d.getListStudents_Classes_());
+    //cout << d.numberStudentsWithNUcs(7,d.getListStudents_Classes_());
     return 0;
 }
