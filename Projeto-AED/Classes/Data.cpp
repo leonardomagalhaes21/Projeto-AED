@@ -2,13 +2,47 @@
 #include <fstream>
 #include <sstream>
 #include <list>
+#include <algorithm>
 #include <map>
 #include <iomanip>
 #include "Data.h"
 using namespace std;
 
-Data::Data() {};
+Data::Data() {
+    readClasses();
+    readClasses_Per_Uc();
+    readStudents_Classes();
+}
+UC* Data::findClass(string ucCode, string classCode) const {
 
+    int low = 0, high = listClasses_Per_Uc_.size() - 1;
+    UC* available;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+        auto it=listClasses_Per_Uc_.begin();
+        advance(it,middle);
+        *available = *it;
+
+        if (ucCode < available->getUcCode()) {
+            high = middle - 1;
+        }
+        else if (ucCode == available->getUcCode()) {
+            if (classCode == available->getClassCode()) {
+                return available;
+            }
+            else if (classCode < available->getClassCode()) {
+                high = middle - 1;
+            }
+            else {
+                low = middle + 1;
+            }
+        } else {
+            low = middle + 1;
+        }
+    }
+    return available;
+
+}
 
 void Data::readClasses(){
     string f = "../schedule/classes.csv";
@@ -65,7 +99,7 @@ void Data::readClasses_Per_Uc(){
         iss >> UcCode;
         aux.push_back(UC(UcCode, ClassCode, Lesson));
     }
-    listClasses_Per_Uc_ = aux;
+    listClasses_Per_Uc_=aux;
     file.close();
 }
 
@@ -96,7 +130,7 @@ void Data::readStudents_Classes(){
     file.close();
 }
 
-std::list<std::pair<UC, Lesson>> Data::getListClasses_() {
+std::list<std::pair<UC, Lesson>> Data::getListClasses_() const {
     return listClasses_;
 }
 
@@ -196,27 +230,34 @@ void Data::printClassTableSchedule(string classCode) const{
         scheduleVector.push_back("              |");
         scheduleVector.push_back("______________|");
     }
-    Data d=Data ();
-    d.readClasses_Per_Uc();
-    list<Lesson> lesson= {};
-    for (const UC& ucClass_ : listClasses_Per_Uc_) {
-        if (ucClass_.getClassCode() == classCode) {
-            UC c= UC (ucClass_.getUcCode(),classCode,lesson);
-            c.addClassLessons(listClasses_);
-            for (const Lesson& lesson : ucClass_.getLessons()) {
+    for (const auto& ucClass : getListClasses_() ){
+        if (ucClass.first.getClassCode() == classCode) {
+            //for (const Lesson& lesson : ucClass.getLessons()) {
+                Lesson lesson= ucClass.second;
                 int weekDayPosition=lesson.getWeekday() -1;
 
                 float duration = lesson.getDuration();
                 int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 4;
 
-                scheduleVector[lessonStartPosition] = " " + ucClass_.getUcCode() + "(" + lesson.getType() + ")";
 
-                if (ucClass_.getUcCode().length() + lesson.getType().length() + 2 < 15)
-                    scheduleVector[lessonStartPosition] += string(15 - ucClass_.getUcCode().length() - lesson.getType().length(), ' ');
 
+                if (ucClass.first.getUcCode().length() + lesson.getType().length() +2 < 14) {
+                    if ("T" == ucClass.second.getType()){
+                        scheduleVector[lessonStartPosition] = "  " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonStartPosition] += string(10 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                    }
+                    else if((ucClass.first.getUcCode()) == "UP001"){
+                        scheduleVector[lessonStartPosition] = "   " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonStartPosition] += string(9 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                    }
+                    else{
+                        scheduleVector[lessonStartPosition] = " " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonStartPosition] += string(11 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                    }
+                }
                 scheduleVector[lessonStartPosition] += "|";
 
-                scheduleVector[++lessonStartPosition] = "   " + ucClass_.getClassCode() + "    |";
+                scheduleVector[++lessonStartPosition] = "   " + ucClass.first.getClassCode() + "    |";
 
                 duration -= 0.5;
                 while (duration > 0.5) {
@@ -225,7 +266,7 @@ void Data::printClassTableSchedule(string classCode) const{
                     scheduleVector[++lessonStartPosition] = "              |";
                 }
                 scheduleVector[++lessonStartPosition] = "              |";
-            }
+            //}
         }
     }
 

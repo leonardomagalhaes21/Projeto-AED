@@ -24,6 +24,7 @@ UC::UC(string ucCode, string classCode, list<Lesson> lesson) : ucCode_(ucCode), 
 string UC::getUcCode() const {
     return ucCode_;
 }
+
 string UC::getClassCode() const {
     return classCode_;
 }

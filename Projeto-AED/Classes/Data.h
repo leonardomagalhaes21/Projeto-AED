@@ -12,10 +12,10 @@ private:
     std::list<std::pair<UC,Lesson>> listClasses_;
     std::list<UC> listClasses_Per_Uc_;
     std::list<std::pair<Student, UC>> listStudents_Classes_;
-
+    UC* findClass(std::string ucCode, std::string classCode) const;
 public:
     Data();
-    std::list<std::pair<UC,Lesson>> getListClasses_();
+    std::list<std::pair<UC,Lesson>> getListClasses_() const;
     std::list<UC> getListClasses_Per_Uc_();
     std::list<std::pair<Student, UC>> getListStudents_Classes_();
     void readClasses();
