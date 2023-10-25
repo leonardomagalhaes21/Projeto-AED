@@ -15,6 +15,7 @@ class Schedule {
     void setSchedule(std::vector<std::pair<UC,Lesson>> schedule);
     void addLesson(const UC& uc, const Lesson& lesson);
     void printSchedule();
+    static std::string toTime(float hour);
 
     private:
     std::vector<std::pair<UC,Lesson>> schedule_;

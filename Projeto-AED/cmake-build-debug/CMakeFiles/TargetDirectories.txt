@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /home/tiago/clion/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/project.dir
 /home/tiago/clion/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/tiago/clion/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/project.dir
+C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> refs/remotes/origin/main

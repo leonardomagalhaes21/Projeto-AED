@@ -21,13 +21,17 @@ public:
     void readClasses();
     void readClasses_Per_Uc();
     void readStudents_Classes();
-    void printStudentsByYear(int x,std::list<std::pair<Student, UC>> val);
-    void printStudentsByClass(std::string x,std::list<std::pair<Student, UC>> val);
-    void numberOfStudentsByYear(int x,std::list<std::pair<Student, UC>> val);
-    void numberOfStudentsInClass(std::string x,std::list<std::pair<Student, UC>> val);
-    void studentsWithNUcs(int x,std::list<std::pair<Student, UC>> val);
-    void numberStudentsWithNUcs(int n,std::list<std::pair<Student, UC>> val);
+    static void printStudentsByYear(int x,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsByClass(const std::string& x,const std::list<std::pair<Student, UC>>& val);
+    static int numberOfStudentsByYear(int x,const std::list<std::pair<Student, UC>>& val);
+    static int numberOfStudentsInClass(const std::string& x,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsWithNUcs(int x,const std::list<std::pair<Student, UC>>& val);
+    static int numberStudentsWithNUcs(int n,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
+    static int numberOfStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
     void printClassTableSchedule(std::string classCode) const;
+
+    static void printClassSchedule(const std::string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) ;
 };
 
 

@@ -25,6 +25,7 @@ public:
     void addLesson(const Lesson& lesson);
     bool operator<(const UC& Uc) const;
     void printLessons() const;
+    static std::string toTime(float hour);
     std::list<Lesson> getLessons() const;
     void addClassLessons(const std::list<std::pair<UC, Lesson>>& l1);
     Schedule getSchedule(const std::list<std::pair<UC, Lesson>>& l1);

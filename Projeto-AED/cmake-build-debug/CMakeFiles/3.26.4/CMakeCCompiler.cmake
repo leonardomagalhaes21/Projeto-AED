@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 set(CMAKE_C_COMPILER "/usr/bin/cc")
+=======
+set(CMAKE_C_COMPILER "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc.exe")
+>>>>>>> refs/remotes/origin/main
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "11.4.0")
@@ -21,11 +25,19 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
+<<<<<<< HEAD
 set(CMAKE_AR "/usr/bin/ar")
 set(CMAKE_C_COMPILER_AR "/usr/bin/gcc-ar-11")
 set(CMAKE_RANLIB "/usr/bin/ranlib")
 set(CMAKE_C_COMPILER_RANLIB "/usr/bin/gcc-ranlib-11")
 set(CMAKE_LINKER "/usr/bin/ld")
+=======
+set(CMAKE_AR "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ld.exe")
+>>>>>>> refs/remotes/origin/main
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
@@ -66,7 +78,13 @@ endif()
 
 
 
+<<<<<<< HEAD
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/lib/gcc/x86_64-linux-gnu/11/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib")
+=======
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/include;C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/x86_64-w64-mingw32/include")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
+>>>>>>> refs/remotes/origin/main
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/tiago/clion/Projeto-AED/Projeto-AED
+=======
+# Install script for directory: C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED
+>>>>>>> refs/remotes/origin/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +43,11 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
+<<<<<<< HEAD
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
+=======
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/objdump.exe")
+>>>>>>> refs/remotes/origin/main
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +58,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/tiago/clion/Projeto-AED/Projeto-AED/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "C:/Users/nardi/Desktop/Projeto-AED/Projeto-AED/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> refs/remotes/origin/main
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
