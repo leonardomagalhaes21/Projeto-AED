@@ -116,7 +116,7 @@ void Data::printStudentsByYear(int x,const list<pair<Student, UC>>& val){
         }
     }
     for(const auto & r : res){
-        cout << r.get_StudentName() << '\n';
+        cout << r.get_StudentName() << " ("  << r.get_StudentCode() << ")" << '\n';
     }
 }
 
@@ -138,7 +138,7 @@ void Data::printStudentsByClass(const string& x,const list<pair<Student, UC>>& v
         }
     }
     for(const auto & r : res){
-        cout << r.get_StudentName() << '\n';
+        cout << r.get_StudentName() << " ("  << r.get_StudentCode() << ")" << '\n';
     }
 }
 
@@ -151,6 +151,29 @@ int Data::numberOfStudentsInClass(const string& x,const list<pair<Student, UC>>&
     }
     return (int) res.size() ;
 }
+
+void Data::printStudentsInUC(const string& x,const list<pair<Student, UC>>& val){
+    set<Student> res;
+    for(const pair<Student,UC>& a: val){
+        if (x == (a.second.getUcCode())){
+            res.insert(a.first);
+        }
+    }
+    for(const auto & r : res){
+        cout << r.get_StudentName() << " ("  << r.get_StudentCode() << ")" << '\n';
+    }
+}
+
+int Data::numberOfStudentsInUC(const string& x,const list<pair<Student, UC>>& val) {
+    set<Student> res;
+    for (const pair<Student, UC>& s: val) {
+        if (x == (s.second.getUcCode())) {
+            res.insert(s.first);
+        }
+    }
+    return (int) res.size() ;
+}
+
 
 void Data::printStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
     map<Student,int> m;
@@ -165,7 +188,7 @@ void Data::printStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
     }
     for(const auto& par: m){
         if(par.second >=n) {
-            cout << par.first.get_StudentName() << '\n';
+            cout << par.first.get_StudentName() << " ("  << par.first.get_StudentCode() << ")" << '\n';
         }
     }
 }

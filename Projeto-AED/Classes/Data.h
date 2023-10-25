@@ -27,6 +27,8 @@ public:
     static int numberOfStudentsInClass(const std::string& x,const std::list<std::pair<Student, UC>>& val);
     static void printStudentsWithNUcs(int x,const std::list<std::pair<Student, UC>>& val);
     static int numberStudentsWithNUcs(int n,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
+    static int numberOfStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
     void printClassTableSchedule(std::string classCode) const;
 
     static void printClassSchedule(const std::string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) ;

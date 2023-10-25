@@ -49,5 +49,7 @@ int main() {
     //cout << d.numberOfStudentsInClass("3LEIC08",d.getListStudents_Classes_());
     //d.printStudentsWithNUcs(7,d.getListStudents_Classes_());
     //cout << d.numberStudentsWithNUcs(7,d.getListStudents_Classes_());
+    //d.printStudentsByUC("L.EIC001",d.getListStudents_Classes_());
+    //cout << d.numberOfStudentsInUC("L.EIC003",d.getListStudents_Classes_());
     return 0;
 }
