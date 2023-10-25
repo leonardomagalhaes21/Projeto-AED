@@ -34,8 +34,6 @@ private:
     std::string classCode_;
     int numberStudents_;
     std::list<Lesson> lesson_;
-
-
 };
 
 

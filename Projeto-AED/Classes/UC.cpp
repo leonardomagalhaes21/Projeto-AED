@@ -21,6 +21,7 @@ UC::UC(string ucCode, string classCode, list<Lesson> lesson) : ucCode_(ucCode), 
     numberStudents_ = 0;
 }
 
+
 string UC::getUcCode() const {
     return ucCode_;
 }
@@ -63,9 +64,6 @@ void UC::addClassLessons(const std::list<std::pair<UC, Lesson>>& l1){
         }
     }
 }
-
-
-
 
 void UC::printLessons() const {
     map<int, string> NumToWeekday = {
@@ -116,7 +114,6 @@ void UC::printLessons() const {
     }
 }
 
-
 std::string UC::toTime(float hour) {
     int hrs = (int) hour;
     int mins = (int) ((hour-hrs)*60);
@@ -128,18 +125,12 @@ std::string UC::toTime(float hour) {
     }
 }
 
-
-
 Schedule UC::getSchedule(const std::list<std::pair<UC, Lesson>>& l1) {
     Schedule s = Schedule();
-
     for (const auto& c : l1){
         if (c.first.ucCode_ == ucCode_){
             s.addLesson(c.first,c.second);
         }
     }
-
     return s;
-
-
 }

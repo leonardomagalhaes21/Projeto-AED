@@ -186,6 +186,7 @@ int Data::numberOfStudentsInClass(const string& x,const list<pair<Student, UC>>&
     return (int) res.size() ;
 }
 
+
 void Data::printStudentsInUC(const string& x,const list<pair<Student, UC>>& val){
     set<Student> res;
     for(const pair<Student,UC>& a: val){
@@ -239,7 +240,7 @@ int Data::numberStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
         }
     }
     int sum =0;
-    for(const auto par: m){
+    for(const auto& par: m){
         if(par.second >=n) {
             sum++;
         }
@@ -247,7 +248,29 @@ int Data::numberStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
     return sum;
 }
 
-void Data::printClassTableSchedule(string classCode) const{
+void Data::printUcsByClass(const string& Ccode,const list<UC>& val){
+    set<UC> res;
+    for(const UC& s: val){
+        if (Ccode == s.getClassCode()){
+            res.insert(s);
+        }
+    }
+    for(const auto & r : res){
+        cout << r.getUcCode() << '\n';
+    }
+}
+void Data::printClassByUcs(const string& UCcode,const list<UC>& val){
+    set<UC> res;
+    for(const UC& s: val){
+        if (UCcode == s.getUcCode()){
+            res.insert(s);
+        }
+    }
+    for(const auto & r : res){
+        cout << r.getClassCode() << '\n';
+    }
+}
+void Data::printClassTableSchedule(const string& classCode) const{
 
     cout << classCode + " schedule\n";
     string schedule_ = " ________________________________________________________________________________________\n"
@@ -323,7 +346,7 @@ void Data::printClassTableSchedule(string classCode) const{
 
 
 
-void Data::printClassSchedule2(const string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) {
+void Data::printClassSchedule(const string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) {
     Schedule s = Schedule();
 
     for (const auto& c : getListClasses){

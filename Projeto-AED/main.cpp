@@ -10,13 +10,13 @@ using namespace std;
 
 int main() {
 
-    Data d = Data();
-    d.readStudents_Classes();
-    d.readClasses_Per_Uc();
-    d.readClasses();
+
+    Menu m= Menu();
+    m.showMenu();
+    cout << "\n";
 
 
-//teste 0 -> print ao horario de um aluno
+/*teste 0 -> print ao horario de um aluno
     Student s = Student(202054812, "Manuel Mauro");
 
     s.getStudentSchedule(d.getListStudents_Classes_(),d.getListClasses_()).printSchedule();
@@ -35,9 +35,6 @@ int main() {
     d.printClassTableSchedule("1LEIC03");
 
 
-    Menu m= Menu();
-    m.showMenu();
-    cout << "\n";
 
 //teste 5 print a horario de turma
     d.printClassSchedule("1LEIC03",d.getListClasses_Per_Uc_(),d.getListClasses_());
@@ -50,6 +47,8 @@ int main() {
     //d.printStudentsWithNUcs(7,d.getListStudents_Classes_());
     //cout << d.numberStudentsWithNUcs(7,d.getListStudents_Classes_());
     //d.printStudentsByUC("L.EIC001",d.getListStudents_Classes_());
-    //cout << d.numberOfStudentsInUC("L.EIC003",d.getListStudents_Classes_());
+    //cout << d.numberOfStudentsInUC("L.EIC003",d.getListStudents_Classes_());*/
+    //d.printUcsByClass("1LEIC05",d.getListClasses_Per_Uc_());
+    //d.printClassByUcs("L.EIC002",d.getListClasses_Per_Uc_());
     return 0;
 }

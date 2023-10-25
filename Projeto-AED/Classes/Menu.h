@@ -8,6 +8,9 @@ class Menu {
 public:
     Menu();
     void showMenu();
+    void drawTop(int largura);
+    void drawBottom(int largura);
+    int numberOfDigits(int stc);
 };
 
 
