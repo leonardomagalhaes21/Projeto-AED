@@ -101,28 +101,29 @@ void Menu::showMenu() {
                                 s.getStudentSchedule(d.getListStudents_Classes_(),d.getListClasses_()).printSchedule();
                                 break;
                             case '2':
-                                //temos de dar print às classes
+                                cout << "Enter Class Code: ";
+                                cin >> ccode;
+                                d.printClassTableSchedule(ccode);
+                                break;
+                            case '3':
                                 cout << "Enter Class Code: ";
                                 cin >> ccode;
                                 d.printClassSchedule(ccode,d.getListClasses_Per_Uc_(),d.getListClasses_());
                                 break;
-                            case '3':
-                                //temos de dar print às classes
-                                cout << "Enter Class Code: ";
-                                cin >> ccode;
-                                break;
                             case '4':
-                                //temos de dar print às UC's
                                 cout << "Enter UC Code: ";
                                 cin >> ucode;
+                                UC u = UC(ucode);
+                                u.getSchedule(d.getListClasses_()).printSchedule();
                                 break;
                             case '5':
-                                //temos de dar print às UC's
                                 cout << "Enter UC Code: ";
                                 cin >> ucode;
-                                //temos de dar print às classes
                                 cout << "Enter Class Code: ";
                                 cin >> ccode;
+                                UC uc= UC(ucode,ccode);
+                                uc.addClassLessons(d.getListClasses_());
+                                uc.printLessons();
                                 break;
                             case 'Q':
                                 break;
@@ -147,7 +148,7 @@ void Menu::showMenu() {
                         break;
                     case 'Q':
                         break;
-                    case default:
+                    default:
                         cout <<"Invalid option!";
                         break;
                 };
@@ -160,7 +161,7 @@ void Menu::showMenu() {
                         break;
                     case 'Q':
                         break;
-                    case default:
+                    default:
                         cout <<"Invalid option!";
                         break;
                     };
