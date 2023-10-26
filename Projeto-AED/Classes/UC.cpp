@@ -102,8 +102,9 @@ void UC::printLessons() const {
             {"UP001", "PUP"}
     };
     cout << UcCodeToName[ucCode_] << ":\n";
-    //lesson_.sort();
-    for (const Lesson& lesson : lesson_) {
+    list<Lesson> l = lesson_;
+    l.sort();
+    for (const Lesson& lesson : l) {
         cout << "\t" << NumToWeekday[lesson.getWeekday()] << "| Start: " << toTime(lesson.getStartHour());
         if (lesson.getDuration() == 1){
             cout << " -> " << toTime(lesson.getStartHour() + lesson.getDuration()) << " hours " << "(" << toTime(lesson.getDuration()) << " hour" << ")"  "| ";
