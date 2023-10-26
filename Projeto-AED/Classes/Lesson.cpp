@@ -39,4 +39,14 @@ bool Lesson::Coincide_T(const Lesson& lesson) const{
     return false;
 }
 
+bool Lesson::operator<(Lesson a) const {
+    if (weekday_ < a.getWeekday()){
+        return true;
+    }
+    else if (weekday_ > a.getWeekday()){
+        return false;
+    }
+    else return (start_hour_ < a.getStartHour());
+}
+
 

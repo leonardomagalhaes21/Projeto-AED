@@ -18,14 +18,28 @@ Student::Student(int studentCode, string studentName){
     studentName_ = studentName;
 }
 
+Student::Student(int studentCode){
+    studentCode_ = studentCode;
+}
+
 
 int Student::get_StudentCode() const {
     return studentCode_;
 }
 
-std::string Student::get_StudentName() const {
+string Student::get_StudentName() const {
     return studentName_;
 }
+
+string Student::findName(const list<pair<Student, UC>>& listStudents_Classes , int num) {
+    for (const auto& c : listStudents_Classes) {
+        if (c.first.studentCode_ == num) {
+            return c.first.studentName_;
+        }
+    }
+}
+
+
 list<UC> Student::get_Ucs() const {
     return ucs_;
 }
@@ -34,6 +48,7 @@ void Student::set_StudentCode(int StudentCode) {
 }
 
 void Student::set_StudentName(string StudentName) {
+
     studentName_ = StudentName;
 }
 void Student::set_Ucs(list<UC> ucs) {
@@ -83,9 +98,81 @@ Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1
 
 }
 
-void Student::printStudentTableSchedule() const {
+void Student::printStudentTableSchedule(int student_code) const {
+    /*
+    cout << studentName_ + " schedule\n";
+    string schedule_ = " ________________________________________________________________________________________\n"
+                       "|     Hour    |    Monday    |   Tuesday    |   Wednesday  |   Thursday   |    Friday    |\n"
+                       "|________________________________________________________________________________________|\n";
 
+
+    vector<string> scheduleVector;
+    for (int i = 0; i < 24 * 5 * 2; i += 2) {
+        scheduleVector.push_back("              |");
+        scheduleVector.push_back("______________|");
+    }
+    for (const auto& ucClass : getListClasses_() ){
+        if (ucClass.first.getClassCode() == classCode) {
+            //for (const Lesson& lesson : ucClass.getLessons()) {
+            Lesson lesson= ucClass.second;
+            int weekDayPosition=lesson.getWeekday() -1;
+
+            float duration = lesson.getDuration();
+            int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 4;
+
+
+
+            if (ucClass.first.getUcCode().length() + lesson.getType().length() +2 < 14) {
+                if ("T" == ucClass.second.getType()){
+                    scheduleVector[lessonStartPosition] = "  " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                    scheduleVector[lessonStartPosition] += string(10 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                }
+                else if((ucClass.first.getUcCode()) == "UP001"){
+                    scheduleVector[lessonStartPosition] = "   " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                    scheduleVector[lessonStartPosition] += string(9 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                }
+                else{
+                    scheduleVector[lessonStartPosition] = " " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                    scheduleVector[lessonStartPosition] += string(11 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                }
+            }
+            scheduleVector[lessonStartPosition] += "|";
+
+            scheduleVector[++lessonStartPosition] = "   " + ucClass.first.getClassCode() + "    |";
+
+            duration -= 0.5;
+            while (duration > 0.5) {
+                duration -= 0.5;
+                scheduleVector[++lessonStartPosition] = "              |";
+                scheduleVector[++lessonStartPosition] = "              |";
+            }
+            scheduleVector[++lessonStartPosition] = "              |";
+            //}
+        }
+    }
+
+    float time = 8.0;
+    for (int i = 0; i < 24 * 2; i += 2) {
+        if (time < 10 || (time + 0.5 < 10)) schedule_ += "|  ";
+        else schedule_ += "| ";
+
+        schedule_ +=to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) + "0-";
+
+        time += 0.5;
+        if (time-static_cast<int>(time)==0){
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6))+ "0";
+        }
+        else {
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6 * 10));
+        }
+        if (time < 10 && (time - 0.5 < 10)) schedule_ += ' ';
+        schedule_ += " |" + scheduleVector[i] + scheduleVector[48 * 1 + i] + scheduleVector[48 * 2 + i] + scheduleVector[48 * 3 + i] + scheduleVector[48 * 4 + i] + '\n';
+        schedule_ += "|_____________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
+    }
+    cout << schedule_;
+     */
 }
+
 
 
 

@@ -17,6 +17,7 @@ class Student {
     public:
         Student();
         Student(int studentCode, std::string studentName);
+        Student(int studentCode);
         Student(int studentCode, std::string studentName, std::list<UC> ucs);
         int get_StudentCode() const;
         std::string get_StudentName() const;
@@ -29,7 +30,8 @@ class Student {
         bool has_Class(std::string classCode) const;
         bool has_Uc(std::string ucCode) const;
         Schedule getStudentSchedule(const std::list<std::pair<Student, UC>>& l1, const std::list<std::pair<UC, Lesson>>& l2) const ;
-        void printStudentTableSchedule() const;
+        void printStudentTableSchedule(int student_code) const;
+        static std::string findName(const std::list<std::pair<Student, UC>>& listStudents_Classes, int num) ;
 
     private:
         int studentCode_;

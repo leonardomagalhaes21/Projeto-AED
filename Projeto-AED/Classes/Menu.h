@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "Student.h"
+#include "UC.h"
+#include "Schedule.h"
 
 class Menu {
 public:
@@ -10,7 +13,6 @@ public:
     void showMenu();
     void drawTop(int largura);
     void drawBottom(int largura);
-    int numberOfDigits(int stc);
 };
 
 
