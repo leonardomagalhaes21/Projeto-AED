@@ -98,8 +98,8 @@ Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1
 
 }
 
-void Student::printStudentTableSchedule(int student_code) const {
-    /*
+void Student::printStudentTableSchedule(int studentCode,const std::list<std::pair<Student, UC>>& l1,const std::list<std::pair<UC, Lesson>>& l2) const {
+
     cout << studentName_ + " schedule\n";
     string schedule_ = " ________________________________________________________________________________________\n"
                        "|     Hour    |    Monday    |   Tuesday    |   Wednesday  |   Thursday   |    Friday    |\n"
@@ -111,44 +111,52 @@ void Student::printStudentTableSchedule(int student_code) const {
         scheduleVector.push_back("              |");
         scheduleVector.push_back("______________|");
     }
-    for (const auto& ucClass : getListClasses_() ){
-        if (ucClass.first.getClassCode() == classCode) {
-            //for (const Lesson& lesson : ucClass.getLessons()) {
-            Lesson lesson= ucClass.second;
-            int weekDayPosition=lesson.getWeekday() -1;
 
+    list<Lesson> s={};
+    set<UC> ucs;
+
+    for (const auto& c : l1){
+        if (c.first.get_StudentCode() == studentCode){
+            ucs.insert(c.second);
+        }
+    }
+
+    for (const auto& c : l2){
+        if (ucs.find(c.first) != ucs.end()){
+            s.push_back(c.second);
+        }
+    }
+    for (const UC& ucClass : ucs ){
+        for (const Lesson& lesson : s){
+            int weekDayPos=lesson.getWeekday() -1;
             float duration = lesson.getDuration();
-            int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 4;
-
-
-
-            if (ucClass.first.getUcCode().length() + lesson.getType().length() +2 < 14) {
-                if ("T" == ucClass.second.getType()){
-                    scheduleVector[lessonStartPosition] = "  " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                    scheduleVector[lessonStartPosition] += string(10 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
-                }
-                else if((ucClass.first.getUcCode()) == "UP001"){
-                    scheduleVector[lessonStartPosition] = "   " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                    scheduleVector[lessonStartPosition] += string(9 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
-                }
-                else{
-                    scheduleVector[lessonStartPosition] = " " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                    scheduleVector[lessonStartPosition] += string(11 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
-                }
+            int lessonPosition = 24 * 2 * weekDayPos + (lesson.getStartHour() - 8.00) * 4;
+            //scheduleVector[lessonPosition]=" "+ucClass.getUcCode()+"("+lesson.getType()+")";
+            if ("T" == lesson.getType()){
+                scheduleVector[lessonPosition] = " "+ucClass.getUcCode()+"("+lesson.getType()+")";
+                scheduleVector[lessonPosition] += string(10 - ucClass.getUcCode().length() - lesson.getType().length(), ' ');
             }
-            scheduleVector[lessonStartPosition] += "|";
+            else if((ucClass.getUcCode()) == "UP001"){
+                scheduleVector[lessonPosition] = " "+ucClass.getUcCode()+"("+lesson.getType()+")";
+                scheduleVector[lessonPosition] += string(9 - ucClass.getUcCode().length() - lesson.getType().length(), ' ');
+            }
+            else{
+                scheduleVector[lessonPosition] = " "+ucClass.getUcCode()+"("+lesson.getType()+")";
+                scheduleVector[lessonPosition] += string(11 - ucClass.getUcCode().length() - lesson.getType().length(), ' ');
+            }
+            scheduleVector[lessonPosition] += "|";
 
-            scheduleVector[++lessonStartPosition] = "   " + ucClass.first.getClassCode() + "    |";
+            scheduleVector[++lessonPosition] = "   " + ucClass.getClassCode() + "    |";
 
             duration -= 0.5;
             while (duration > 0.5) {
                 duration -= 0.5;
-                scheduleVector[++lessonStartPosition] = "              |";
-                scheduleVector[++lessonStartPosition] = "              |";
+                scheduleVector[++lessonPosition] = "              |";
+                scheduleVector[++lessonPosition] = "              |";
             }
-            scheduleVector[++lessonStartPosition] = "              |";
-            //}
+            scheduleVector[++lessonPosition] = "              |";
         }
+
     }
 
     float time = 8.0;
@@ -170,7 +178,6 @@ void Student::printStudentTableSchedule(int student_code) const {
         schedule_ += "|_____________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
     }
     cout << schedule_;
-     */
 }
 
 

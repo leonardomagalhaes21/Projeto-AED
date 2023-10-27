@@ -285,41 +285,39 @@ void Data::printClassTableSchedule(const string& classCode) const{
     }
     for (const auto& ucClass : getListClasses_() ){
         if (ucClass.first.getClassCode() == classCode) {
-            //for (const Lesson& lesson : ucClass.getLessons()) {
                 Lesson lesson= ucClass.second;
-                int weekDayPosition=lesson.getWeekday() -1;
+                int weekDayPos=lesson.getWeekday() -1;
 
                 float duration = lesson.getDuration();
-                int lessonStartPosition = 24 * 2 * weekDayPosition + (lesson.getStartHour() - 8.00) * 4;
+                int lessonPosition = 24 * 2 * weekDayPos + (lesson.getStartHour() - 8.00) * 4;
 
 
 
                 if (ucClass.first.getUcCode().length() + lesson.getType().length() +2 < 14) {
                     if ("T" == ucClass.second.getType()){
-                        scheduleVector[lessonStartPosition] = "  " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                        scheduleVector[lessonStartPosition] += string(10 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                        scheduleVector[lessonPosition] = "  " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonPosition] += string(10 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
                     }
                     else if((ucClass.first.getUcCode()) == "UP001"){
-                        scheduleVector[lessonStartPosition] = "   " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                        scheduleVector[lessonStartPosition] += string(9 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                        scheduleVector[lessonPosition] = "   " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonPosition] += string(9 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
                     }
                     else{
-                        scheduleVector[lessonStartPosition] = " " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
-                        scheduleVector[lessonStartPosition] += string(11 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
+                        scheduleVector[lessonPosition] = " " + ucClass.first.getUcCode() + "(" + lesson.getType() + ")";
+                        scheduleVector[lessonPosition] += string(11 - ucClass.first.getUcCode().length() - lesson.getType().length(), ' ');
                     }
                 }
-                scheduleVector[lessonStartPosition] += "|";
+                scheduleVector[lessonPosition] += "|";
 
-                scheduleVector[++lessonStartPosition] = "   " + ucClass.first.getClassCode() + "    |";
+                scheduleVector[++lessonPosition] = "   " + ucClass.first.getClassCode() + "    |";
 
                 duration -= 0.5;
                 while (duration > 0.5) {
                     duration -= 0.5;
-                    scheduleVector[++lessonStartPosition] = "              |";
-                    scheduleVector[++lessonStartPosition] = "              |";
+                    scheduleVector[++lessonPosition] = "              |";
+                    scheduleVector[++lessonPosition] = "              |";
                 }
-                scheduleVector[++lessonStartPosition] = "              |";
-            //}
+                scheduleVector[++lessonPosition] = "              |";
         }
     }
 

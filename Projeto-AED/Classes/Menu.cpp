@@ -51,13 +51,12 @@ void Menu::showMenu() {
                 switch (key) {
                     case '1': {
                         drawTop(largura);
-                        cout << "| " << setw(largura - 18) << "1. Print Schedule from Student" << setw(8) << "|"
-                             << endl;
-                        cout << "| " << setw(largura - 14) << "2. Print Schedule from Class(Table)" << setw(3) << "|"
-                             << endl;
-                        cout << "| " << setw(largura - 12) << "3. Print Schedule from Class" << setw(10) << "|" << endl;
-                        cout << "| " << setw(largura - 18) << "4. Print Schedule from UC" << setw(13) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "5. Print Schedule from UC(with Class)" << setw(1)
+                        cout << "| " << setw(largura - 18) << "1. Print Schedule from Student" << setw(8) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "2. Print Schedule from Student(Table)" << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "3. Print Schedule from Class(Table)" << setw(3) << "|" << endl;
+                        cout << "| " << setw(largura - 12) << "4. Print Schedule from Class" << setw(10) << "|" << endl;
+                        cout << "| " << setw(largura - 18) << "5. Print Schedule from UC" << setw(13) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "6. Print Schedule from UC(with Class)" << setw(1)
                              << "|" << endl;
                         cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
                         drawBottom(largura);
@@ -79,26 +78,34 @@ void Menu::showMenu() {
                                 s.getStudentSchedule(d.getListStudents_Classes_(), d.getListClasses_()).printSchedule();
                                 break;
                             }
-                            case '2': {
-                                cout << "Enter Class Code: ";
-                                cin >> ccode;
-                                d.printClassTableSchedule(ccode);
+                            case '2':{
+                                cout << "Enter Student Code: ";
+                                cin >> stc;
+                                Student s = Student(stc);
+                                //cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
+                                s.printStudentTableSchedule(stc,d.getListStudents_Classes_(),d.getListClasses_());
                                 break;
                             }
                             case '3': {
                                 cout << "Enter Class Code: ";
                                 cin >> ccode;
-                                d.printClassSchedule(ccode, d.getListClasses_Per_Uc_(), d.getListClasses_());
+                                d.printClassTableSchedule(ccode);
                                 break;
                             }
                             case '4': {
+                                cout << "Enter Class Code: ";
+                                cin >> ccode;
+                                d.printClassSchedule(ccode, d.getListClasses_Per_Uc_(), d.getListClasses_());
+                                break;
+                            }
+                            case '5': {
                                 cout << "Enter UC Code: ";
                                 cin >> ucode;
                                 UC u = UC(ucode);
                                 u.getSchedule(d.getListClasses_()).printSchedule();
                                 break;
                             }
-                            case '5' : {
+                            case '6' : {
                                 cout << "Enter UC Code: ";
                                 cin >> ucode;
                                 cout << "Enter Class Code: ";
