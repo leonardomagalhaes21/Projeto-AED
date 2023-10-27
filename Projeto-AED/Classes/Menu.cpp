@@ -30,9 +30,9 @@ void Menu::showMenu() {
     string nm, ccode, ucode;
     while (flag) {
         drawTop(largura);
-        cout << "| " << setw(largura - 14) << "1. View" << setw(12) << "|" << endl;
-        cout << "| " << setw(largura - 14) << "2. Edit" << setw(12) << "|" << endl;
-        cout << "| " << setw(largura - 14) << "3. Queue" << setw(12) << "|" << endl;
+        cout << "| " << setw(largura - 19) << "1. View" << setw(17) << "|" << endl;
+        cout << "| " << setw(largura - 19) << "2. Edit" << setw(17) << "|" << endl;
+        cout << "| " << setw(largura - 18) << "3. Queue" << setw(16) << "|" << endl;
         cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
         drawBottom(largura);
         cout << "Choose an option: ";
@@ -51,13 +51,13 @@ void Menu::showMenu() {
                 switch (key) {
                     case '1': {
                         drawTop(largura);
-                        cout << "| " << setw(largura - 18) << "1. Print Schedule from Student" << setw(6) << "|"
+                        cout << "| " << setw(largura - 18) << "1. Print Schedule from Student" << setw(8) << "|"
                              << endl;
-                        cout << "| " << setw(largura - 14) << "2. Print Schedule from Class(Table)" << setw(12) << "|"
+                        cout << "| " << setw(largura - 14) << "2. Print Schedule from Class(Table)" << setw(3) << "|"
                              << endl;
-                        cout << "| " << setw(largura - 14) << "3. Print Schedule from Class" << setw(12) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "4. Print Schedule from UC" << setw(12) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "5. Print Schedule from UC(with Class)" << setw(12)
+                        cout << "| " << setw(largura - 12) << "3. Print Schedule from Class" << setw(10) << "|" << endl;
+                        cout << "| " << setw(largura - 18) << "4. Print Schedule from UC" << setw(13) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "5. Print Schedule from UC(with Class)" << setw(1)
                              << "|" << endl;
                         cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
                         drawBottom(largura);
@@ -117,6 +117,124 @@ void Menu::showMenu() {
                         };
                         break;
                     case '2' : {
+
+                        drawTop(largura);
+                        cout << "| " << setw(largura - 18) << "1. Print Students from Year" << setw(11) << "|"
+                             << endl;
+                        cout << "| " << setw(largura - 14) << "2. Print Students in Class" << setw(12) << "|"
+                             << endl;
+                        cout << "| " << setw(largura - 18) << "3. Print Students in UC" << setw(15) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "4. Print Students with N UCs" << setw(10) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "5. Number of Students from Year" << setw(7) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "6. Number of Students in Class" << setw(8) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "7. Number of Students in UC" << setw(11) << "|" << endl;
+                        cout << "| " << setw(largura - 14) << "8. Number of Students with N UCs" << setw(6) << "|" << endl;
+
+                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom(largura);
+                        cout << "Choose an option: ";
+                        cin >> key;
+                        switch(key){
+                            case '1': {
+                                cout << "Enter year: ";
+                                int y;
+                                cin >> y;
+                                d.printStudentsByYear(y,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '2': {
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+                                d.printStudentsByClass(cc,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '3': {
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                d.printStudentsInUC(ucc,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '4': {
+                                cout << "Enter N: ";
+                                int n;
+                                cin >> n;
+                                d.printStudentsWithNUcs(n,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '5': {
+                                cout << "Enter year: ";
+                                int y;
+                                cin >> y;
+                                cout << d.numberOfStudentsByYear(y,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '6': {
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+                                cout << d.numberOfStudentsInClass(cc,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '7': {
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                cout << d.numberOfStudentsInUC(ucc,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case '8': {
+                                cout << "Enter N: ";
+                                int n;
+                                cin >> n;
+                                cout << d.numberStudentsWithNUcs(n,d.getListStudents_Classes_());
+                                break;
+                            }
+                            case 'Q' : {
+                                break;
+                            }
+                            default: {
+                                cout << endl << "Invalid option!" << endl;
+                            }
+                        };
+
+                        break;
+                    }
+
+                    case '3': {
+                        drawTop(largura);
+                        cout << "| " << setw(largura - 11) << "1. Print UCs from Class" << setw(9) << "|"
+                             << endl;
+                        cout << "| " << setw(largura - 10) << "2. Print Classes from UC" << setw(8) << "|"
+                             << endl;
+                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom(largura);
+                        cout << "Choose an option: ";
+                        cin >> key;
+                        switch(key){
+                            case '1': {
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+                                d.printUcsByClass(cc,d.getListClasses_Per_Uc_());
+                                break;
+                            }
+                            case '2': {
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                d.printClassByUcs(ucc,d.getListClasses_Per_Uc_());
+                                break;
+                            }
+                            case 'Q' : {
+                                break;
+                            }
+                            default: {
+                                cout << endl << "Invalid option!" << endl;
+                            }
+
+                        };
                         break;
                     }
 

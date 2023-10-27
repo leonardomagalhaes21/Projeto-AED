@@ -248,10 +248,10 @@ int Data::numberStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
     return sum;
 }
 
-void Data::printUcsByClass(const string& Ccode,const list<UC>& val){
+void Data::printClassByUcs(const string& UCCode,const list<UC>& val){
     set<UC> res;
     for(const UC& s: val){
-        if (Ccode == s.getClassCode()){
+        if (UCCode == s.getClassCode()){
             res.insert(s);
         }
     }
@@ -259,10 +259,10 @@ void Data::printUcsByClass(const string& Ccode,const list<UC>& val){
         cout << r.getUcCode() << '\n';
     }
 }
-void Data::printClassByUcs(const string& UCcode,const list<UC>& val){
+void Data::printUcsByClass(const string& CCode,const list<UC>& val){
     set<UC> res;
     for(const UC& s: val){
-        if (UCcode == s.getUcCode()){
+        if (CCode == s.getUcCode()){
             res.insert(s);
         }
     }
