@@ -222,7 +222,7 @@ void Data::printStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
         }
     }
     for(const auto& par: m){
-        if(par.second >=n) {
+        if(par.second ==n) {
             cout << par.first.get_StudentName() << " ("  << par.first.get_StudentCode() << ")" << '\n';
         }
     }
@@ -241,7 +241,7 @@ int Data::numberStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
     }
     int sum =0;
     for(const auto& par: m){
-        if(par.second >=n) {
+        if(par.second ==n) {
             sum++;
         }
     }
