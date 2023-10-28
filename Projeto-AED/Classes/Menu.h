@@ -6,6 +6,7 @@
 #include "Student.h"
 #include "UC.h"
 #include "Schedule.h"
+#include "Request.h"
 
 class Menu {
 public:

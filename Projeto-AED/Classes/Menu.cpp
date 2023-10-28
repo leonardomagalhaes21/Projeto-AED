@@ -244,6 +244,39 @@ void Menu::showMenu() {
                         };
                         break;
                     }
+                    case '4':{
+                        drawTop(largura);
+                        cout << "| " << setw(largura - 18) << "1. Add UC" << setw(11) << "|"<< endl;
+
+
+                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom(largura);
+                        cout << "Choose an option: ";
+                        cin >> key;
+                        switch (key){
+                            case '1' : {
+                                cout << "Enter Student Code: ";
+                                cin >> stc;
+                                Student s = Student(stc);
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                Request r = Request();
+                                list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                                r.addUC(s,ucc,l,d.getListClasses_());
+
+                                break;
+                            }
+                            case 'Q' : {
+                                break;
+                            }
+                            default: {
+                                cout << endl << "Invalid option!" << endl;
+                            }
+                        }
+
+                        break;
+                    }
 
                     case 'Q': {
                         break;

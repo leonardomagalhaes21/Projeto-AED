@@ -5,7 +5,9 @@
 #include "Student.h"
 
 class Request {
-    void addUC(const Student& s, const UC& uc, const std::list<std::pair<Student, UC>>& val);
+    public:
+    Request();
+    static void addUC(const Student& s, const std::string& ucc, std::list<std::pair<Student, UC>>& val, const std::list<std::pair<UC, Lesson>>& val2);
 
 };
 
