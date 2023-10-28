@@ -37,6 +37,7 @@ string Student::findName(const list<pair<Student, UC>>& listStudents_Classes , i
             return c.first.studentName_;
         }
     }
+    return "";
 }
 
 
@@ -55,9 +56,10 @@ void Student::set_Ucs(list<UC> ucs) {
     ucs_ = ucs;
 }
 
-bool Student::operator<(const Student &Student) const {
-    return studentCode_ < Student.studentCode_;
+bool Student::operator<(const Student &other) const {
+    return std::tie(this->studentCode_, this->studentName_) < std::tie(other.studentCode_, other.studentName_);
 }
+
 void Student::add_UC(UC uc) {
     ucs_.push_back(uc);
 }

@@ -3,63 +3,58 @@
 using namespace std;
 Menu::Menu() {}
 
-
-void Menu::drawTop(int largura){
-    cout << "----------------------------------------" << endl;
-    cout << "|" << "################ Menu ################" << "|" << endl;
-    cout << "|";
-    cout << "--------------------------------------";
-    cout << "|" << endl;
+void Menu::drawTop(){
+    cout << "________________________________________" << endl;
+    cout << "|" << "================ Menu ================" << "|" << endl;
+    cout << "|" << "______________________________________" << "|" << endl;
 }
-void Menu::drawBottom(int largura){
-    cout << "|--------------------------------------|" << endl;
-    cout << "|######################################|" << endl;
-    cout << "|--------------------------------------|" << endl;
+void Menu::drawBottom(){
+    cout << "|______________________________________|" << endl;
+    cout << "|======================================|" << endl;
+    cout << "|______________________________________|" << endl;
 }
 
 void Menu::showMenu() {
 
     Data d = Data();
-
+    const int largura =40;
     short t2;
-    const int largura = 40;
     int stc;
     char key;
     string newCicle;
     bool flag = true;
     string nm, ccode, ucode;
     while (flag) {
-        drawTop(largura);
-        cout << "| " << setw(largura - 19) << "1. View" << setw(17) << "|" << endl;
-        cout << "| " << setw(largura - 19) << "2. Edit" << setw(17) << "|" << endl;
-        cout << "| " << setw(largura - 18) << "3. Queue" << setw(16) << "|" << endl;
-        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-        drawBottom(largura);
+        drawTop();
+        cout << "| " << setw( largura- 19) << "1. View" << setw(17) << "|" << endl;
+        cout << "| " << setw( largura- 19) << "2. Edit" << setw(17) << "|" << endl;
+        cout << "| " << setw( largura- 18) << "3. Queue" << setw(16) << "|" << endl;
+        cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+        drawBottom();
         cout << "Choose an option: ";
         cin >> key;
         switch (key) {
             case  '1' :
-                drawTop(largura);
-                cout << "| " << setw(largura - 14) << "1. View Schedule" << setw(12) << "|" << endl;
-                cout << "| " << setw(largura - 14) << "2. View Students" << setw(12) << "|" << endl;
-                cout << "| " << setw(largura - 14) << "3. Classes <-> UC" << setw(12) << "|" << endl;
-                cout << "| " << setw(largura - 15) << "4. Make Request" << setw(13) << "|" << endl;
-                cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                drawBottom(largura);
+                drawTop();
+                cout << "| " << setw( largura- 14) << "1. View Schedule" << setw(12) << "|" << endl;
+                cout << "| " << setw( largura- 14) << "2. View Students" << setw(12) << "|" << endl;
+                cout << "| " << setw( largura- 14) << "3. Classes <-> UC" << setw(12) << "|" << endl;
+                cout << "| " << setw( largura- 15) << "4. Make Request" << setw(13) << "|" << endl;
+                cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                drawBottom();
                 cout << "Choose an option: ";
                 cin >> key;
                 switch (key) {
                     case '1': {
-                        drawTop(largura);
-                        cout << "| " << setw(largura - 18) << "1. Print Schedule from Student" << setw(8) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "2. Print Schedule from Student(Table)" << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "3. Print Schedule from Class(Table)" << setw(3) << "|" << endl;
-                        cout << "| " << setw(largura - 12) << "4. Print Schedule from Class" << setw(10) << "|" << endl;
-                        cout << "| " << setw(largura - 18) << "5. Print Schedule from UC" << setw(13) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "6. Print Schedule from UC(with Class)" << setw(1)
-                             << "|" << endl;
-                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                        drawBottom(largura);
+                        drawTop();
+                        cout << "| " << setw( largura- 18) << "1. Print Schedule from Student" << setw(8) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "2. Print Schedule from Student(Table)" << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "3. Print Schedule from Class(Table)" << setw(3) << "|" << endl;
+                        cout << "| " << setw( largura- 12) << "4. Print Schedule from Class" << setw(10) << "|" << endl;
+                        cout << "| " << setw( largura- 18) << "5. Print Schedule from UC" << setw(13) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "6. Print Schedule from UC(with Class)" << setw(1) << "|" << endl;
+                        cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom();
                         cout << "Choose an option: ";
                         cin >> key;
                     }
@@ -68,6 +63,11 @@ void Menu::showMenu() {
 
                                 cout << "Enter Student Code: ";
                                 cin >> stc;
+                                if (cin.fail()){
+                                    cin.clear();
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
                                 string k = to_string(stc);
                                 if (k.size() != 9){
                                     cout << "Error: Invalid Input!";
@@ -81,6 +81,16 @@ void Menu::showMenu() {
                             case '2':{
                                 cout << "Enter Student Code: ";
                                 cin >> stc;
+                                if (cin.fail()){
+                                    cin.clear();
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
+                                string k = to_string(stc);
+                                if (k.size() != 9){
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
                                 Student s = Student(stc);
                                 //cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
                                 s.printStudentTableSchedule(stc,d.getListStudents_Classes_(),d.getListClasses_());
@@ -125,20 +135,18 @@ void Menu::showMenu() {
                         break;
                     case '2' : {
 
-                        drawTop(largura);
-                        cout << "| " << setw(largura - 18) << "1. Print Students from Year" << setw(11) << "|"
-                             << endl;
-                        cout << "| " << setw(largura - 14) << "2. Print Students in Class" << setw(12) << "|"
-                             << endl;
-                        cout << "| " << setw(largura - 18) << "3. Print Students in UC" << setw(15) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "4. Print Students with N UCs" << setw(10) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "5. Number of Students from Year" << setw(7) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "6. Number of Students in Class" << setw(8) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "7. Number of Students in UC" << setw(11) << "|" << endl;
-                        cout << "| " << setw(largura - 14) << "8. Number of Students with N UCs" << setw(6) << "|" << endl;
-
-                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                        drawBottom(largura);
+                        drawTop();
+                        cout << "| " << setw( largura- 18) << "1. Print Students from Year" << setw(11) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "2. Print Students in Class" << setw(12) << "|" << endl;
+                        cout << "| " << setw( largura- 18) << "3. Print Students in UC" << setw(15) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "4. Print Students with N UCs" << setw(10) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "5. Number of Students from Year" << setw(7) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "6. Number of Students in Class" << setw(8) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "7. Number of Students in UC" << setw(11) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "8. Number of Students with N UCs" << setw(6) << "|" << endl;
+                        cout << "| " << setw( largura- 24) << "9. Print Students" << setw(21) << "|" << endl;
+                        cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom();
                         cout << "Choose an option: ";
                         cin >> key;
                         switch(key){
@@ -146,6 +154,16 @@ void Menu::showMenu() {
                                 cout << "Enter year: ";
                                 int y;
                                 cin >> y;
+                                if (cin.fail()){
+                                    cin.clear();
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
+                                string k = to_string(y);
+                                if (k.size() != 4){
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
                                 d.printStudentsByYear(y,d.getListStudents_Classes_());
                                 break;
                             }
@@ -174,6 +192,16 @@ void Menu::showMenu() {
                                 cout << "Enter year: ";
                                 int y;
                                 cin >> y;
+                                if (cin.fail()){
+                                    cin.clear();
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
+                                string k = to_string(y);
+                                if (k.size() != 4){
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
                                 cout << d.numberOfStudentsByYear(y,d.getListStudents_Classes_());
                                 break;
                             }
@@ -198,6 +226,43 @@ void Menu::showMenu() {
                                 cout << d.numberStudentsWithNUcs(n,d.getListStudents_Classes_());
                                 break;
                             }
+                            case '9' :{
+                                drawTop();
+                                cout << "| " << setw( largura- 9) << "1. Ascending Order [Up Code]" << setw(7) << "|" << endl;
+                                cout << "| " << setw( largura- 8) << "2. Descending Order [Up Code]" << setw(6) << "|" << endl;
+                                cout << "| " << setw( largura- 9) << "3. Alhabetic Order - [A - Z]" << setw(7) << "|" << endl;
+                                cout << "| " << setw( largura- 9) << "4. Alhabetic Order - [Z - A]" << setw(7) << "|" << endl;
+                                cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                                drawBottom();
+                                cout << "Choose an option: ";
+                                cin>>key;
+                                switch (key) {
+                                    case '1':{
+                                        d.printStudentsAscendingCode();
+                                        break;
+                                    }
+                                    case '2':{
+                                        d.printStudentsDescendingCode();
+                                        break;
+                                    }
+                                    case '3':{
+                                        d.printStudentsAscendingName();
+                                        break;
+                                    }
+                                    case '4':{
+                                        d.printStudentsDescendingName();
+                                        break;
+                                    }
+                                    case 'Q' : {
+                                        break;
+                                    }
+                                    default: {
+                                        cout << endl << "Invalid option!" << endl;
+                                    }
+
+                                }
+
+                            }
                             case 'Q' : {
                                 break;
                             }
@@ -210,13 +275,13 @@ void Menu::showMenu() {
                     }
 
                     case '3': {
-                        drawTop(largura);
-                        cout << "| " << setw(largura - 11) << "1. Print UCs from Class" << setw(9) << "|"
+                        drawTop();
+                        cout << "| " << setw( largura- 11) << "1. Print UCs from Class" << setw(9) << "|"
                              << endl;
-                        cout << "| " << setw(largura - 10) << "2. Print Classes from UC" << setw(8) << "|"
+                        cout << "| " << setw( largura- 10) << "2. Print Classes from UC" << setw(8) << "|"
                              << endl;
-                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                        drawBottom(largura);
+                        cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                        drawBottom();
                         cout << "Choose an option: ";
                         cin >> key;
                         switch(key){
@@ -245,26 +310,40 @@ void Menu::showMenu() {
                         break;
                     }
                     case '4':{
-                        drawTop(largura);
-                        cout << "| " << setw(largura - 18) << "1. Add UC" << setw(11) << "|"<< endl;
+                        drawTop();
+                        cout << "| " << setw(largura - 18) << "1. Add UC" << setw(16) << "|"<< endl;
 
 
                         cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                        drawBottom(largura);
+                        drawBottom();
                         cout << "Choose an option: ";
                         cin >> key;
                         switch (key){
                             case '1' : {
                                 cout << "Enter Student Code: ";
                                 cin >> stc;
+                                if (cin.fail()){
+                                    cin.clear();
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
+                                string k = to_string(stc);
+                                if (k.size() != 9){
+                                    cout << "Error: Invalid Input!";
+                                    break;
+                                }
                                 Student s = Student(stc);
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+
                                 Request r = Request();
                                 list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                                r.addUC(s,ucc,l,d.getListClasses_());
-
+                                r.addUC(s,ucc, cc,l,d.getListClasses_());
+                                d.setListStudents_Classes_(l);
                                 break;
                             }
                             case 'Q' : {

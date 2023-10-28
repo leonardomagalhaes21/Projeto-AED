@@ -124,6 +124,7 @@ void Data::readStudents_Classes(){
 
         pair<Student,UC> p (Student(stc,StName), UC(UcCode, ClassCode));
         aux.push_back(p);
+        students_.insert(Student(stc,StName));
 
     }
     listStudents_Classes_ = aux;
@@ -141,6 +142,56 @@ std::list<UC> Data::getListClasses_Per_Uc_() {
 std::list<std::pair<Student, UC>> Data::getListStudents_Classes_() {
     return listStudents_Classes_;
 }
+set<Student> Data::getStudents(){
+    return students_;
+}
+void Data::setListStudents_Classes_(std::list<std::pair<Student, UC>> l){
+    listStudents_Classes_= l;
+}
+
+void Data::printStudentsAscendingCode(){
+    for ( const auto& student: students_){
+        cout << student.get_StudentCode() << " - " << student.get_StudentName()<< endl;
+    }
+
+}
+void Data::printStudentsDescendingCode() {
+    vector<Student> studentsVector(students_.begin(), students_.end());
+    std::sort(studentsVector.rbegin(), studentsVector.rend());
+
+    for (const auto& student : studentsVector) {
+        cout << student.get_StudentCode() << " - " << student.get_StudentName() << endl;
+    }
+
+}
+void Data::printStudentsAscendingName() {
+    vector<Student> studentsVector(students_.begin(), students_.end());
+    std::sort(studentsVector.begin(), studentsVector.end(), [](const Student& a, const Student& b) {
+        return a.get_StudentName() < b.get_StudentName();
+    });
+
+    for (const auto& student : studentsVector) {
+        cout << student.get_StudentName() << " - " << student.get_StudentCode() << endl;
+    }
+}
+struct CompareStudentsByName {
+    bool operator()(const Student& lhs, const Student& rhs) const {
+        return lhs.get_StudentName() > rhs.get_StudentName();
+    }
+};
+
+void Data::printStudentsDescendingName() {
+    set<Student, CompareStudentsByName> students;
+
+    for (const auto& student : students_) {
+        students.insert(student);
+    }
+
+    for (const auto& student : students) {
+        cout << student.get_StudentName() << " - " << student.get_StudentCode()<< endl;
+    }
+}
+
 
 void Data::printStudentsByYear(int x,const list<pair<Student, UC>>& val){
     set<Student> res;

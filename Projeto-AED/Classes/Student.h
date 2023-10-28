@@ -25,7 +25,7 @@ class Student {
         void set_StudentName(std::string studentName);
         void set_StudentCode(int studentCode);
         void set_Ucs(std::list<UC> ucs);
-        bool operator< (const Student & student) const;
+        bool operator< (const Student & other) const;
         void add_UC(UC uc);
         bool has_Class(std::string classCode) const;
         bool has_Uc(std::string ucCode) const;

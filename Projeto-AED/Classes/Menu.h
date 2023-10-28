@@ -12,8 +12,8 @@ class Menu {
 public:
     Menu();
     void showMenu();
-    static void drawTop(int largura);
-    static void drawBottom(int largura);
+    static void drawTop();
+    static void drawBottom();
 };
 
 
