@@ -13,9 +13,10 @@ private:
     std::list<UC> listClasses_Per_Uc_;
     std::list<std::pair<Student, UC>> listStudents_Classes_;
     std::set<Student> students_;
-    std::map<int, std::list<Student>> NUcsToStudentsMap_;
+    std::map<int, std::list<Student>> nUcsToStudentsMap_;
     std::map<std::string, std::set<std::string>> ucToClassMap_;
     std::map<std::string, std::set<std::string>> classToUcMap_;
+    std::map<std::string, std::set<Student>> ucToStudentsMap_;
 
 
 public:
@@ -30,6 +31,8 @@ public:
     void startClassToUcMap();
     std::map<std::string, std::set<std::string>> getUcToClassMap();
     std::map<std::string, std::set<std::string>> getClassToUcMap();
+    void startUcToStudentsMap();
+    std::map<std::string, std::set<Student>> getUcToStudentsMap();
 
     void readClasses();
     void readClasses_Per_Uc();
@@ -45,8 +48,8 @@ public:
     static int numberOfStudentsInClass(const std::string& x,const std::list<std::pair<Student, UC>>& val);
     static void printStudentsWithNUcs(int x,const std::map<int, std::list<Student>>& m);
     static int numberStudentsWithNUcs(int n,const std::map<int, std::list<Student>>& m);
-    static void printStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
-    static int numberOfStudentsInUC(const std::string& x,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsInUC(const std::string& x,const std::map<std::string, std::set<Student>>& ucToStudentsMap);
+    static int numberOfStudentsInUC(const std::string& x,const std::map<std::string, std::set<Student>>& m);
     static void printUcsByClass(const std::string& Ccode,std::map<std::string, std::set<std::string>>);
     static void printClassByUcs(const std::string& UCcode,std::map<std::string, std::set<std::string>>);
     void printClassTableSchedule(const std::string& classCode) const;

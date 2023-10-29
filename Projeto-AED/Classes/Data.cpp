@@ -15,6 +15,7 @@ Data::Data() {
     startNUcsToStudentsMap();
     startUcToClassMap();
     startClassToUcMap();
+    startUcToStudentsMap();
 }
 
 void Data::readClasses(){
@@ -202,7 +203,7 @@ void Data::printStudentsByClass(const string& x,const list<pair<Student, UC>>& v
 
 int Data::numberOfStudentsInClass(const string& x,const list<pair<Student, UC>>& val) {
     set<Student> res;
-    for (const pair<Student, UC>& s: val) {
+    for (const auto& s: val) {
         if (x == (s.second.getClassCode())) {
             res.insert(s.first);
         }
@@ -210,27 +211,32 @@ int Data::numberOfStudentsInClass(const string& x,const list<pair<Student, UC>>&
     return (int) res.size() ;
 }
 
-
-void Data::printStudentsInUC(const string& x,const list<pair<Student, UC>>& val){
-    set<Student> res;
-    for(const pair<Student,UC>& a: val){
-        if (x == (a.second.getUcCode())){
-            res.insert(a.first);
-        }
-    }
-    for(const auto & r : res){
-        cout << r.get_StudentName() << " ("  << r.get_StudentCode() << ")" << '\n';
+void Data::startUcToStudentsMap(){
+    for (const auto& c : listStudents_Classes_){
+        ucToStudentsMap_[c.second.getUcCode()].insert(c.first);
     }
 }
 
-int Data::numberOfStudentsInUC(const string& x,const list<pair<Student, UC>>& val) {
-    set<Student> res;
-    for (const pair<Student, UC>& s: val) {
-        if (x == (s.second.getUcCode())) {
-            res.insert(s.first);
+map<string, set<Student>> Data::getUcToStudentsMap(){
+    return ucToStudentsMap_;
+}
+
+void Data::printStudentsInUC(const string& x,const map<string, set<Student>>& m){
+
+    auto i = m.find(x);
+    if (i != m.end()) {
+        for (const auto &c: i->second) {
+            cout << c.get_StudentName() << " (" << c.get_StudentCode() << ")" << '\n';
         }
     }
-    return (int) res.size() ;
+}
+
+int Data::numberOfStudentsInUC(const string& x,const map<string, set<Student>>& m) {
+    auto i = m.find(x);
+    if (i != m.end()) {
+        return (int) i->second.size();
+    }
+    else return 0;
 }
 
 void Data::startNUcsToStudentsMap(){
@@ -245,12 +251,12 @@ void Data::startNUcsToStudentsMap(){
         Student s = d.first;
         int c = studentCodeToN[s.get_StudentCode()];
 
-        NUcsToStudentsMap_[c].push_back(s);
+        nUcsToStudentsMap_[c].push_back(s);
     }
 }
 
 map<int, list<Student>> Data::getNUcsToStudentsMap(){
-    return NUcsToStudentsMap_;
+    return nUcsToStudentsMap_;
 }
 
 
@@ -262,7 +268,7 @@ void Data::printStudentsWithNUcs(int n,const map<int, list<Student>>& m){
         return;
     }
     else {
-        for (const Student &s: i->second) {
+        for (const auto& s: i->second) {
             cout << s.get_StudentName() << " (" << s.get_StudentCode() << ")\n";
         }
     }
@@ -304,7 +310,7 @@ map<string, set<string>> Data::getClassToUcMap(){
 void Data::printClassByUcs(const string& UCCode,map<string, set<string>> m){
     auto i = m.find(UCCode);
     if (i != m.end()) {
-        for (const string& c : i->second) {
+        for (const auto& c : i->second) {
             cout << c << endl;
         }
     }
@@ -312,7 +318,7 @@ void Data::printClassByUcs(const string& UCCode,map<string, set<string>> m){
 void Data::printUcsByClass(const string& CCode,map<string, set<string>> m){
     auto i = m.find(CCode);
     if (i != m.end()) {
-        for (const string& u : i->second) {
+        for (const auto& u : i->second) {
             cout << u << endl;
         }
     }

@@ -179,7 +179,7 @@ void Menu::showMenu() {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                d.printStudentsInUC(ucc,d.getListStudents_Classes_());
+                                d.printStudentsInUC(ucc,d.getUcToStudentsMap());
                                 break;
                             }
                             case '4': {
@@ -217,7 +217,7 @@ void Menu::showMenu() {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                cout << d.numberOfStudentsInUC(ucc,d.getListStudents_Classes_());
+                                cout << d.numberOfStudentsInUC(ucc,d.getUcToStudentsMap());
                                 break;
                             }
                             case '8': {
