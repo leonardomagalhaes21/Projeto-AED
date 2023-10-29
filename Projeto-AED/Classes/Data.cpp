@@ -16,6 +16,7 @@ Data::Data() {
     startUcToClassMap();
     startClassToUcMap();
     startUcToStudentsMap();
+    startClassToStudentsMap();
 }
 
 void Data::readClasses(){
@@ -189,26 +190,32 @@ int Data::numberOfStudentsByYear(int x,const list<pair<Student, UC>>& val){
     return (int) res.size();
 }
 
-void Data::printStudentsByClass(const string& x,const list<pair<Student, UC>>& val){
-    set<Student> res;
-    for(const pair<Student,UC>& s: val){
-        if (x == (s.second.getClassCode())){
-            res.insert(s.first);
-        }
-    }
-    for(const auto & r : res){
-        cout << r.get_StudentName() << " ("  << r.get_StudentCode() << ")" << '\n';
+void Data::startClassToStudentsMap(){
+    for (const auto& c : listStudents_Classes_){
+        classToStudentsMap_[c.second.getClassCode()].insert(c.first);
     }
 }
 
-int Data::numberOfStudentsInClass(const string& x,const list<pair<Student, UC>>& val) {
-    set<Student> res;
-    for (const auto& s: val) {
-        if (x == (s.second.getClassCode())) {
-            res.insert(s.first);
+map<string, set<Student>> Data::getClassToStudentsMap(){
+    return classToStudentsMap_;
+}
+
+void Data::printStudentsByClass(const string& x,const map<string, set<Student>>& m){
+
+    auto i = m.find(x);
+    if (i != m.end()) {
+        for (const auto &c: i->second) {
+            cout << c.get_StudentName() << " (" << c.get_StudentCode() << ")" << '\n';
         }
     }
-    return (int) res.size() ;
+}
+
+int Data::numberOfStudentsInClass(const string& x,const map<string, set<Student>>& m) {
+    auto i = m.find(x);
+    if (i != m.end()) {
+        return (int) i->second.size();
+    }
+    else return 0;
 }
 
 void Data::startUcToStudentsMap(){

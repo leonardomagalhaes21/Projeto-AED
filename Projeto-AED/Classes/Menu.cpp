@@ -172,7 +172,7 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                d.printStudentsByClass(cc,d.getListStudents_Classes_());
+                                d.printStudentsByClass(cc,d.getClassToStudentsMap());
                                 break;
                             }
                             case '3': {
@@ -210,7 +210,7 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                cout << d.numberOfStudentsInClass(cc,d.getListStudents_Classes_());
+                                cout << d.numberOfStudentsInClass(cc,d.getClassToStudentsMap());
                                 break;
                             }
                             case '7': {
