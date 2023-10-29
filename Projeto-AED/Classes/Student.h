@@ -26,9 +26,9 @@ class Student {
         void set_StudentCode(int studentCode);
         void set_Ucs(std::list<UC> ucs);
         bool operator< (const Student & other) const;
-        void add_UC(UC uc);
+        void add_UC(const UC& uc);
         bool has_Class(std::string classCode) const;
-        bool has_Uc(std::string ucCode) const;
+        bool has_Uc(const std::string& ucCode) const;
         Schedule getStudentSchedule(const std::list<std::pair<Student, UC>>& l1, const std::list<std::pair<UC, Lesson>>& l2) const ;
         void printStudentTableSchedule(int student_code,const std::list<std::pair<Student, UC>>& l1,const std::list<std::pair<UC, Lesson>>& l2) const;
         static std::string findName(const std::list<std::pair<Student, UC>>& listStudents_Classes, int num) ;

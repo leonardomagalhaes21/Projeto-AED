@@ -60,19 +60,19 @@ bool Student::operator<(const Student &other) const {
     return std::tie(this->studentCode_, this->studentName_) < std::tie(other.studentCode_, other.studentName_);
 }
 
-void Student::add_UC(UC uc) {
+void Student::add_UC(const UC& uc) {
     ucs_.push_back(uc);
 }
 bool Student::has_Class(string classCode) const {
-    for(UC uc: ucs_){
+    for(const UC& uc: ucs_){
         if(uc.getClassCode()==classCode){
             return true;
         }
     }
     return false;
 }
-bool Student::has_Uc(string ucCode) const {
-    for(UC uc: ucs_){
+bool Student::has_Uc(const string& ucCode) const {
+    for(const UC& uc: ucs_){
         if(uc.getUcCode()==ucCode){
             return true;
         }
@@ -129,7 +129,7 @@ void Student::printStudentTableSchedule(int studentCode,const std::list<std::pai
         }
     }
     for (const UC& ucClass : ucs ){
-        for (auto lesson : s.getSchedule()){
+        for (const auto& lesson : s.getSchedule()){
             int weekDayPos=lesson.second.getWeekday() -1;
             float duration = lesson.second.getDuration();
             int lessonPosition = 24 * 2 * weekDayPos + (lesson.second.getStartHour() - 8.00) * 4;

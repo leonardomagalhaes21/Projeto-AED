@@ -318,13 +318,13 @@ void Menu::showMenu() {
                 break;
             case '2': {
                 drawTop();
-                cout << "| " << setw( largura- 11) << "1. Add UC" << setw(9) << "|" << endl;
-                cout << "| " << setw( largura- 10) << "2. Add Class" << setw(8) << "|" << endl;
-                cout << "| " << setw( largura- 11) << "3. Remove UC" << setw(9) << "|" << endl;
-                cout << "| " << setw( largura- 10) << "4. Remove Class" << setw(8) << "|" << endl;
-                cout << "| " << setw( largura- 11) << "5. Switch Uc" << setw(9) << "|" << endl;
-                cout << "| " << setw( largura- 10) << "6. Switch Class" << setw(8) << "|" << endl;
-                cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                cout << "| " << setw( largura- 19) << "1. Add UC" << setw(17) << "|" << endl;
+                cout << "| " << setw( largura- 16) << "2. Add Class" << setw(14) << "|" << endl;
+                cout << "| " << setw( largura- 16) << "3. Remove UC" << setw(14) << "|" << endl;
+                cout << "| " << setw( largura- 13) << "4. Remove Class" << setw(11) << "|" << endl;
+                cout << "| " << setw( largura- 16) << "5. Switch Uc" << setw(14) << "|" << endl;
+                cout << "| " << setw( largura- 13) << "6. Switch Class" << setw(11) << "|" << endl;
+                cout << "| " << setw( largura- 18) << "Q. EXIT" << setw(16) << " |" << endl;
                 drawBottom();
                 cout << "Choose an option: ";
                 cin >> key;
