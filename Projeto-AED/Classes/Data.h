@@ -18,6 +18,7 @@ private:
     std::map<std::string, std::set<std::string>> classToUcMap_;
     std::map<std::string, std::set<Student>> ucToStudentsMap_;
     std::map<std::string, std::set<Student>> classToStudentsMap_;
+    std::map<int, std::set<Student>> yearToStudentsMap_;
 
 
 public:
@@ -36,6 +37,8 @@ public:
     std::map<std::string, std::set<Student>> getUcToStudentsMap();
     void startClassToStudentsMap();
     std::map<std::string, std::set<Student>> getClassToStudentsMap();
+    void startYearToStudentsMap();
+    std::map<int, std::set<Student>> getYearToStudentsMap();
 
     void readClasses();
     void readClasses_Per_Uc();
@@ -45,9 +48,9 @@ public:
     void printStudentsDescendingCode();
     void printStudentsAscendingName();
     void printStudentsDescendingName();
-    static void printStudentsByYear(int x,const std::list<std::pair<Student, UC>>& val);
+    static void printStudentsByYear(int x,const std::map<int, std::set<Student>>& m);
     static void printStudentsByClass(const std::string& x,const std::map<std::string, std::set<Student>>& m);
-    static int numberOfStudentsByYear(int x,const std::list<std::pair<Student, UC>>& val);
+    static int numberOfStudentsByYear(int x,const std::map<int, std::set<Student>>& m);
     static int numberOfStudentsInClass(const std::string& x,const std::map<std::string, std::set<Student>>& m);
     static void printStudentsWithNUcs(int x,const std::map<int, std::list<Student>>& m);
     static int numberStudentsWithNUcs(int n,const std::map<int, std::list<Student>>& m);

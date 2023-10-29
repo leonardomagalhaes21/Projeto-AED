@@ -165,7 +165,7 @@ void Menu::showMenu() {
                                     cout << "Error: Invalid Input!";
                                     break;
                                 }
-                                d.printStudentsByYear(y,d.getListStudents_Classes_());
+                                d.printStudentsByYear(y,d.getYearToStudentsMap());
                                 break;
                             }
                             case '2': {
@@ -203,7 +203,7 @@ void Menu::showMenu() {
                                     cout << "Error: Invalid Input!";
                                     break;
                                 }
-                                cout << d.numberOfStudentsByYear(y,d.getListStudents_Classes_());
+                                cout << d.numberOfStudentsByYear(y,d.getYearToStudentsMap());
                                 break;
                             }
                             case '6': {
