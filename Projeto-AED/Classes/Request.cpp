@@ -1,9 +1,39 @@
 #include "Request.h"
 using namespace std;
 
+
+void RequestLog::requestAndLog(const std::string& action,Student student, UC newUc) {
+    Operation operation;
+    operation.action_ = action;
+    operation.newUc_ = newUc;
+    operations.push_back(operation);
+}
+void RequestLog::requestAndLog(const std::string& action, Student student,UC newUc,UC oldUc) {
+    Operation operation;
+    operation.action_ = action;
+    operation.student_=student;
+    operation.newUc_ = newUc;
+    operation.oldUc_= oldUc;
+    operations.push_back(operation);
+}
+void RequestLog::requestAndLog(const std::string& action,Student student, std::string class_uc_Code){
+    Operation operation;
+    operation.action_ = action;
+    operation.student_=student;
+    operation.class_Uc_Code_=class_uc_Code;
+}
+
+/*
+void RequestLog::printLog() {
+    std::cout << "Request Log:" << std::endl;
+    for (const Operation& operation : operations) {
+        std::cout << operation.action << " " << operation.value << std::endl;
+    }
+}
+*/
 Request::Request(){}
 
-void Request::addUC(const Student& s, const string& ucc, const string& cc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2) {
+bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2) {
     int n = 0;
     for(const pair<Student,UC>& c: val){
         if (c.first.get_StudentCode() == s.get_StudentCode()){
@@ -54,9 +84,11 @@ void Request::addUC(const Student& s, const string& ucc, const string& cc, list<
         pair<Student, UC> p = {s,a};
         val.push_back(p);
         cout << "Operation successful!";
+        return true;
     }
     else{
         cout << "Operation failed!";
+        return false;
     }
 
 }
@@ -64,7 +96,13 @@ void Request::addUC(const Student& s, const string& ucc, const string& cc, list<
 
 void Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2) {
     removeUC(s, oldUC, val);
-    addUC(s, newUC.getUcCode(),newUC.getClassCode(), val,val2);
+    if(addUC(s, newUC.getUcCode(),newUC.getClassCode(), val,val2)){
+        cout << "Operation successful!";
+    }
+    else{
+        addUC(s,oldUC.getUcCode(),oldUC.getClassCode(),val,val2);
+        cout << "Operation failed!";
+    }
 }
 
 void Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
@@ -78,7 +116,7 @@ void Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& 
     }
 }
 
-void Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2){
+bool Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2){
     bool cond1, cond2, cond3;
     cond1 = true;
     cond2 = true;
@@ -129,15 +167,24 @@ void Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& 
         pair<Student, UC> p = {s,a};
         val.push_back(p);
         cout << "Operation successful!";
+        return true;
     }
     else{
         cout << "Operation failed!";
+        return false;
     }
 }
 
 void Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2) {
     removeClass(s, oldUC, val);
-    addClass(s, newUC, val,val2);
+
+    if(addClass(s, newUC, val,val2)){
+        cout << "Operation successful!";
+    }
+    else{
+        addClass(s,oldUC,val,val2);
+        cout << "Operation failed!";
+    }
 }
 void Request::removeClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
     for (auto it = val.begin(); it != val.end(); ) {

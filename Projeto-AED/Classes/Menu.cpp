@@ -17,6 +17,8 @@ void Menu::drawBottom(){
 void Menu::showMenu() {
 
     Data d = Data();
+    Request r = Request();
+    RequestLog log;
     const int largura =40;
     short t2;
     int stc;
@@ -39,7 +41,6 @@ void Menu::showMenu() {
                 cout << "| " << setw( largura- 14) << "1. View Schedule" << setw(12) << "|" << endl;
                 cout << "| " << setw( largura- 14) << "2. View Students" << setw(12) << "|" << endl;
                 cout << "| " << setw( largura- 14) << "3. Classes <-> UC" << setw(12) << "|" << endl;
-                cout << "| " << setw( largura- 15) << "4. Make Request" << setw(13) << "|" << endl;
                 cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
                 drawBottom();
                 cout << "Choose an option: ";
@@ -92,7 +93,7 @@ void Menu::showMenu() {
                                     break;
                                 }
                                 Student s = Student(stc);
-                                //cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
+                                cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
                                 s.printStudentTableSchedule(stc,d.getListStudents_Classes_(),d.getListClasses_());
                                 break;
                             }
@@ -185,7 +186,7 @@ void Menu::showMenu() {
                                 cout << "Enter N: ";
                                 int n;
                                 cin >> n;
-                                d.printStudentsWithNUcs(n,d.getListStudents_Classes_());
+                                d.printStudentsWithNUcs(n,d.getNUcsToStudentsMap());
                                 break;
                             }
                             case '5': {
@@ -223,15 +224,15 @@ void Menu::showMenu() {
                                 cout << "Enter N: ";
                                 int n;
                                 cin >> n;
-                                cout << d.numberStudentsWithNUcs(n,d.getListStudents_Classes_());
+                                cout << d.numberStudentsWithNUcs(n,d.getNUcsToStudentsMap());
                                 break;
                             }
                             case '9' :{
                                 drawTop();
                                 cout << "| " << setw( largura- 9) << "1. Ascending Order [Up Code]" << setw(7) << "|" << endl;
                                 cout << "| " << setw( largura- 8) << "2. Descending Order [Up Code]" << setw(6) << "|" << endl;
-                                cout << "| " << setw( largura- 9) << "3. Alhabetic Order - [A - Z]" << setw(7) << "|" << endl;
-                                cout << "| " << setw( largura- 9) << "4. Alhabetic Order - [Z - A]" << setw(7) << "|" << endl;
+                                cout << "| " << setw( largura- 9) << "3. Alphabetic Order - [A - Z]" << setw(7) << "|" << endl;
+                                cout << "| " << setw( largura- 9) << "4. Alphabetic Order - [Z - A]" << setw(7) << "|" << endl;
                                 cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
                                 drawBottom();
                                 cout << "Choose an option: ";
@@ -276,10 +277,8 @@ void Menu::showMenu() {
 
                     case '3': {
                         drawTop();
-                        cout << "| " << setw( largura- 11) << "1. Print UCs from Class" << setw(9) << "|"
-                             << endl;
-                        cout << "| " << setw( largura- 10) << "2. Print Classes from UC" << setw(8) << "|"
-                             << endl;
+                        cout << "| " << setw( largura- 11) << "1. Print UCs from Class" << setw(9) << "|" << endl;
+                        cout << "| " << setw( largura- 10) << "2. Print Classes from UC" << setw(8) << "|" << endl;
                         cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
                         drawBottom();
                         cout << "Choose an option: ";
@@ -289,14 +288,14 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                d.printUcsByClass(cc,d.getListClasses_Per_Uc_());
+                                d.printUcsByClass(cc,d.getClassToUcMap());
                                 break;
                             }
                             case '2': {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                d.printClassByUcs(ucc,d.getListClasses_Per_Uc_());
+                                d.printClassByUcs(ucc,d.getUcToClassMap());
                                 break;
                             }
                             case 'Q' : {
@@ -309,54 +308,6 @@ void Menu::showMenu() {
                         };
                         break;
                     }
-                    case '4':{
-                        drawTop();
-                        cout << "| " << setw(largura - 18) << "1. Add UC" << setw(16) << "|"<< endl;
-
-
-                        cout << "| " << setw(largura - 19) << "Q. EXIT" << setw(17) << " |" << endl;
-                        drawBottom();
-                        cout << "Choose an option: ";
-                        cin >> key;
-                        switch (key){
-                            case '1' : {
-                                cout << "Enter Student Code: ";
-                                cin >> stc;
-                                if (cin.fail()){
-                                    cin.clear();
-                                    cout << "Error: Invalid Input!";
-                                    break;
-                                }
-                                string k = to_string(stc);
-                                if (k.size() != 9){
-                                    cout << "Error: Invalid Input!";
-                                    break;
-                                }
-                                Student s = Student(stc);
-                                cout << "Enter UC Code: ";
-                                string ucc;
-                                cin >> ucc;
-                                cout << "Enter Class Code: ";
-                                string cc;
-                                cin >> cc;
-
-                                Request r = Request();
-                                list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                                r.addUC(s,ucc, cc,l,d.getListClasses_());
-                                d.setListStudents_Classes_(l);
-                                break;
-                            }
-                            case 'Q' : {
-                                break;
-                            }
-                            default: {
-                                cout << endl << "Invalid option!" << endl;
-                            }
-                        }
-
-                        break;
-                    }
-
                     case 'Q': {
                         break;
                     }
@@ -366,10 +317,146 @@ void Menu::showMenu() {
                 };
                 break;
             case '2': {
-                //menu de edit
+                drawTop();
+                cout << "| " << setw( largura- 11) << "1. Add UC" << setw(9) << "|" << endl;
+                cout << "| " << setw( largura- 10) << "2. Add Class" << setw(8) << "|" << endl;
+                cout << "| " << setw( largura- 11) << "3. Remove UC" << setw(9) << "|" << endl;
+                cout << "| " << setw( largura- 10) << "4. Remove Class" << setw(8) << "|" << endl;
+                cout << "| " << setw( largura- 11) << "5. Switch Uc" << setw(9) << "|" << endl;
+                cout << "| " << setw( largura- 10) << "6. Switch Class" << setw(8) << "|" << endl;
+                cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
+                drawBottom();
+                cout << "Choose an option: ";
                 cin >> key;
                 switch (key) {
                     case '1': {
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter UC Code: ";
+                        string ucc;
+                        cin >> ucc;
+                        cout << "Enter Class Code: ";
+                        string cc;
+                        cin >> cc;
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        r.addUC(s,ucc, cc,l,d.getListClasses_());
+                        d.setListStudents_Classes_(l);
+                        log.requestAndLog("AddUc", s,UC(ucc,cc));
+                        break;
+                    }
+                    case '2': {
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter Class Code: ";
+                        string cc;
+                        cin >> cc;
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        r.addClass(s,cc,l,d.getListClasses_());
+                        d.setListStudents_Classes_(l);
+                        log.requestAndLog("AddClass", s,cc);
+                        break;
+                    }
+                    case '3': {
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter UC Code: ";
+                        string ucc;
+                        cin >> ucc;
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        r.removeUC(s,ucc,l);
+                        d.setListStudents_Classes_(l);
+                        log.requestAndLog("RemoveUc", s,ucc);
+                        break;
+                    }
+                    case '4': {
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter Class Code: ";
+                        string cc;
+                        cin >> cc;
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        r.removeClass(s,cc,l);
+                        d.setListStudents_Classes_(l);
+                        log.requestAndLog("RemoveClass", s,cc);
+                        break;
+
+                    }
+                    case '5': {
+                        /*
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter UC Code: ";
+                        string ucc;
+                        cin >> ucc;
+                        cout << "Enter Current Class Code: ";
+                        string ccc;
+                        cin >> ccc;
+                        cout << "Enter New Class Code: ";
+                        string ncc;
+                        cin >> ncc;
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        r.addUC(s,ucc, cc,l,d.getListClasses_());
+                        d.setListStudents_Classes_(l);
+                        log.requestAndLog("AddUc", s,UC(ucc,cc));
+                        break;
+                         */
+                    }
+                    case '6': {
                         break;
                     }
                     case 'Q': {

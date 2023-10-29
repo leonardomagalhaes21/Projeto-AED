@@ -12,36 +12,9 @@ Data::Data() {
     readClasses();
     readClasses_Per_Uc();
     readStudents_Classes();
-}
-UC* Data::findClass(string ucCode, string classCode) const {
-
-    int low = 0, high = listClasses_Per_Uc_.size() - 1;
-    UC* available;
-    while (low <= high) {
-        int middle = low + (high - low) / 2;
-        auto it=listClasses_Per_Uc_.begin();
-        advance(it,middle);
-        *available = *it;
-
-        if (ucCode < available->getUcCode()) {
-            high = middle - 1;
-        }
-        else if (ucCode == available->getUcCode()) {
-            if (classCode == available->getClassCode()) {
-                return available;
-            }
-            else if (classCode < available->getClassCode()) {
-                high = middle - 1;
-            }
-            else {
-                low = middle + 1;
-            }
-        } else {
-            low = middle + 1;
-        }
-    }
-    return available;
-
+    startNUcsToStudentsMap();
+    startUcToClassMap();
+    startClassToUcMap();
 }
 
 void Data::readClasses(){
@@ -260,65 +233,88 @@ int Data::numberOfStudentsInUC(const string& x,const list<pair<Student, UC>>& va
     return (int) res.size() ;
 }
 
+void Data::startNUcsToStudentsMap(){
 
-void Data::printStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
-    map<Student,int> m;
-    for(const pair<Student,UC>& s: val){
+    std::map<int, int> studentCodeToN;
 
-        if (m.count(s.first) > 0){
-            m[s.first]++;
-        }
-        else{
-            m[s.first]=1;
-        }
+    for (const auto& d : listStudents_Classes_) {
+        studentCodeToN[d.first.get_StudentCode()]++;
     }
-    for(const auto& par: m){
-        if(par.second ==n) {
-            cout << par.first.get_StudentName() << " ("  << par.first.get_StudentCode() << ")" << '\n';
+
+    for (const auto& d : listStudents_Classes_) {
+        Student s = d.first;
+        int c = studentCodeToN[s.get_StudentCode()];
+
+        NUcsToStudentsMap_[c].push_back(s);
+    }
+}
+
+map<int, list<Student>> Data::getNUcsToStudentsMap(){
+    return NUcsToStudentsMap_;
+}
+
+
+void Data::printStudentsWithNUcs(int n,const map<int, list<Student>>& m){
+
+    auto i= m.find(n);
+
+    if (i == m.end()){
+        return;
+    }
+    else {
+        for (const Student &s: i->second) {
+            cout << s.get_StudentName() << " (" << s.get_StudentCode() << ")\n";
         }
     }
 }
 
-int Data::numberStudentsWithNUcs(int n,const list<pair<Student, UC>>& val){
-    map<Student,int> m;
-    for(const pair<Student,UC>& s: val){
+int Data::numberStudentsWithNUcs(int n,const map<int, list<Student>>& m){
 
-        if (m.count(s.first) > 0){
-            m[s.first]++;
-        }
-        else{
-            m[s.first]=1;
-        }
+    auto i= m.find(n);
+
+    if (i == m.end()){
+        return 0;
     }
-    int sum =0;
-    for(const auto& par: m){
-        if(par.second ==n) {
-            sum++;
-        }
+    else {
+        return (int) i->second.size();
     }
-    return sum;
 }
 
-void Data::printClassByUcs(const string& UCCode,const list<UC>& val){
-    set<UC> res;
-    for(const UC& s: val){
-        if (UCCode == s.getClassCode()){
-            res.insert(s);
-        }
-    }
-    for(const auto & r : res){
-        cout << r.getUcCode() << '\n';
+
+void Data::startUcToClassMap(){
+    for (const auto& d : listStudents_Classes_) {
+        ucToClassMap_[d.second.getUcCode()].insert(d.second.getClassCode());
     }
 }
-void Data::printUcsByClass(const string& CCode,const list<UC>& val){
-    set<UC> res;
-    for(const UC& s: val){
-        if (CCode == s.getUcCode()){
-            res.insert(s);
+
+void Data::startClassToUcMap(){
+    for (const auto& d : listStudents_Classes_) {
+        classToUcMap_[d.second.getClassCode()].insert(d.second.getUcCode());
+    }
+}
+
+map<string, set<string>> Data::getUcToClassMap(){
+    return ucToClassMap_;
+}
+
+map<string, set<string>> Data::getClassToUcMap(){
+    return classToUcMap_;
+}
+
+void Data::printClassByUcs(const string& UCCode,map<string, set<string>> m){
+    auto i = m.find(UCCode);
+    if (i != m.end()) {
+        for (const string& c : i->second) {
+            cout << c << endl;
         }
     }
-    for(const auto & r : res){
-        cout << r.getClassCode() << '\n';
+}
+void Data::printUcsByClass(const string& CCode,map<string, set<string>> m){
+    auto i = m.find(CCode);
+    if (i != m.end()) {
+        for (const string& u : i->second) {
+            cout << u << endl;
+        }
     }
 }
 void Data::printClassTableSchedule(const string& classCode) const{
