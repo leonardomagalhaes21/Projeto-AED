@@ -60,6 +60,7 @@ public:
     static void printClassByUcs(const std::string& UCcode,std::map<std::string, std::set<std::string>>);
     void printClassTableSchedule(const std::string& classCode) const;
     static void printClassSchedule(const std::string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) ;
+    static void printTop5UCs(const std::map<std::string, std::set<Student>>& m);
 
 };
 

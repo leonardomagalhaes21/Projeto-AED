@@ -146,6 +146,7 @@ void Menu::showMenu() {
                         cout << "| " << setw( largura- 14) << "7. Number of Students in UC" << setw(11) << "|" << endl;
                         cout << "| " << setw( largura- 14) << "8. Number of Students with N UCs" << setw(6) << "|" << endl;
                         cout << "| " << setw( largura- 24) << "9. Print Students" << setw(21) << "|" << endl;
+                        cout << "| " << setw( largura- 24) << "0. Print Top 5 UCs by student count" << setw(3) << "|" << endl;
                         cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
                         drawBottom();
                         cout << "Choose an option: ";
@@ -263,6 +264,10 @@ void Menu::showMenu() {
 
                                 }
 
+                            }
+                            case '0': {
+                                d.printTop5UCs(d.getUcToStudentsMap());
+                                break;
                             }
                             case 'Q' : {
                                 break;

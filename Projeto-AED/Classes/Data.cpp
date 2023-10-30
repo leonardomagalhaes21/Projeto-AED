@@ -422,3 +422,26 @@ void Data::printClassSchedule(const string& classCode, const std::list<UC>& clas
     s.printSchedule();
 
 }
+
+
+void Data::printTop5UCs(const map<string, set<Student>>& m) {
+
+    vector<pair<string, int>> vec;
+
+    for (const auto& c : m) {
+        int a = c.second.size();
+        pair<string,int> p = {c.first, a};
+        vec.push_back(p);
+    }
+
+    sort(vec.begin(), vec.end(),[](const pair<string, int>& a, const pair<string, int>& b){
+             return a.second > b.second;
+         });
+
+    cout << "1. UC: " << vec[0].first << " -> " << vec[0].second << " students" << endl;
+    cout << "2. UC: " << vec[1].first << " -> " << vec[1].second << " students" << endl;
+    cout << "3. UC: " << vec[2].first << " -> " << vec[2].second << " students" << endl;
+    cout << "4. UC: " << vec[3].first << " -> " << vec[3].second << " students" << endl;
+    cout << "5. UC: " << vec[4].first << " -> " << vec[4].second << " students" << endl;
+}
+
