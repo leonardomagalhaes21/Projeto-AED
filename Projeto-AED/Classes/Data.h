@@ -19,6 +19,7 @@ private:
     std::map<std::string, std::set<Student>> ucToStudentsMap_;
     std::map<std::string, std::set<Student>> classToStudentsMap_;
     std::map<int, std::set<Student>> yearToStudentsMap_;
+    std::map<UC, std::set<Student>> ucClasstoStudentsMap_;
 
 
 public:
@@ -39,6 +40,8 @@ public:
     std::map<std::string, std::set<Student>> getClassToStudentsMap();
     void startYearToStudentsMap();
     std::map<int, std::set<Student>> getYearToStudentsMap();
+    void startUcClasstoStudentsMap();
+    std::map<UC, std::set<Student>> getUcClasstoStudentsMap();
 
     void readClasses();
     void readClasses_Per_Uc();
@@ -61,7 +64,8 @@ public:
     void printClassTableSchedule(const std::string& classCode) const;
     static void printClassSchedule(const std::string& classCode, const std::list<UC>& classes_per_uc, const std::list<std::pair<UC, Lesson>>& getListClasses) ;
     static void printTop5UCs(const std::map<std::string, std::set<Student>>& m);
-
+    static void printStudentsInUcClass(const std::string& ucCode,const std::string& classCode, std::map<UC, std::set<Student>> m );
+    static int numberOfStudentsInUcClass(const std::string& ucCode,const std::string& classCode, std::map<UC, std::set<Student>> m );
 };
 
 

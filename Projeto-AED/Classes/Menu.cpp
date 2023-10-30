@@ -147,6 +147,8 @@ void Menu::showMenu() {
                         cout << "| " << setw( largura- 14) << "8. Number of Students with N UCs" << setw(6) << "|" << endl;
                         cout << "| " << setw( largura- 24) << "9. Print Students" << setw(21) << "|" << endl;
                         cout << "| " << setw( largura- 24) << "0. Print Top 5 UCs by student count" << setw(3) << "|" << endl;
+                        cout << "| " << setw( largura- 18) << "A. Print Students in UC and Class" << setw(5) << "|" << endl;
+                        cout << "| " << setw( largura- 14) << "B. Number of Students in UC and Class" << setw(1) << "|" << endl;
                         cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
                         drawBottom();
                         cout << "Choose an option: ";
@@ -267,6 +269,26 @@ void Menu::showMenu() {
                             }
                             case '0': {
                                 d.printTop5UCs(d.getUcToStudentsMap());
+                                break;
+                            }
+                            case 'A': {
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+                                d.printStudentsInUcClass(ucc,cc,d.getUcClasstoStudentsMap());
+                                break;
+                            }
+                            case 'B': {
+                                cout << "Enter UC Code: ";
+                                string ucc;
+                                cin >> ucc;
+                                cout << "Enter Class Code: ";
+                                string cc;
+                                cin >> cc;
+                                cout << d.numberOfStudentsInUcClass(ucc,cc,d.getUcClasstoStudentsMap());
                                 break;
                             }
                             case 'Q' : {

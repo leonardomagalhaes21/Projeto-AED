@@ -18,6 +18,7 @@ Data::Data() {
     startUcToStudentsMap();
     startClassToStudentsMap();
     startYearToStudentsMap();
+    startUcClasstoStudentsMap();
 }
 
 void Data::readClasses(){
@@ -444,4 +445,34 @@ void Data::printTop5UCs(const map<string, set<Student>>& m) {
     cout << "4. UC: " << vec[3].first << " -> " << vec[3].second << " students" << endl;
     cout << "5. UC: " << vec[4].first << " -> " << vec[4].second << " students" << endl;
 }
+
+void Data::startUcClasstoStudentsMap() {
+    for (const auto& c : listStudents_Classes_){
+        if (ucClasstoStudentsMap_.find(c.second) != ucClasstoStudentsMap_.end()){
+            ucClasstoStudentsMap_[c.second].insert(c.first);
+        }
+        else{
+            ucClasstoStudentsMap_[c.second] = set<Student>();
+        }
+    }
+}
+
+std::map<UC, std::set<Student>> Data::getUcClasstoStudentsMap() {
+    return ucClasstoStudentsMap_;
+}
+
+void Data::printStudentsInUcClass(const string &ucCode, const string &classCode, std::map<UC, std::set<Student>> m) {
+    UC a = UC(ucCode,classCode);
+    for(const auto& s : m[a]){
+        cout << s.get_StudentName() << " (" << s.get_StudentCode() << ")\n";
+    }
+}
+
+int Data::numberOfStudentsInUcClass(const string &ucCode, const string &classCode, std::map<UC, std::set<Student>> m) {
+    UC a = UC(ucCode,classCode);
+    return (int) m[a].size();
+}
+
+
+
 
