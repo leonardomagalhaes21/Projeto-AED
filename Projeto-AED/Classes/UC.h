@@ -22,8 +22,6 @@ public:
     std::string getClassCode() const;
     int getNumberStudents() const;
     void setNumberStudents(int newValue);
-    int getCapacity() const;
-    void setCapacity(int newValue);
     void addLesson(const Lesson& lesson);
     bool operator<(const UC& Uc) const;
     void printLessons() const;
@@ -31,11 +29,11 @@ public:
     std::list<Lesson> getLessons() const;
     void addClassLessons(const std::list<std::pair<UC, Lesson>>& l1);
     Schedule getSchedule(const std::list<std::pair<UC, Lesson>>& l1);
+    static int capacity_;
 private:
     std::string ucCode_;
     std::string classCode_;
     int numberStudents_;
-    int capacity_;
     std::list<Lesson> lesson_;
 };
 

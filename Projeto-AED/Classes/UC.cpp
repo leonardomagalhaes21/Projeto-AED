@@ -3,12 +3,11 @@ using namespace std;
 
 UC::UC(){
     numberStudents_ = 0;
-    capacity_ = 0;
 }
+int UC::capacity_ = 26;
 
 UC::UC(string ucCode){
     numberStudents_ = 0;
-    capacity_ = 0;
     ucCode_ = ucCode;
 }
 
@@ -17,12 +16,10 @@ UC::UC(string ucCode,string classCode){
     ucCode_= ucCode;
     classCode_ = classCode;
     numberStudents_ = 0;
-    capacity_ = 0;
 }
 
 UC::UC(string ucCode, string classCode, list<Lesson> lesson) : ucCode_(ucCode), classCode_(classCode), lesson_(lesson) {
     numberStudents_ = 0;
-    capacity_ = 0;
 }
 
 
@@ -38,12 +35,6 @@ int UC::getNumberStudents() const {
 }
 void UC::setNumberStudents(int newValue){
     numberStudents_=newValue;
-}
-int UC::getCapacity() const {
-    return capacity_;
-}
-void UC::setCapacity(int newValue){
-    capacity_= newValue;
 }
 void UC::addLesson(const Lesson& lesson) {
     lesson_.push_back(lesson);
