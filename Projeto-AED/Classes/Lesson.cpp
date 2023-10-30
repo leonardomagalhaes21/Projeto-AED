@@ -12,8 +12,6 @@ Lesson::Lesson(int weekday, float duration, float start_hour, string type){
     type_=type;
 }
 
-
-
 int Lesson::getWeekday() const{
    return weekday_;
 }

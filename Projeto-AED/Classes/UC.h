@@ -22,6 +22,8 @@ public:
     std::string getClassCode() const;
     int getNumberStudents() const;
     void setNumberStudents(int newValue);
+    int getCapacity() const;
+    void setCapacity(int newValue);
     void addLesson(const Lesson& lesson);
     bool operator<(const UC& Uc) const;
     void printLessons() const;
@@ -33,6 +35,7 @@ private:
     std::string ucCode_;
     std::string classCode_;
     int numberStudents_;
+    int capacity_;
     std::list<Lesson> lesson_;
 };
 
