@@ -25,15 +25,17 @@ void Schedule::addLesson(const UC& uc,const Lesson& lesson) {
 }
 
 
-bool compare(const pair<UC, Lesson> &a, const pair<UC, Lesson> &b) {
-    if (a.second.getWeekday() < b.second.getWeekday()){
-        return true;
+struct compareLessons {
+    bool operator()(const pair<UC, Lesson> &a, const pair<UC, Lesson> &b) {
+        if (a.second.getWeekday() < b.second.getWeekday()) {
+            return true;
+        }
+        else if (a.second.getWeekday() > b.second.getWeekday()) {
+            return false;
+        }
+        else return (a.second.getStartHour() < b.second.getStartHour());
     }
-    else if (a.second.getWeekday() > b.second.getWeekday()){
-        return false;
-    }
-    else return (a.second.getStartHour() < b.second.getStartHour());
-}
+};
 
 
 
@@ -76,7 +78,7 @@ void Schedule::printSchedule() {
             {5, "Friday"}
     };
 
-    sort(schedule_.begin(), schedule_.end(), compare);
+    sort(schedule_.begin(), schedule_.end(), compareLessons());
 
     cout << "--------------------------------------------------------------------" << endl;
     cout << "Weekday | UC Code (Name) (Class Code) | Class Time (Duration) | Type" << endl;
