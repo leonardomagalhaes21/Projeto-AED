@@ -377,7 +377,7 @@ void Menu::showMenu() {
                         string cc;
                         cin >> cc;
                         list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.addUC(s,ucc, cc,l,d.getListClasses_());
+                        r.addUC(s,ucc, cc,l,d.getListClasses_(),d.getUcClasstoStudentsMap());
                         d.setListStudents_Classes_(l);
                         log.requestAndLog("AddUc", s,UC(ucc,cc));
                         break;
