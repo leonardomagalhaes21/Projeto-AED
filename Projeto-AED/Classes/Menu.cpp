@@ -8,6 +8,7 @@ void Menu::drawTop(){
     cout << "|" << "================ Menu ================" << "|" << endl;
     cout << "|" << "______________________________________" << "|" << endl;
 }
+
 void Menu::drawBottom(){
     cout << "|______________________________________|" << endl;
     cout << "|======================================|" << endl;
@@ -75,8 +76,8 @@ void Menu::showMenu() {
                                     break;
                                 }
                                 Student s = Student(stc);
-                                cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
-                                s.getStudentSchedule(d.getListStudents_Classes_(), d.getListClasses_()).printSchedule();
+                                cout << "The student's name is : " << s.findName(d.getListStudentsClasses_(), stc) << endl;
+                                s.getStudentSchedule(d.getListStudentsClasses_(), d.getListClasses_()).printSchedule();
                                 break;
                             }
                             case '2':{
@@ -93,8 +94,8 @@ void Menu::showMenu() {
                                     break;
                                 }
                                 Student s = Student(stc);
-                                cout << "The student's name is : " << s.findName(d.getListStudents_Classes_(), stc) << endl;
-                                s.printStudentTableSchedule(stc,d.getListStudents_Classes_(),d.getListClasses_());
+                                cout << "The student's name is : " << s.findName(d.getListStudentsClasses_(), stc) << endl;
+                                s.printStudentTableSchedule(stc,d.getListStudentsClasses_(),d.getListClasses_());
                                 break;
                             }
                             case '3': {
@@ -106,7 +107,7 @@ void Menu::showMenu() {
                             case '4': {
                                 cout << "Enter Class Code: ";
                                 cin >> ccode;
-                                d.printClassSchedule(ccode, d.getListClasses_Per_Uc_(), d.getListClasses_());
+                                d.printClassSchedule(ccode, d.getListClassesPerUC_(), d.getListClasses_());
                                 break;
                             }
                             case '5': {
@@ -182,14 +183,14 @@ void Menu::showMenu() {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                d.printStudentsInUC(ucc,d.getUcToStudentsMap());
+                                d.printStudentsInUC(ucc,d.getUCToStudentsMap());
                                 break;
                             }
                             case '4': {
                                 cout << "Enter N: ";
                                 int n;
                                 cin >> n;
-                                d.printStudentsWithNUcs(n,d.getNUcsToStudentsMap());
+                                d.printStudentsWithNUCs(n,d.getNUCsToStudentsMap());
                                 break;
                             }
                             case '5': {
@@ -220,14 +221,14 @@ void Menu::showMenu() {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                cout << d.numberOfStudentsInUC(ucc,d.getUcToStudentsMap());
+                                cout << d.numberOfStudentsInUC(ucc,d.getUCToStudentsMap());
                                 break;
                             }
                             case '8': {
                                 cout << "Enter N: ";
                                 int n;
                                 cin >> n;
-                                cout << d.numberStudentsWithNUcs(n,d.getNUcsToStudentsMap());
+                                cout << d.numberStudentsWithNUCs(n,d.getNUCsToStudentsMap());
                                 break;
                             }
                             case '9' :{
@@ -268,7 +269,7 @@ void Menu::showMenu() {
 
                             }
                             case '0': {
-                                d.printTop5UCs(d.getUcToStudentsMap());
+                                d.printTop5UCs(d.getUCToStudentsMap());
                                 break;
                             }
                             case 'A': {
@@ -278,7 +279,7 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                d.printStudentsInUcClass(ucc,cc,d.getUcClasstoStudentsMap());
+                                d.printStudentsInUCClass(ucc,cc,d.getUCClasstoStudentsMap());
                                 break;
                             }
                             case 'B': {
@@ -288,7 +289,7 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                cout << d.numberOfStudentsInUcClass(ucc,cc,d.getUcClasstoStudentsMap());
+                                cout << d.numberOfStudentsInUCClass(ucc,cc,d.getUCClasstoStudentsMap());
                                 break;
                             }
                             case 'Q' : {
@@ -315,14 +316,14 @@ void Menu::showMenu() {
                                 cout << "Enter Class Code: ";
                                 string cc;
                                 cin >> cc;
-                                d.printUcsByClass(cc,d.getClassToUcMap());
+                                d.printUCsByClass(cc,d.getClassToUcMap());
                                 break;
                             }
                             case '2': {
                                 cout << "Enter UC Code: ";
                                 string ucc;
                                 cin >> ucc;
-                                d.printClassByUcs(ucc,d.getUcToClassMap());
+                                d.printClassByUCs(ucc,d.getUCToClassMap());
                                 break;
                             }
                             case 'Q' : {
@@ -375,9 +376,9 @@ void Menu::showMenu() {
                         cout << "Enter Class Code: ";
                         string cc;
                         cin >> cc;
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        if(r.addUC(s,ucc, cc,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
-                            d.setListStudents_Classes_(l);
+                        list<pair<Student, UC>> l = d.getListStudentsClasses_();
+                        if(r.addUC(s,ucc, cc,l,d.getListClasses_(),d.getUCClasstoStudentsMap())) {
+                            d.setListStudentsClasses_(l);
                             log.requestAndLog("AddUc", s, UC(ucc, cc));
                             cout << "Operation successful!";
                         }
@@ -403,9 +404,9 @@ void Menu::showMenu() {
                         cout << "Enter UC Code: ";
                         string ucc;
                         cin >> ucc;
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        list<pair<Student, UC>> l = d.getListStudentsClasses_();
                         if(r.removeUC(s,ucc,l)) {
-                            d.setListStudents_Classes_(l);
+                            d.setListStudentsClasses_(l);
                             log.requestAndLog("RemoveUc", s, ucc);
                         }
                         else{
@@ -430,9 +431,9 @@ void Menu::showMenu() {
                         cout << "Enter Class Code: ";
                         string cc;
                         cin >> cc;
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        list<pair<Student, UC>> l = d.getListStudentsClasses_();
                         if(r.removeClass(s,cc,l)){
-                            d.setListStudents_Classes_(l);
+                            d.setListStudentsClasses_(l);
                             log.requestAndLog("RemoveClass", s, cc);
                             cout << "Operation successful!";
                         }
@@ -471,9 +472,9 @@ void Menu::showMenu() {
                         cin >> ncc;
                         UC a = UC(uccc,ccc);
                         UC b = UC(nucc,ncc);
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        if(r.switchUC(s,a,b,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
-                            d.setListStudents_Classes_(l);
+                        list<pair<Student, UC>> l = d.getListStudentsClasses_();
+                        if(r.switchUC(s,a,b,l,d.getListClasses_(),d.getUCClasstoStudentsMap())) {
+                            d.setListStudentsClasses_(l);
                             log.requestAndLog("AddUc", s, a);
                             cout << "Operation successful!";
                         }
@@ -508,9 +509,9 @@ void Menu::showMenu() {
                         cin >> ncc;
                         UC a = UC(ucc,ccc);
                         UC b = UC(ucc,ncc);
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        if(r.switchClass(s,a,b,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
-                            d.setListStudents_Classes_(l);
+                        list<pair<Student, UC>> l = d.getListStudentsClasses_();
+                        if(r.switchClass(s,a,b,l,d.getListClasses_(),d.getUCClasstoStudentsMap())) {
+                            d.setListStudentsClasses_(l);
                             log.requestAndLog("AddUc", s, a);
                             cout << "Operation successful!";
                         }

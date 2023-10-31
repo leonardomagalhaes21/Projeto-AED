@@ -4,13 +4,13 @@ using namespace std;
 UC::UC(){
     numberStudents_ = 0;
 }
+
 int UC::capacity_ = 26;
 
 UC::UC(string ucCode){
     numberStudents_ = 0;
     ucCode_ = ucCode;
 }
-
 
 UC::UC(string ucCode,string classCode){
     ucCode_= ucCode;
@@ -22,23 +22,26 @@ UC::UC(string ucCode, string classCode, list<Lesson> lesson) : ucCode_(ucCode), 
     numberStudents_ = 0;
 }
 
-
-string UC::getUcCode() const {
+string UC::getUCCode() const {
     return ucCode_;
 }
 
 string UC::getClassCode() const {
     return classCode_;
 }
+
 int UC::getNumberStudents() const {
     return numberStudents_;
 }
+
 void UC::setNumberStudents(int newValue){
     numberStudents_=newValue;
 }
+
 void UC::addLesson(const Lesson& lesson) {
     lesson_.push_back(lesson);
 }
+
 list<Lesson> UC::getLessons() const{
     return lesson_;
 }

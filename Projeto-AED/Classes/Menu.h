@@ -9,6 +9,7 @@
 #include "Request.h"
 
 class Menu {
+
 public:
     Menu();
     void showMenu();

@@ -7,6 +7,7 @@ using namespace std;
 Student::Student(){
 
 }
+
 Student::Student(int studentCode, string studentName, list<UC> ucs){
     studentCode_ = studentCode;
     studentName_ = studentName;
@@ -21,7 +22,6 @@ Student::Student(int studentCode, string studentName){
 Student::Student(int studentCode){
     studentCode_ = studentCode;
 }
-
 
 int Student::getStudentCode() const {
     return studentCode_;
@@ -40,18 +40,18 @@ string Student::findName(const list<pair<Student, UC>>& listStudents_Classes , i
     return "";
 }
 
-
 list<UC> Student::getUCs() const {
     return ucs_;
 }
+
 void Student::setStudentCode(int StudentCode) {
     studentCode_ = StudentCode;
 }
 
 void Student::setStudentName(string StudentName) {
-
     studentName_ = StudentName;
 }
+
 void Student::setUCs(list<UC> ucs) {
     ucs_ = ucs;
 }
@@ -63,6 +63,7 @@ bool Student::operator<(const Student &other) const {
 void Student::addUC(const UC& uc) {
     ucs_.push_back(uc);
 }
+
 bool Student::hasClass(string classCode) const {
     for(const UC& uc: ucs_){
         if(uc.getClassCode()==classCode){
@@ -71,9 +72,9 @@ bool Student::hasClass(string classCode) const {
     }
     return false;
 }
-bool Student::hasUc(const string& ucCode) const {
+bool Student::hasUC(const string& ucCode) const {
     for(const UC& uc: ucs_){
-        if(uc.getUcCode()==ucCode){
+        if(uc.getUCCode()==ucCode){
             return true;
         }
     }
@@ -135,16 +136,16 @@ void Student::printStudentTableSchedule(int studentCode,const std::list<std::pai
             int lessonPosition = 24 * 2 * weekDayPos + (lesson.second.getStartHour() - 8.00) * 4;
             //scheduleVector[lessonPosition]=" "+ucClass.getUcCode()+"("+lesson.getType()+")";
             if ("T" == lesson.second.getType()){
-                scheduleVector[lessonPosition] = " "+lesson.first.getUcCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(10 - lesson.first.getUcCode().length() - lesson.second.getType().length(), ' ');
+                scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
+                scheduleVector[lessonPosition] += string(10 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
-            else if((ucClass.getUcCode()) == "UP001"){
-                scheduleVector[lessonPosition] = " "+lesson.first.getUcCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(9 - lesson.first.getUcCode().length() - lesson.second.getType().length(), ' ');
+            else if((ucClass.getUCCode()) == "UP001"){
+                scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
+                scheduleVector[lessonPosition] += string(9 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
             else{
-                scheduleVector[lessonPosition] = " "+lesson.first.getUcCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(11 - lesson.first.getUcCode().length() - lesson.second.getType().length(), ' ');
+                scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
+                scheduleVector[lessonPosition] += string(11 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
             scheduleVector[lessonPosition] += "|";
 

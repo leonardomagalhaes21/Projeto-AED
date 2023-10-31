@@ -12,13 +12,13 @@
 class Schedule;
 
 class UC {
+
 public:
     UC();
     UC(std::string ucCode, std::string classCode, std::list<Lesson> lesson);
     UC(std::string ucCode, std::string classCode);
     UC(std::string ucCode);
-
-    std::string getUcCode() const;
+    std::string getUCCode() const;
     std::string getClassCode() const;
     int getNumberStudents() const;
     void setNumberStudents(int newValue);
@@ -30,6 +30,7 @@ public:
     void addClassLessons(const std::list<std::pair<UC, Lesson>>& l1);
     Schedule getSchedule(const std::list<std::pair<UC, Lesson>>& l1);
     static int capacity_;
+
 private:
     std::string ucCode_;
     std::string classCode_;

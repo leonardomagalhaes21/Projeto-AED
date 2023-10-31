@@ -24,7 +24,6 @@ void Schedule::addLesson(const UC& uc,const Lesson& lesson) {
     schedule_.push_back(p);
 }
 
-
 struct compareLessons {
     bool operator()(const pair<UC, Lesson> &a, const pair<UC, Lesson> &b) {
         if (a.second.getWeekday() < b.second.getWeekday()) {
@@ -36,8 +35,6 @@ struct compareLessons {
         else return (a.second.getStartHour() < b.second.getStartHour());
     }
 };
-
-
 
 void Schedule::printSchedule() {
 
@@ -88,7 +85,7 @@ void Schedule::printSchedule() {
         UC uc = p.first;
         Lesson l = p.second;
         cout << NumToWeekday[l.getWeekday()] << " | ";
-        cout << uc.getUcCode() <<" (" << UcCodeToName[uc.getUcCode()] << ")" << " (" << uc.getClassCode() << ") | ";
+        cout << uc.getUCCode() <<" (" << UcCodeToName[uc.getUCCode()] << ")" << " (" << uc.getClassCode() << ") | ";
         cout << toTime(l.getStartHour()) << " hours";
         if (l.getDuration() == 1.0){
             cout << " -> " << toTime(l.getStartHour() + l.getDuration()) << " hours " << "(" << toTime(l.getDuration()) << " hour" << ")"  "| " << l.getType() << endl;

@@ -8,7 +8,8 @@
 class UC;
 
 class Schedule {
-    public:
+
+public:
     Schedule();
     Schedule(std::vector<std::pair<UC,Lesson>> schedule);
     std::vector<std::pair<UC,Lesson>> getSchedule();
@@ -17,9 +18,8 @@ class Schedule {
     void printSchedule();
     static std::string toTime(float hour);
 
-    private:
+private:
     std::vector<std::pair<UC,Lesson>> schedule_;
-
 
 };
 

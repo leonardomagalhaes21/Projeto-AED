@@ -14,11 +14,9 @@ struct RequestLog {
 
     std::vector<Operation> operations; // Para armazenar informações sobre as operações
     std::list<int> data; // Sua lista de dados
-
     void requestAndLog(const std::string& action,const Student& student, UC newUc);
     void requestAndLog(const std::string& action, Student student,UC newUc, UC oldUc);
     void requestAndLog(const std::string& action,Student student, std::string class_uc_Code);
-
     void printLog();
 };
 
