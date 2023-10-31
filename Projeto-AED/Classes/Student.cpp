@@ -23,11 +23,11 @@ Student::Student(int studentCode){
 }
 
 
-int Student::get_StudentCode() const {
+int Student::getStudentCode() const {
     return studentCode_;
 }
 
-string Student::get_StudentName() const {
+string Student::getStudentName() const {
     return studentName_;
 }
 
@@ -41,18 +41,18 @@ string Student::findName(const list<pair<Student, UC>>& listStudents_Classes , i
 }
 
 
-list<UC> Student::get_Ucs() const {
+list<UC> Student::getUCs() const {
     return ucs_;
 }
-void Student::set_StudentCode(int StudentCode) {
+void Student::setStudentCode(int StudentCode) {
     studentCode_ = StudentCode;
 }
 
-void Student::set_StudentName(string StudentName) {
+void Student::setStudentName(string StudentName) {
 
     studentName_ = StudentName;
 }
-void Student::set_Ucs(list<UC> ucs) {
+void Student::setUCs(list<UC> ucs) {
     ucs_ = ucs;
 }
 
@@ -60,10 +60,10 @@ bool Student::operator<(const Student &other) const {
     return std::tie(this->studentCode_, this->studentName_) < std::tie(other.studentCode_, other.studentName_);
 }
 
-void Student::add_UC(const UC& uc) {
+void Student::addUC(const UC& uc) {
     ucs_.push_back(uc);
 }
-bool Student::has_Class(string classCode) const {
+bool Student::hasClass(string classCode) const {
     for(const UC& uc: ucs_){
         if(uc.getClassCode()==classCode){
             return true;
@@ -71,7 +71,7 @@ bool Student::has_Class(string classCode) const {
     }
     return false;
 }
-bool Student::has_Uc(const string& ucCode) const {
+bool Student::hasUc(const string& ucCode) const {
     for(const UC& uc: ucs_){
         if(uc.getUcCode()==ucCode){
             return true;
@@ -85,7 +85,7 @@ Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1
     set<UC> ucs;
 
     for (const auto& c : l1){
-        if (c.first.get_StudentCode() == studentCode_){
+        if (c.first.getStudentCode() == studentCode_){
             ucs.insert(c.second);
         }
     }
@@ -118,7 +118,7 @@ void Student::printStudentTableSchedule(int studentCode,const std::list<std::pai
     set<UC> ucs;
 
     for (const auto& c : l1){
-        if (c.first.get_StudentCode() == studentCode){
+        if (c.first.getStudentCode() == studentCode){
             ucs.insert(c.second);
         }
     }

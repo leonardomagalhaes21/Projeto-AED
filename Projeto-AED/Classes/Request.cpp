@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void RequestLog::requestAndLog(const std::string& action,Student student, UC newUc) {
+void RequestLog::requestAndLog(const std::string& action,const Student& student, UC newUc) {
     Operation operation;
     operation.action_ = action;
     operation.newUc_ = newUc;
@@ -36,7 +36,7 @@ Request::Request(){}
 bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
     int n = 0;
     for(const pair<Student,UC>& c: val){
-        if (c.first.get_StudentCode() == s.get_StudentCode()){
+        if (c.first.getStudentCode() == s.getStudentCode()){
             n++;
         }
     }
@@ -49,13 +49,12 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
 
     UC a = UC(ucc, cc);
 
-    /*for (const auto& c : m2) {
-        if (abs((int)m2.at(a).size() - (int)c.second.size()) > 4) {
+    /*for (const auto& c : m) {
+        if (abs((int)m.at(a).size() - (int)c.second.size()) > 4) {
             cond2 = false;
             break;
         }
     }*/
-
 
 
     Schedule schedule = s.getStudentSchedule(val,val2);
@@ -83,39 +82,44 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
     if (cond1 && cond2 && cond3 && cond4){
         pair<Student, UC> p = {s,a};
         val.push_back(p);
-        cout << "Operation successful!";
+        return true;
+    }
+    return false;
+
+
+}
+
+
+bool Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
+    removeUC(s, oldUC, val);
+    if(addUC(s, newUC.getUcCode(),newUC.getClassCode(), val,val2,m)){
         return true;
     }
     else{
-        cout << "Operation failed!";
+        addUC(s,oldUC.getUcCode(),oldUC.getClassCode(),val,val2,m);
         return false;
     }
-
 }
 
-
-void Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
-    removeUC(s, oldUC, val);
-    if(addUC(s, newUC.getUcCode(),newUC.getClassCode(), val,val2,m)){
-        cout << "Operation successful!";
-    }
-    else{
-        addUC(s,oldUC.getUcCode(),oldUC.getClassCode(),val,val2,m);
-        cout << "Operation failed!";
-    }
-}
-
-void Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
+bool Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
+    bool flag = false;
     for (auto it = val.begin(); it != val.end(); ) {
-        if (it->first.get_StudentCode()==s.get_StudentCode() and it->second.getUcCode()==uc.getUcCode()) {
+        if (it->first.getStudentCode()==s.getStudentCode() and it->second.getUcCode()==uc.getUcCode()) {
             it = val.erase(it);
+            flag = true;
         }
         else {
             ++it;
         }
     }
+    if (flag){
+        return true;
+    }
+    return false;
+
 }
 
+/*
 bool Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2){
     bool cond1, cond2, cond3;
     cond1 = true;
@@ -174,26 +178,34 @@ bool Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& 
         return false;
     }
 }
+*/
+bool Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
+    removeUC(s, oldUC, val);
 
-void Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2) {
-    removeClass(s, oldUC, val);
-
-    if(addClass(s, newUC, val,val2)){
-        cout << "Operation successful!";
+    if(addUC(s, newUC.getUcCode(),newUC.getClassCode(), val,val2, m)){
+        return true;
     }
     else{
-        addClass(s,oldUC,val,val2);
-        cout << "Operation failed!";
+        addUC(s,oldUC.getUcCode(),oldUC.getClassCode(),val,val2,m);
+        return false;
     }
 }
-void Request::removeClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
+
+bool Request::removeClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
+    bool flag = false;
     for (auto it = val.begin(); it != val.end(); ) {
-        if (it->first.get_StudentCode()==s.get_StudentCode() and it->second.getClassCode()==uc.getClassCode()) {
+        if (it->first.getStudentCode()==s.getStudentCode() and it->second.getClassCode()==uc.getClassCode()) {
             it = val.erase(it);
+            flag = true;
         }
         else {
             ++it;
         }
     }
+    if (flag){
+        return true;
+    }
+    return false;
+
 }
 

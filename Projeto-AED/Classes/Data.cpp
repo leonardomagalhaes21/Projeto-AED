@@ -128,7 +128,7 @@ void Data::setListStudents_Classes_(std::list<std::pair<Student, UC>> l){
 
 void Data::printStudentsAscendingCode(){
     for ( const auto& student: students_){
-        cout << student.get_StudentCode() << " - " << student.get_StudentName()<< endl;
+        cout << student.getStudentCode() << " - " << student.getStudentName()<< endl;
     }
 
 }
@@ -137,23 +137,23 @@ void Data::printStudentsDescendingCode() {
     std::sort(studentsVector.rbegin(), studentsVector.rend());
 
     for (const auto& student : studentsVector) {
-        cout << student.get_StudentCode() << " - " << student.get_StudentName() << endl;
+        cout << student.getStudentCode() << " - " << student.getStudentName() << endl;
     }
 
 }
 void Data::printStudentsAscendingName() {
     vector<Student> studentsVector(students_.begin(), students_.end());
     std::sort(studentsVector.begin(), studentsVector.end(), [](const Student& a, const Student& b) {
-        return a.get_StudentName() < b.get_StudentName();
+        return a.getStudentName() < b.getStudentName();
     });
 
     for (const auto& student : studentsVector) {
-        cout << student.get_StudentName() << " - " << student.get_StudentCode() << endl;
+        cout << student.getStudentName() << " - " << student.getStudentCode() << endl;
     }
 }
 struct CompareStudentsByName {
     bool operator()(const Student& lhs, const Student& rhs) const {
-        return lhs.get_StudentName() > rhs.get_StudentName();
+        return lhs.getStudentName() > rhs.getStudentName();
     }
 };
 
@@ -165,13 +165,13 @@ void Data::printStudentsDescendingName() {
     }
 
     for (const auto& student : students) {
-        cout << student.get_StudentName() << " - " << student.get_StudentCode()<< endl;
+        cout << student.getStudentName() << " - " << student.getStudentCode()<< endl;
     }
 }
 
 void Data::startYearToStudentsMap(){
     for (const auto& c : listStudents_Classes_){
-        yearToStudentsMap_[c.first.get_StudentCode()/100000].insert(c.first);
+        yearToStudentsMap_[c.first.getStudentCode()/100000].insert(c.first);
     }
 }
 
@@ -185,7 +185,7 @@ void Data::printStudentsByYear(int x,const map<int, set<Student>>& m){
     auto i = m.find(x);
     if (i != m.end()) {
         for (const auto &c: i->second) {
-            cout << c.get_StudentName() << " (" << c.get_StudentCode() << ")" << '\n';
+            cout << c.getStudentName() << " (" << c.getStudentCode() << ")" << '\n';
         }
     }
 }
@@ -213,7 +213,7 @@ void Data::printStudentsByClass(const string& x,const map<string, set<Student>>&
     auto i = m.find(x);
     if (i != m.end()) {
         for (const auto &c: i->second) {
-            cout << c.get_StudentName() << " (" << c.get_StudentCode() << ")" << '\n';
+            cout << c.getStudentName() << " (" << c.getStudentCode() << ")" << '\n';
         }
     }
 }
@@ -241,7 +241,7 @@ void Data::printStudentsInUC(const string& x,const map<string, set<Student>>& m)
     auto i = m.find(x);
     if (i != m.end()) {
         for (const auto &c: i->second) {
-            cout << c.get_StudentName() << " (" << c.get_StudentCode() << ")" << '\n';
+            cout << c.getStudentName() << " (" << c.getStudentCode() << ")" << '\n';
         }
     }
 }
@@ -259,12 +259,12 @@ void Data::startNUcsToStudentsMap(){
     std::map<int, int> studentCodeToN;
 
     for (const auto& d : listStudents_Classes_) {
-        studentCodeToN[d.first.get_StudentCode()]++;
+        studentCodeToN[d.first.getStudentCode()]++;
     }
 
     for (const auto& d : listStudents_Classes_) {
         Student s = d.first;
-        int c = studentCodeToN[s.get_StudentCode()];
+        int c = studentCodeToN[s.getStudentCode()];
 
         nUcsToStudentsMap_[c].push_back(s);
     }
@@ -284,7 +284,7 @@ void Data::printStudentsWithNUcs(int n,const map<int, list<Student>>& m){
     }
     else {
         for (const auto& s: i->second) {
-            cout << s.get_StudentName() << " (" << s.get_StudentCode() << ")\n";
+            cout << s.getStudentName() << " (" << s.getStudentCode() << ")\n";
         }
     }
 }
@@ -464,7 +464,7 @@ std::map<UC, std::set<Student>> Data::getUcClasstoStudentsMap() {
 void Data::printStudentsInUcClass(const string &ucCode, const string &classCode, std::map<UC, std::set<Student>> m) {
     UC a = UC(ucCode,classCode);
     for(const auto& s : m[a]){
-        cout << s.get_StudentName() << " (" << s.get_StudentCode() << ")\n";
+        cout << s.getStudentName() << " (" << s.getStudentCode() << ")\n";
     }
 }
 

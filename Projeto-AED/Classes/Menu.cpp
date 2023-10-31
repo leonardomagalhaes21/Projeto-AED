@@ -346,11 +346,10 @@ void Menu::showMenu() {
             case '2': {
                 drawTop();
                 cout << "| " << setw( largura- 19) << "1. Add UC" << setw(17) << "|" << endl;
-                cout << "| " << setw( largura- 16) << "2. Add Class" << setw(14) << "|" << endl;
-                cout << "| " << setw( largura- 16) << "3. Remove UC" << setw(14) << "|" << endl;
-                cout << "| " << setw( largura- 13) << "4. Remove Class" << setw(11) << "|" << endl;
-                cout << "| " << setw( largura- 16) << "5. Switch Uc" << setw(14) << "|" << endl;
-                cout << "| " << setw( largura- 13) << "6. Switch Class" << setw(11) << "|" << endl;
+                cout << "| " << setw( largura- 16) << "2. Remove UC" << setw(14) << "|" << endl;
+                cout << "| " << setw( largura- 13) << "3. Remove Class" << setw(11) << "|" << endl;
+                cout << "| " << setw( largura- 16) << "4. Switch Uc" << setw(14) << "|" << endl;
+                cout << "| " << setw( largura- 13) << "5. Switch Class" << setw(11) << "|" << endl;
                 cout << "| " << setw( largura- 18) << "Q. EXIT" << setw(16) << " |" << endl;
                 drawBottom();
                 cout << "Choose an option: ";
@@ -377,35 +376,17 @@ void Menu::showMenu() {
                         string cc;
                         cin >> cc;
                         list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.addUC(s,ucc, cc,l,d.getListClasses_(),d.getUcClasstoStudentsMap());
-                        d.setListStudents_Classes_(l);
-                        log.requestAndLog("AddUc", s,UC(ucc,cc));
+                        if(r.addUC(s,ucc, cc,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
+                            d.setListStudents_Classes_(l);
+                            log.requestAndLog("AddUc", s, UC(ucc, cc));
+                            cout << "Operation successful!";
+                        }
+                        else{
+                            cout << "Operation failed!";
+                        }
                         break;
                     }
                     case '2': {
-                        cout << "Enter Student Code: ";
-                        cin >> stc;
-                        if (cin.fail()){
-                            cin.clear();
-                            cout << "Error: Invalid Input!";
-                            break;
-                        }
-                        string k = to_string(stc);
-                        if (k.size() != 9){
-                            cout << "Error: Invalid Input!";
-                            break;
-                        }
-                        Student s = Student(stc);
-                        cout << "Enter Class Code: ";
-                        string cc;
-                        cin >> cc;
-                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.addClass(s,cc,l,d.getListClasses_());
-                        d.setListStudents_Classes_(l);
-                        log.requestAndLog("AddClass", s,cc);
-                        break;
-                    }
-                    case '3': {
                         cout << "Enter Student Code: ";
                         cin >> stc;
                         if (cin.fail()){
@@ -423,12 +404,16 @@ void Menu::showMenu() {
                         string ucc;
                         cin >> ucc;
                         list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.removeUC(s,ucc,l);
-                        d.setListStudents_Classes_(l);
-                        log.requestAndLog("RemoveUc", s,ucc);
+                        if(r.removeUC(s,ucc,l)) {
+                            d.setListStudents_Classes_(l);
+                            log.requestAndLog("RemoveUc", s, ucc);
+                        }
+                        else{
+                            cout << "Operation failed!";
+                        }
                         break;
                     }
-                    case '4': {
+                    case '3': {
                         cout << "Enter Student Code: ";
                         cin >> stc;
                         if (cin.fail()){
@@ -446,14 +431,59 @@ void Menu::showMenu() {
                         string cc;
                         cin >> cc;
                         list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.removeClass(s,cc,l);
-                        d.setListStudents_Classes_(l);
-                        log.requestAndLog("RemoveClass", s,cc);
+                        if(r.removeClass(s,cc,l)){
+                            d.setListStudents_Classes_(l);
+                            log.requestAndLog("RemoveClass", s, cc);
+                            cout << "Operation successful!";
+                        }
+                        else{
+                            cout << "Operation failed!";
+                        }
+                        break;
+
+                    }
+                    case '4': {
+
+                        cout << "Enter Student Code: ";
+                        cin >> stc;
+                        if (cin.fail()){
+                            cin.clear();
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        string k = to_string(stc);
+                        if (k.size() != 9){
+                            cout << "Error: Invalid Input!";
+                            break;
+                        }
+                        Student s = Student(stc);
+                        cout << "Enter Current UC Code: ";
+                        string uccc;
+                        cin >> uccc;
+                        cout << "Enter Current Class Code: ";
+                        string ccc;
+                        cin >> ccc;
+                        cout << "Enter New UC Code: ";
+                        string nucc;
+                        cin >> nucc;
+                        cout << "Enter New Class Code: ";
+                        string ncc;
+                        cin >> ncc;
+                        UC a = UC(uccc,ccc);
+                        UC b = UC(nucc,ncc);
+                        list<pair<Student, UC>> l = d.getListStudents_Classes_();
+                        if(r.switchUC(s,a,b,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
+                            d.setListStudents_Classes_(l);
+                            log.requestAndLog("AddUc", s, a);
+                            cout << "Operation successful!";
+                        }
+                        else{
+                            cout << "Operation failed!";
+                        }
                         break;
 
                     }
                     case '5': {
-                        /*
                         cout << "Enter Student Code: ";
                         cin >> stc;
                         if (cin.fail()){
@@ -476,14 +506,17 @@ void Menu::showMenu() {
                         cout << "Enter New Class Code: ";
                         string ncc;
                         cin >> ncc;
+                        UC a = UC(ucc,ccc);
+                        UC b = UC(ucc,ncc);
                         list<pair<Student, UC>> l = d.getListStudents_Classes_();
-                        r.addUC(s,ucc, cc,l,d.getListClasses_());
-                        d.setListStudents_Classes_(l);
-                        log.requestAndLog("AddUc", s,UC(ucc,cc));
-                        break;
-                         */
-                    }
-                    case '6': {
+                        if(r.switchClass(s,a,b,l,d.getListClasses_(),d.getUcClasstoStudentsMap())) {
+                            d.setListStudents_Classes_(l);
+                            log.requestAndLog("AddUc", s, a);
+                            cout << "Operation successful!";
+                        }
+                        else{
+                            cout << "Operation failed!";
+                        }
                         break;
                     }
                     case 'Q': {
