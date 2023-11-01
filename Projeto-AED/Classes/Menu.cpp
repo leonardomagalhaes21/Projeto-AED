@@ -61,7 +61,7 @@ void Menu::showMenu() {
         drawTop();
         cout << "| " << setw( largura- 19) << "1. View" << setw(17) << "|" << endl;
         cout << "| " << setw( largura- 19) << "2. Edit" << setw(17) << "|" << endl;
-        cout << "| " << setw( largura- 18) << "3. Queue" << setw(16) << "|" << endl;
+        cout << "| " << setw( largura- 16) << "3. Save/Undo" << setw(14) << "|" << endl;
         cout << "| " << setw( largura- 19) << "Q. EXIT" << setw(17) << " |" << endl;
         drawBottom();
         cout << "Choose an option: ";
@@ -560,12 +560,25 @@ void Menu::showMenu() {
                 break;
             }
             case '3': {
-                //menu de queue
+                drawTop();
+                cout << "| " << setw( largura- 18) << "1. Save" << setw(16) << "|" << endl;
+                cout << "| " << setw( largura- 18) << "2. Undo" << setw(16) << "|" << endl;
+                cout << "| " << setw( largura- 18) << "Q. EXIT" << setw(16) << " |" << endl;
+                drawBottom();
+                cout << "Choose an option: ";
                 cin >> key;
                 switch (key) {
                     case '1': {
+                        RequestLog r;
+                        r.save();
                         break;
                     }
+                    case '2':{
+                        RequestLog r;
+                        r.undo();
+                        break;
+                    }
+
                     case 'Q': {
                         break;
                     }

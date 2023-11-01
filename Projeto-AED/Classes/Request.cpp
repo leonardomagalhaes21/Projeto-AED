@@ -66,13 +66,13 @@ void RequestLog::requestAndLog(const std::string& action,Student student, std::s
     operations_.push(operation);
 }
 
-
-void RequestLog::printLog(const string& file) {
-    ofstream out(file);
-    string f = "../log.txt";
+void RequestLog::save() {
+    string f = "../schedule/log.txt";
+    ofstream out(f);
 
     if (!out.is_open() && !out.good()) {
         std::cerr << "Failed to open file: " << f << std::endl;
+        return;
     }
 
     out << "Request Log:" << endl;
@@ -90,10 +90,13 @@ void RequestLog::printLog(const string& file) {
     out.close();
 }
 
-
-
 void RequestLog::undo() {
-    if (!operations_.empty()) {
+    if (!operations_.empty()){
+        for(int i=0;i<operations_.size()-1;i++){
+            Operation aux=operations_.front();
+            operations_.pop();
+            operations_.push(aux);
+        }
         operations_.pop();
     }
 }

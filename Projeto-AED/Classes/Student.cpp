@@ -215,18 +215,29 @@ Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1
 
 }
 
+/**
+ * @brief Prints the schedule of a student to the console.
+ *
+ * This function prints the weekly schedule of a student, including the hours, days of the week, and the lessons they are attending.
+ *
+ * @param studentCode The code of the student for whom the schedule should be printed.
+ * @param l1 A list of pairs containing students and their corresponding classes.
+ * @param l2 A list of pairs containing classes and their lessons.
+ *
+ * Time Complexity: O(n²)
+ */
 void Student::printStudentTableSchedule(int studentCode,const std::list<std::pair<Student, UC>>& l1,const std::list<std::pair<UC, Lesson>>& l2) const {
 
     cout << studentName_ + " schedule\n";
-    string schedule_ = " ________________________________________________________________________________________\n"
-                       "|     Hour    |    Monday    |   Tuesday    |   Wednesday  |   Thursday   |    Friday    |\n"
-                       "|________________________________________________________________________________________|\n";
+    string schedule_ = " ____________________________________________________________________________________________________\n"
+                       "|      Hour     |     Monday     |    Tuesday     |    Wednesday   |    Thursday    |     Friday     |\n"
+                       "|_______________|________________|________________|________________|________________|________________|\n";
 
 
     vector<string> scheduleVector;
     for (int i = 0; i < 24 * 5 * 2; i += 2) {
-        scheduleVector.push_back("              |");
-        scheduleVector.push_back("______________|");
+        scheduleVector.push_back("                |");
+        scheduleVector.push_back("________________|");
     }
 
     Schedule s = Schedule();
@@ -250,28 +261,28 @@ void Student::printStudentTableSchedule(int studentCode,const std::list<std::pai
             int lessonPosition = 24 * 2 * weekDayPos + (lesson.second.getStartHour() - 8.00) * 4;
             //scheduleVector[lessonPosition]=" "+ucClass.getUcCode()+"("+lesson.getType()+")";
             if ("T" == lesson.second.getType()){
-                scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(10 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
+                scheduleVector[lessonPosition] = "  "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
+                scheduleVector[lessonPosition] += string(12 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
             else if((ucClass.getUCCode()) == "UP001"){
                 scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(9 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
+                scheduleVector[lessonPosition] += string(11 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
             else{
                 scheduleVector[lessonPosition] = " "+lesson.first.getUCCode()+"("+lesson.second.getType()+")";
-                scheduleVector[lessonPosition] += string(11 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
+                scheduleVector[lessonPosition] += string(13 - lesson.first.getUCCode().length() - lesson.second.getType().length(), ' ');
             }
             scheduleVector[lessonPosition] += "|";
 
-            scheduleVector[++lessonPosition] = "   " + lesson.first.getClassCode() + "    |";
+            scheduleVector[++lessonPosition] = "    " + lesson.first.getClassCode() + "     |";
 
             duration -= 0.5;
             while (duration > 0.5) {
                 duration -= 0.5;
-                scheduleVector[++lessonPosition] = "              |";
-                scheduleVector[++lessonPosition] = "              |";
+                scheduleVector[++lessonPosition] = "                |";
+                scheduleVector[++lessonPosition] = "                |";
             }
-            scheduleVector[++lessonPosition] = "              |";
+            scheduleVector[++lessonPosition] = "                |";
         }
 
     }
@@ -281,18 +292,18 @@ void Student::printStudentTableSchedule(int studentCode,const std::list<std::pai
         if (time < 10 || (time + 0.5 < 10)) schedule_ += "|  ";
         else schedule_ += "| ";
 
-        schedule_ +=to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) + "0-";
+        schedule_ += " "+to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6)) + "0-";
 
         time += 0.5;
         if (time-static_cast<int>(time)==0){
-            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6))+ "0";
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6))+ "0 ";
         }
         else {
-            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6 * 10));
+            schedule_ += to_string(static_cast<int>(time)) + ':' + to_string(static_cast<int>((time - static_cast<int>(time)) * 6 * 10))+" ";
         }
         if (time < 10 && (time - 0.5 < 10)) schedule_ += ' ';
         schedule_ += " |" + scheduleVector[i] + scheduleVector[48 * 1 + i] + scheduleVector[48 * 2 + i] + scheduleVector[48 * 3 + i] + scheduleVector[48 * 4 + i] + '\n';
-        schedule_ += "|_____________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
+        schedule_ += "|_______________|" + scheduleVector[i + 1] + scheduleVector[48 * 1 + i + 1] + scheduleVector[48 * 2 + i + 1] + scheduleVector[48 * 3 + i + 1] + scheduleVector[48 * 4 + i + 1] + '\n';
     }
     cout << schedule_;
 }

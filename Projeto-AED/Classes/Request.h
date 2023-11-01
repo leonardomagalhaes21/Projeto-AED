@@ -17,9 +17,8 @@ struct RequestLog {
     void requestAndLog(const std::string& action,const Student& student, UC newUc);
     void requestAndLog(const std::string& action, Student student,UC newUc, UC oldUc);
     void requestAndLog(const std::string& action,Student student, std::string class_uc_Code);
-    void save(const std::string& file);
+    void save();
     void undo();
-    void printLog(const std::string& file);
 };
 
 class Request {
