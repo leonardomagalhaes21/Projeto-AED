@@ -189,10 +189,10 @@ bool Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, li
     }
 }
 
-bool Request::removeClass(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
+bool Request::removeClass(const Student& s, const string& cc, list<pair<Student, UC>>& val) {
     bool flag = false;
     for (auto it = val.begin(); it != val.end(); ) {
-        if (it->first.getStudentCode()==s.getStudentCode() and it->second.getClassCode()==uc.getClassCode()) {
+        if (it->first.getStudentCode()==s.getStudentCode() and it->second.getClassCode()==cc) {
             it = val.erase(it);
             flag = true;
         }

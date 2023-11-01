@@ -524,7 +524,7 @@ void Data::startNUCsToStudentsMap(){
         Student s = d.first;
         int c = studentCodeToN[s.getStudentCode()];
 
-        nUCsToStudentsMap_[c].push_back(s);
+        nUCsToStudentsMap_[c].insert(s);
     }
 }
 
@@ -538,7 +538,7 @@ void Data::startNUCsToStudentsMap(){
  *
  * Time Complexity: O(1)
  */
-map<int, list<Student>> Data::getNUCsToStudentsMap(){
+map<int, set<Student>> Data::getNUCsToStudentsMap(){
     return nUCsToStudentsMap_;
 }
 
@@ -553,7 +553,7 @@ map<int, list<Student>> Data::getNUCsToStudentsMap(){
  *
  *  * Time Complexity: O(1) for finding the list of students with the specified number of UCs.
  */
-void Data::printStudentsWithNUCs(int n,const map<int, list<Student>>& m){
+void Data::printStudentsWithNUCs(int n,const map<int, set<Student>>& m){
 
     auto i= m.find(n);
 
@@ -579,7 +579,7 @@ void Data::printStudentsWithNUCs(int n,const map<int, list<Student>>& m){
  *
  *  * Time Complexity: O(1) for finding the list of students with the specified number of UCs.
  */
-int Data::numberStudentsWithNUCs(int n,const map<int, list<Student>>& m){
+int Data::numberStudentsWithNUCs(int n,const map<int, set<Student>>& m){
 
     auto i= m.find(n);
 
