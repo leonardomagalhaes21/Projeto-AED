@@ -24,10 +24,10 @@ class Request {
     public:
     Request();
     static bool addUC(const Student& s, const std::string& ucc, const std::string& cc, std::list<std::pair<Student, UC>>& val, const std::list<std::pair<UC, Lesson>>& val2, const std::map<UC, std::set<Student>>& m);
-    bool switchUC(const Student& s, const UC& oldUC, const UC& newUC, std::list<std::pair<Student, UC>>& val,const std::list<std::pair<UC, Lesson>>& val2, const std::map<UC, std::set<Student>>& m);
+    static bool switchUC(const Student& s, const UC& oldUC, const UC& newUC, std::list<std::pair<Student, UC>>& val,const std::list<std::pair<UC, Lesson>>& val2, const std::map<UC, std::set<Student>>& m);
     static bool removeUC(const Student& s, const UC& uc, std::list<std::pair<Student, UC>>& val);
     static bool switchClass(const Student& s, const UC& oldUC, const UC& newUC, std::list<std::pair<Student, UC>>& val,const std::list<std::pair<UC, Lesson>>& val2, const std::map<UC, std::set<Student>>& m);
-    bool removeClass(const Student& s, const UC& uc, std::list<std::pair<Student, UC>>& val);
+    static bool removeClass(const Student& s, const UC& uc, std::list<std::pair<Student, UC>>& val);
 private:
     RequestLog log;
 };

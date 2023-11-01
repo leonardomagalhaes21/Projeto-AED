@@ -37,30 +37,20 @@ Request::Request(){}
 
 bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<pair<Student, UC>>& val, const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
     int n = 0;
+
     for(const pair<Student,UC>& c: val){
         if (c.first.getStudentCode() == s.getStudentCode()){
             n++;
         }
     }
-    bool cond1, cond2, cond3, cond4;
+    bool cond1, cond2, cond3;
     cond1 = n<7;
     cond2 = true;
     cond3 = true;
-    cond4 = true;
-
 
     UC a = UC(ucc, cc);
 
-    /*for (const auto& c : m) {
-        if (abs((int)m.at(a).size() - (int)c.second.size()) > 4) {
-            cond2 = false;
-            break;
-        }
-    }*/
-
-
     Schedule schedule = s.getStudentSchedule(val,val2);
-
 
     for(const auto& c : val2){
         if(c.first.getClassCode() == cc && c.first.getUCCode() == ucc) {
@@ -70,18 +60,18 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
     for(const auto& c : schedule.getSchedule()){
         for (const auto& d : a.getLessons()){
             if (c.second.coincideT(d)){
-                cond3 = false;
+                cond2 = false;
                 break;
             }
         }
+        if (!cond2) break;
     }
-
 
     if (m.at(a).size() +1 > UC::capacity_){
-        cond4 = false;
+        cond3 = false;
     }
 
-    if (cond1 && cond2 && cond3 && cond4){
+    if (cond1 && cond2 && cond3){
         pair<Student, UC> p = {s,a};
         val.push_back(p);
         return true;
@@ -93,10 +83,14 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
 
 bool Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
     removeUC(s, oldUC, val);
-    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2,m)){
+
+    bool cond = (m.at(newUC).size() - m.at(oldUC).size() < 4);
+
+    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2, m) && cond){
         return true;
     }
     else{
+        removeUC(s, newUC, val);
         addUC(s,oldUC.getUCCode(),oldUC.getClassCode(),val,val2,m);
         return false;
     }
@@ -183,10 +177,13 @@ bool Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& 
 bool Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
     removeUC(s, oldUC, val);
 
-    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2, m)){
+    bool cond = (m.at(newUC).size() - m.at(oldUC).size() < 4);
+
+    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2, m) && cond){
         return true;
     }
     else{
+        removeUC(s, newUC, val);
         addUC(s,oldUC.getUCCode(),oldUC.getClassCode(),val,val2,m);
         return false;
     }
