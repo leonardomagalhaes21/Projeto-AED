@@ -82,18 +82,20 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
 }
 
 bool Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
-    removeUC(s, oldUC, val);
-
-    bool cond = (m.at(newUC).size() - m.at(oldUC).size() < 4);
-
-    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2, m) && cond){
-        return true;
-    }
-    else{
-        removeUC(s, newUC, val);
-        addUC(s,oldUC.getUCCode(),oldUC.getClassCode(),val,val2,m);
+    if (!removeUC(s, oldUC, val)) {
         return false;
     }
+
+
+    if (addUC(s, newUC.getUCCode(), newUC.getClassCode(), val, val2, m)) {
+        return true;
+    }
+    else {
+        removeUC(s, newUC, val);
+        addUC(s, oldUC.getUCCode(), oldUC.getClassCode(), val, val2, m);
+        return false;
+    }
+
 }
 
 bool Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& val) {
@@ -175,18 +177,22 @@ bool Request::addClass(const Student& s, const UC& uc, list<pair<Student, UC>>& 
 }
 */
 bool Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, list<pair<Student, UC>>& val,const list<pair<UC, Lesson>>& val2, const map<UC, set<Student>>& m) {
-    removeUC(s, oldUC, val);
-
-    bool cond = (m.at(newUC).size() - m.at(oldUC).size() < 4);
-
-    if(addUC(s, newUC.getUCCode(),newUC.getClassCode(), val,val2, m) && cond){
-        return true;
-    }
-    else{
-        removeUC(s, newUC, val);
-        addUC(s,oldUC.getUCCode(),oldUC.getClassCode(),val,val2,m);
+    if (!removeUC(s, oldUC, val)){
         return false;
+    };
+
+    bool cond = ((int) (m.at(newUC).size() - m.at(oldUC).size()) < 4);
+
+    if (cond) {
+        if (addUC(s, newUC.getUCCode(), newUC.getClassCode(), val, val2, m)) {
+            return true;
+        } else {
+            removeUC(s, newUC, val);
+            addUC(s, oldUC.getUCCode(), oldUC.getClassCode(), val, val2, m);
+            return false;
+        }
     }
+    else return false;
 }
 
 bool Request::removeClass(const Student& s, const string& cc, list<pair<Student, UC>>& val) {
