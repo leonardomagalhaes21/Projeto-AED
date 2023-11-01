@@ -1,20 +1,50 @@
 #include "Menu.h"
 
 using namespace std;
+
+/**
+ * @brief Default constructor for the Menu class.
+ *
+ * This constructor initializes an instance of the Menu class.
+ *
+ * Time Complexity: O(1)
+ */
 Menu::Menu() {}
 
+/**
+ * @brief Draws the top section of the menu interface.
+ *
+ * This function is responsible for rendering the top section of the menu interface.
+ *
+ * Time Complexity: O(1)
+ */
 void Menu::drawTop(){
     cout << "________________________________________" << endl;
     cout << "|" << "================ Menu ================" << "|" << endl;
     cout << "|" << "______________________________________" << "|" << endl;
 }
 
+/**
+ * @brief Draws the bottom section of the menu interface.
+ *
+ * This function is responsible for rendering the bottom section of the menu interface.
+ *
+ * Time Complexity: O(1)
+ */
 void Menu::drawBottom(){
     cout << "|______________________________________|" << endl;
     cout << "|======================================|" << endl;
     cout << "|______________________________________|" << endl;
 }
 
+/**
+ * @brief Displays the main menu and handles user interactions.
+ *
+ * This function presents the main menu to the user and processes user input to navigate
+ * through different options.
+ *
+ * @b Complexity: Depends on the complexity of the code executed within the switch cases.
+ */
 void Menu::showMenu() {
 
     Data d = Data();

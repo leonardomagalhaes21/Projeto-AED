@@ -16,6 +16,8 @@ using namespace std;
 /**
  * @brief Constructor for the Data class. Initializes various data structures.
  *
+ * This constructor executes all the necessary methods to populate the data base.
+ *
  * Time Complexity: O(1)
  */
 Data::Data() {
