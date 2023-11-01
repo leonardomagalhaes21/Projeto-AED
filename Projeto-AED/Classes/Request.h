@@ -1,8 +1,9 @@
 #ifndef PROJECT_REQUEST_H
 #define PROJECT_REQUEST_H
 
-
 #include "Student.h"
+#include <fstream>
+#include <queue>
 struct RequestLog {
     struct Operation {
         std::string action_; // "add" ou "remove"
@@ -11,13 +12,14 @@ struct RequestLog {
         std::string class_Uc_Code_;
         Student student_;
     };
-
-    std::vector<Operation> operations; // Para armazenar informações sobre as operações
-    std::list<int> data; // Sua lista de dados
+    RequestLog();
+    std::queue<Operation> operations_;
     void requestAndLog(const std::string& action,const Student& student, UC newUc);
     void requestAndLog(const std::string& action, Student student,UC newUc, UC oldUc);
     void requestAndLog(const std::string& action,Student student, std::string class_uc_Code);
-    void printLog();
+    void save(const std::string& file);
+    void undo();
+    void printLog(const std::string& file);
 };
 
 class Request {

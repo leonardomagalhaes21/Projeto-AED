@@ -4,26 +4,75 @@
 #include <map>
 using namespace std;
 
-
+/**
+ * @brief Default constructor for the Schedule class.
+ *
+ * Time Complexity: O(1), constant time for object initialization.
+ */
 Schedule::Schedule(){
 }
 
+/**
+* @brief Constructor for the Schedule class that initializes the schedule vector.
+*
+* @param schedule Vector of pairs (UC, Lesson) representing the class schedule.
+*
+* Time Complexity: O(n), where 'n' is the number of elements in the input vector.
+*/
 Schedule::Schedule(vector<pair<UC,Lesson>> schedule) : schedule_(schedule) {
 }
 
+/**
+ * @brief Get the class schedule vector.
+ *
+ * @return A vector of pairs (UC, Lesson) representing the class schedule.
+ *
+ * Time Complexity: O(1)
+ */
 vector<pair<UC,Lesson>> Schedule::getSchedule() {
     return schedule_;
 }
 
+/**
+ * @brief Set the class schedule vector.
+ *
+ * This function replaces the current class schedule with a new one provided as an argument.
+ *
+ * @param schedule Vector of pairs (UC, Lesson) representing the class schedule.
+ *
+ * Time Complexity: O(n), where 'n' is the number of elements in the input vector.
+ */
 void Schedule::setSchedule(vector<pair<UC,Lesson>> schedule) {
     schedule_=schedule;
 }
 
+/**
+ * @brief Add a Lesson to the schedule of a UC.
+ *
+ * This function adds a new lesson to the class schedule by creating a pair of UC and Lesson and pushing it
+ * to the schedule vector.
+ *
+ * @param uc UC object representing the course.
+ * @param lesson Lesson object representing the class.
+ *
+ * Time Complexity: O(1) as it simply adds an element to the end of the vector.
+ */
 void Schedule::addLesson(const UC& uc,const Lesson& lesson) {
     pair<UC,Lesson> p = {uc, lesson};
     schedule_.push_back(p);
 }
 
+/**
+ * @brief Comparison function used to sort classes by weekday and start time.
+ *
+ * This function is used to sort the vector of classes.
+ *
+ * @param a First pair (UC, Lesson) to be compared.
+ * @param b Second pair (UC, Lesson) to be compared.
+ * @return true if class 'a' occurs before class 'b', false otherwise.
+ *
+ * Time Complexity: O(n log n), where 'n' is the number of classes.
+ */
 struct compareLessons {
     bool operator()(const pair<UC, Lesson> &a, const pair<UC, Lesson> &b) {
         if (a.second.getWeekday() < b.second.getWeekday()) {
@@ -36,6 +85,15 @@ struct compareLessons {
     }
 };
 
+/**
+ * @brief Print the class schedule in a tabular format.
+ *
+ * This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday,
+ * UC (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the
+ * schedule based on weekday and start hour before printing.
+ *
+ * Time Complexity: O(n log n), where 'n' is the number of lessons in the schedule, due to the sorting operation.
+ */
 void Schedule::printSchedule() {
 
     map<string, string> UcCodeToName = {
@@ -98,6 +156,17 @@ void Schedule::printSchedule() {
     cout << "--------------------------------------------------------------------" << endl;
 }
 
+/**
+ * @brief Convert a floating-point hour value to a formatted string (hh:mm).
+ *
+ * This function takes a floating-point hour value, such as 9.5 (9:30), and converts it to a formatted time string
+ * in the "hh:mm" format. It ensures that minutes are zero-padded if less than 10.
+ *
+ * @param hour The floating-point hour value.
+ * @return A string in the "hh:mm" format.
+ *
+ * Time Complexity: O(1) as it performs a fixed number of operations.
+ */
 std::string Schedule::toTime(float hour) {
     int hrs = (int) hour;
     int mins = (int) ((hour-hrs)*60);

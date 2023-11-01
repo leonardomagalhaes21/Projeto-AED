@@ -49,7 +49,7 @@ void Data::readClasses(){
     string f = "../schedule/classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
-        std::cerr << "Failed to open file: " << f << std::endl;
+        std::cerr << "Failed to open file: " << f << endl;
     }
     string line, ClassCode, UcCode, Weekday, Type, StartHour, Duration;
     list<pair<UC,Lesson>> aux;
@@ -100,7 +100,7 @@ void Data::readClassesPerUC(){
     string f = "../schedule/classes_per_uc.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
-        std::cerr << "Failed to open file: " << f << std::endl;
+        std::cerr << "Failed to open file: " << f << endl;
     }
     string UcCode,ClassCode,line;
     list<UC> aux;
@@ -132,7 +132,7 @@ void Data::readStudentsClasses(){
     string f = "../schedule/students_classes.csv";
     ifstream file(f);
     if (!file.is_open() && !file.good()) {
-        std::cerr << "Failed to open file: " << f << std::endl;
+        std::cerr << "Failed to open file: " << f << endl;
     }
     string StName,StCode, UcCode, ClassCode, line;
 
