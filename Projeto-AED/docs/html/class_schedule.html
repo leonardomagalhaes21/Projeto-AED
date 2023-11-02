@@ -172,7 +172,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a <a class="el" href="class_lesson.html">Lesson</a> to the schedule of a <a class="el" href="class_u_c.html">UC</a>. </p>
-<p>This function adds a new lesson to the class schedule by creating a pair of <a class="el" href="class_u_c.html">UC</a> and <a class="el" href="class_lesson.html">Lesson</a> and pushing it to the schedule vector.</p>
+<p>@detail This function adds a new lesson to the class schedule by creating a pair of <a class="el" href="class_u_c.html">UC</a> and <a class="el" href="class_lesson.html">Lesson</a> and pushing it to the schedule vector.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">uc</td><td><a class="el" href="class_u_c.html">UC</a> object representing the course. </td></tr>
@@ -221,7 +221,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print the class schedule in a tabular format. </p>
-<p>This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday, <a class="el" href="class_u_c.html">UC</a> (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the schedule based on weekday and start hour before printing.</p>
+<p>@detail This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday, <a class="el" href="class_u_c.html">UC</a> (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the schedule based on weekday and start hour before printing.</p>
 <p>Time Complexity: O(n log n), where 'n' is the number of lessons in the schedule, due to the sorting operation. </p>
 
 </div>
@@ -243,7 +243,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the class schedule vector. </p>
-<p>This function replaces the current class schedule with a new one provided as an argument.</p>
+<p>@detail This function replaces the current class schedule with a new one provided as an argument.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">schedule</td><td>Vector of pairs (<a class="el" href="class_u_c.html">UC</a>, <a class="el" href="class_lesson.html">Lesson</a>) representing the class schedule.</td></tr>
@@ -279,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Convert a floating-point hour value to a formatted string (hh:mm). </p>
-<p>This function takes a floating-point hour value, such as 9.5 (9:30), and converts it to a formatted time string in the "hh:mm" format. It ensures that minutes are zero-padded if less than 10.</p>
+<p>@detail This function takes a floating-point hour value, such as 9.5 (9:30), and converts it to a formatted time string in the "hh:mm" format. It ensures that minutes are zero-padded if less than 10.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hour</td><td>The floating-point hour value. </td></tr>

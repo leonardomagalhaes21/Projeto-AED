@@ -5,7 +5,7 @@ using namespace std;
 /**
  * @brief Default constructor for the Menu class.
  *
- * This constructor initializes an instance of the Menu class.
+ * @detail This constructor initializes an instance of the Menu class.
  *
  * Time Complexity: O(1)
  */
@@ -14,7 +14,7 @@ Menu::Menu() {}
 /**
  * @brief Draws the top section of the menu interface.
  *
- * This function is responsible for rendering the top section of the menu interface.
+ * @detail This function is responsible for rendering the top section of the menu interface.
  *
  * Time Complexity: O(1)
  */
@@ -27,7 +27,7 @@ void Menu::drawTop(){
 /**
  * @brief Draws the bottom section of the menu interface.
  *
- * This function is responsible for rendering the bottom section of the menu interface.
+ * @detail This function is responsible for rendering the bottom section of the menu interface.
  *
  * Time Complexity: O(1)
  */
@@ -40,7 +40,7 @@ void Menu::drawBottom(){
 /**
  * @brief Displays the main menu and handles user interactions.
  *
- * This function presents the main menu to the user and processes user input to navigate
+ * @detail This function presents the main menu to the user and processes user input to navigate
  * through different options.
  *
  * @b Complexity: Depends on the complexity of the code executed within the switch cases.

@@ -56,7 +56,7 @@ Time Complexity\+: O(1), constant time for object initialization. \Hypertarget{c
 
 Add a \doxylink{class_lesson}{Lesson} to the schedule of a \doxylink{class_u_c}{UC}. 
 
-This function adds a new lesson to the class schedule by creating a pair of \doxylink{class_u_c}{UC} and \doxylink{class_lesson}{Lesson} and pushing it to the schedule vector.
+@detail This function adds a new lesson to the class schedule by creating a pair of \doxylink{class_u_c}{UC} and \doxylink{class_lesson}{Lesson} and pushing it to the schedule vector.
 
 
 \begin{DoxyParams}{Parameters}
@@ -88,7 +88,7 @@ Time Complexity\+: O(1) \Hypertarget{class_schedule_abd815da87ce7b7f35f531aedcac
 
 Print the class schedule in a tabular format. 
 
-This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday, \doxylink{class_u_c}{UC} (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the schedule based on weekday and start hour before printing.
+@detail This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday, \doxylink{class_u_c}{UC} (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the schedule based on weekday and start hour before printing.
 
 Time Complexity\+: O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of lessons in the schedule, due to the sorting operation. \Hypertarget{class_schedule_a207f94cc2af1e34dece0cabbc77861fb}\label{class_schedule_a207f94cc2af1e34dece0cabbc77861fb} 
 \index{Schedule@{Schedule}!setSchedule@{setSchedule}}
@@ -100,7 +100,7 @@ Time Complexity\+: O(n log n), where \textquotesingle{}n\textquotesingle{} is th
 
 Set the class schedule vector. 
 
-This function replaces the current class schedule with a new one provided as an argument.
+@detail This function replaces the current class schedule with a new one provided as an argument.
 
 
 \begin{DoxyParams}{Parameters}
@@ -117,7 +117,7 @@ Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the numb
 
 Convert a floating-\/point hour value to a formatted string (hh\+:mm). 
 
-This function takes a floating-\/point hour value, such as 9.\+5 (9\+:30), and converts it to a formatted time string in the "{}hh\+:mm"{} format. It ensures that minutes are zero-\/padded if less than 10.
+@detail This function takes a floating-\/point hour value, such as 9.\+5 (9\+:30), and converts it to a formatted time string in the "{}hh\+:mm"{} format. It ensures that minutes are zero-\/padded if less than 10.
 
 
 \begin{DoxyParams}{Parameters}

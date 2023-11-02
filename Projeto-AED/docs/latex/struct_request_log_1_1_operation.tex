@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{struct_request_log_1_1_operation_ae4c20f7bf46c0460f645f0e45d2d8a7b}{save\+To\+Data}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Save operation details to a data file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,6 +32,12 @@ std\+::string \mbox{\hyperlink{struct_request_log_1_1_operation_afe71c636f3fc40f
 {\footnotesize\ttfamily void Request\+Log\+::\+Operation\+::save\+To\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Save operation details to a data file. 
+
+@detail This function saves operation details to a data file based on the type of action. The action type is used to determine how the data should be saved in the file. The supported actions include "{}\+Add\+Uc,"{} "{}\+Remove\+Uc,"{} "{}\+Remove\+Class,"{} "{}\+Switch\+Uc,"{} and "{}\+Switch\+Class."{}
+
+Time Complexity\+: The time complexity of this function is O(\+N), where N is the number of lines in the file. 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{struct_request_log_1_1_operation_aa36ebf2a7e9ed31dbad84c84c550596d}\label{struct_request_log_1_1_operation_aa36ebf2a7e9ed31dbad84c84c550596d} 

@@ -73,7 +73,7 @@ string Lesson::getType() const{
 /**
  * @brief Check if this lesson coincides with another lesson.
  *
- * This function checks if the current lesson coincides with another lesson by comparing their types, weekdays, and time slots.
+ * @detail This function checks if the current lesson coincides with another lesson by comparing their types, weekdays, and time slots.
  *
  * @param lesson The lesson to check for coincidence with.
  * @return True if the lessons coincide, false otherwise.
@@ -96,7 +96,7 @@ bool Lesson::coincideT(const Lesson& lesson) const{
 /**
  * @brief Compare two lessons for sorting purposes.
  *
- * This operator compares two lessons for sorting purposes based on their weekdays and starting hours.
+ * @detail This operator compares two lessons for sorting purposes based on their weekdays and starting hours.
  *
  * @param a The lesson to compare with.
  * @return True if the current lesson is less than the provided lesson, false otherwise.

@@ -228,7 +228,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor for the <a class="el" href="class_data.html">Data</a> class. Initializes various data structures. </p>
-<p>This constructor executes all the necessary methods to populate the data base.</p>
+<p>@detail This constructor executes all the necessary methods to populate the data base.</p>
 <p>Time Complexity: O(1) </p>
 
 </div>
@@ -467,7 +467,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Retrieves the map that groups students by their admission year. </p>
-<p>This function returns the map yearToStudentsMap_, which associates each admission year with a set of students who started in that year. You can use this map to access the grouped students by their admission year.</p>
+<p>@detail This function returns the map yearToStudentsMap_, which associates each admission year with a set of students who started in that year. You can use this map to access the grouped students by their admission year.</p>
 <dl class="section return"><dt>Returns</dt><dd>A map where the keys are admission years and the values are sets of students.</dd></dl>
 <p>Time complexity: O(1) </p>
 
@@ -508,7 +508,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Get the number of students in a specific year. </p>
-<p>This function retrieves the number of students in a given academic year based on a map that associates years with sets of students.</p>
+<p>@detail This function retrieves the number of students in a given academic year based on a map that associates years with sets of students.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>The academic year for which to count the students. </td></tr>
@@ -869,7 +869,7 @@ Time Complexity: O(1) </li>
 
 <p>Prints the list of students in ascending order of their student codes. Each line displays the student code followed by the student name. </p>
 <p>Time Complexity: O(n * log(n)), where 'n' is the number of students and sorted by the operator &lt; defined in the class <a class="el" href="class_student.html">Student</a>.</p>
-<p>This function iterates through the set of students and prints their student codes along with their names. The students are printed in ascending order of their student codes. </p>
+<p>@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in ascending order of their student codes. </p>
 
 </div>
 </div>
@@ -889,7 +889,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Prints the list of students in ascending order of their student codes. </p>
-<p>This function iterates through the set of students and prints each student's code followed by their name. The list is sorted in ascending order based on student codes.</p>
+<p>@detail This function iterates through the set of students and prints each student's code followed by their name. The list is sorted in ascending order based on student codes.</p>
 <p>Time complexity: O(n * log(n)), where 'n' is the number of students. </p>
 
 </div>
@@ -976,7 +976,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Prints the students who started in a specific admission year. </p>
-<p>This function prints the names and student codes of the students who were admitted in the given admission year. If there are no students admitted in that year, it will not display anything.</p>
+<p>@detail This function prints the names and student codes of the students who were admitted in the given admission year. If there are no students admitted in that year, it will not display anything.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>The admission year for which you want to print students. </td></tr>
@@ -1005,7 +1005,7 @@ Time Complexity: O(1) </li>
 
 <p>Prints the list of students in descending order of their student codes. Each line displays the student code followed by the student name. </p>
 <p>Time Complexity: O(n * log(n)), where 'n' is the number of students and sorted by the operator &lt; defined in the class <a class="el" href="class_student.html">Student</a>.</p>
-<p>This function iterates through the set of students and prints their student codes along with their names. The students are printed in descending order of their student codes. </p>
+<p>@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in descending order of their student codes. </p>
 
 </div>
 </div>
@@ -1025,7 +1025,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Prints the list of students in descending order of their names. Each line displays the student name followed by the student code. </p>
-<p>This function creates a sorted set of students based on their names in descending order, and then iterates through the set, printing the student names followed by their codes.</p>
+<p>@detail This function creates a sorted set of students based on their names in descending order, and then iterates through the set, printing the student names followed by their codes.</p>
 <p>Time Complexity: O(N * log(N)), where N is the number of students. </p>
 
 </div>
@@ -1279,7 +1279,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Reads classes and their schedules from the CSV file 'classes.csv' and populates the data structures. </p>
-<p>This function reads class information from a CSV file and populates the internal data structures. It creates a list of pairs, each containing a <a class="el" href="class_u_c.html">UC</a> (course) and a <a class="el" href="class_lesson.html">Lesson</a>, representing the class details, such as day of the week, start time, and duration.</p>
+<p>@detail This function reads class information from a CSV file and populates the internal data structures. It creates a list of pairs, each containing a <a class="el" href="class_u_c.html">UC</a> (course) and a <a class="el" href="class_lesson.html">Lesson</a>, representing the class details, such as day of the week, start time, and duration.</p>
 <p>Time Complexity: O(N), where N is the number of lines in the CSV file.</p>
 <dl class="section note"><dt>Note</dt><dd>This function assumes that the file format is well-formed and doesn't perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. </dd></dl>
 
@@ -1301,7 +1301,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Reads all the classes and the corresponding <a class="el" href="class_u_c.html">UC</a>'s from the CSV file 'classes_per_uc.csv' and populates the data structures. </p>
-<p>This function reads class per <a class="el" href="class_u_c.html">UC</a> information from a CSV file and populates the internal data structures. It creates a list of UCs associated with their corresponding classes.</p>
+<p>@detail This function reads class per <a class="el" href="class_u_c.html">UC</a> information from a CSV file and populates the internal data structures. It creates a list of UCs associated with their corresponding classes.</p>
 <p>Time Complexity: O(N), where N is the number of lines in the CSV file.</p>
 <dl class="section note"><dt>Note</dt><dd>This function assumes that the file format is well-formed and doesn't perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. </dd></dl>
 
@@ -1323,7 +1323,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Reads student classes data from the CSV file 'students_classes.csv' and populates the data structures. </p>
-<p>This function reads student-class relationships from a CSV file and populates the internal data structures. It creates pairs of students and their associated classes (<a class="el" href="class_u_c.html">UC</a>) and also keeps track of unique students. Each student have at least an <a class="el" href="class_u_c.html">UC</a> and a class.</p>
+<p>@detail This function reads student-class relationships from a CSV file and populates the internal data structures. It creates pairs of students and their associated classes (<a class="el" href="class_u_c.html">UC</a>) and also keeps track of unique students. Each student have at least an <a class="el" href="class_u_c.html">UC</a> and a class.</p>
 <p>Time Complexity: O(N), where N is the number of lines in the CSV file.</p>
 <dl class="section note"><dt>Note</dt><dd>This function assumes that the file format is well-formed and doesn't perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. </dd></dl>
 
@@ -1372,7 +1372,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Initialize a map associating class codes with sets of students. </p>
-<p>This function iterates through the list of student-class pairs and populates a map that associates class codes with sets of students enrolled in each class.</p>
+<p>@detail This function iterates through the list of student-class pairs and populates a map that associates class codes with sets of students enrolled in each class.</p>
 <p>Time Complexity: O(n), where 'n' is the number of student-class pairs. </p>
 
 </div>
@@ -1498,7 +1498,7 @@ Time Complexity: O(1) </li>
 </div><div class="memdoc">
 
 <p>Initializes a map that groups students by their admission year. </p>
-<p>This function processes the list of students and creates a mapping where each admission year corresponds to a set of students who started in that year. The map yearToStudentsMap_ is populated with this information.</p>
+<p>@detail This function processes the list of students and creates a mapping where each admission year corresponds to a set of students who started in that year. The map yearToStudentsMap_ is populated with this information.</p>
 <p>Time complexity: O(n), where 'n' is the number of students. </p>
 
 </div>

@@ -15,7 +15,7 @@ using namespace std;
 /**
  * @brief Constructor for the Data class. Initializes various data structures.
  *
- * This constructor executes all the necessary methods to populate the data base.
+ * @detail This constructor executes all the necessary methods to populate the data base.
  *
  * Time Complexity: O(1)
  */
@@ -35,7 +35,7 @@ Data::Data() {
 /**
  * @brief Reads classes and their schedules from the CSV file 'classes.csv' and populates the data structures.
  *
- * This function reads class information from a CSV file and populates the internal
+ * @detail This function reads class information from a CSV file and populates the internal
  * data structures. It creates a list of pairs, each containing a UC (course) and a Lesson,
  * representing the class details, such as day of the week, start time, and duration.
  *
@@ -87,7 +87,7 @@ void Data::readClasses(){
 /**
  * @brief Reads all the classes and the corresponding UC's from the CSV file 'classes_per_uc.csv' and populates the data structures.
  *
- * This function reads class per UC information from a CSV file and populates the internal
+ * @detail This function reads class per UC information from a CSV file and populates the internal
  * data structures. It creates a list of UCs associated with their corresponding classes.
  *
  * Time Complexity: O(N), where N is the number of lines in the CSV file.
@@ -118,7 +118,7 @@ void Data::readClassesPerUC(){
 /**
  * @brief Reads student classes data from the CSV file 'students_classes.csv' and populates the data structures.
  *
- * This function reads student-class relationships from a CSV file and populates the internal
+ * @detail This function reads student-class relationships from a CSV file and populates the internal
  * data structures. It creates pairs of students and their associated classes (UC) and also
  * keeps track of unique students. Each student have at least an UC and a class.
  *
@@ -208,7 +208,7 @@ void Data::setListStudentsClasses_(std::list<std::pair<Student, UC>> l){
  *
  * Time Complexity: O(n * log(n)), where 'n' is the number of students and sorted by the operator < defined in the class Student.
  *
- * This function iterates through the set of students and prints their student codes
+ * @detail This function iterates through the set of students and prints their student codes
  * along with their names. The students are printed in ascending order of their student codes.
  */
 void Data::printStudentsAscendingCode(){
@@ -223,7 +223,7 @@ void Data::printStudentsAscendingCode(){
  *
  * Time Complexity: O(n * log(n)), where 'n' is the number of students and sorted by the operator < defined in the class Student.
  *
- * This function iterates through the set of students and prints their student codes
+ * @detail This function iterates through the set of students and prints their student codes
  * along with their names. The students are printed in descending order of their student codes.
  */
 void Data::printStudentsDescendingCode() {
@@ -238,7 +238,7 @@ void Data::printStudentsDescendingCode() {
 /**
  * @brief Prints the list of students in ascending order of their student codes.
  *
- * This function iterates through the set of students and prints each student's code followed by their name.
+ * @detail This function iterates through the set of students and prints each student's code followed by their name.
  * The list is sorted in ascending order based on student codes.
  *
  * Time complexity: O(n * log(n)), where 'n' is the number of students.
@@ -258,7 +258,7 @@ void Data::printStudentsAscendingName() {
  * @struct CompareStudentsByName
  * @brief Functor for comparing students by their names in descending order.
  *
- * This struct provides a custom comparison operator to compare students by their names.
+ * @detail This struct provides a custom comparison operator to compare students by their names.
  * It is designed for use with standard sorting algorithms like std::sort to sort students
  * in descending order of their names.
  *
@@ -281,7 +281,7 @@ struct CompareStudentsByName {
  * @brief Prints the list of students in descending order of their names.
  * Each line displays the student name followed by the student code.
  *
- * This function creates a sorted set of students based on their names in descending order,
+ * @detail This function creates a sorted set of students based on their names in descending order,
  * and then iterates through the set, printing the student names followed by their codes.
  *
  * Time Complexity: O(N * log(N)), where N is the number of students.
@@ -301,7 +301,7 @@ void Data::printStudentsDescendingName() {
 /**
  * @brief Initializes a map that groups students by their admission year.
  *
- * This function processes the list of students and creates a mapping where each
+ * @detail This function processes the list of students and creates a mapping where each
  * admission year corresponds to a set of students who started in that year.
  * The map yearToStudentsMap_ is populated with this information.
  *
@@ -316,7 +316,7 @@ void Data::startYearToStudentsMap(){
 /**
  * @brief Retrieves the map that groups students by their admission year.
  *
- * This function returns the map yearToStudentsMap_, which associates each admission year with a set of students
+ * @detail This function returns the map yearToStudentsMap_, which associates each admission year with a set of students
  * who started in that year. You can use this map to access the grouped students by their admission year.
  *
  * @return A map where the keys are admission years and the values are sets of students.
@@ -330,7 +330,7 @@ map<int, set<Student>> Data::getYearToStudentsMap(){
 /**
  * @brief Prints the students who started in a specific admission year.
  *
- * This function prints the names and student codes of the students who were admitted in the given admission year.
+ * @detail This function prints the names and student codes of the students who were admitted in the given admission year.
  * If there are no students admitted in that year, it will not display anything.
  *
  * @param x The admission year for which you want to print students.
@@ -350,7 +350,7 @@ void Data::printStudentsByYear(int x, const map<int, set<Student>>& m) {
 /**
  * @brief Get the number of students in a specific year.
  *
- * This function retrieves the number of students in a given academic year based on a map
+ * @detail This function retrieves the number of students in a given academic year based on a map
  * that associates years with sets of students.
  *
  * @param x The academic year for which to count the students.
@@ -373,7 +373,7 @@ int Data::numberOfStudentsByYear(int x,const map<int, set<Student>>& m){
 /**
  * @brief Initialize a map associating class codes with sets of students.
  *
- * This function iterates through the list of student-class pairs and populates
+ * @detail This function iterates through the list of student-class pairs and populates
  * a map that associates class codes with sets of students enrolled in each class.
  *
  * Time Complexity: O(n), where 'n' is the number of student-class pairs.

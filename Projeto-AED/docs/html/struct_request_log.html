@@ -100,8 +100,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7c98136c9868dcad94f62998e2c0f40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Records and logs a request with a student and class/UC code.  <br /></td></tr>
 <tr class="separator:a7c98136c9868dcad94f62998e2c0f40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c3689513745a5cfa48dbaa0f41511da" id="r_a0c3689513745a5cfa48dbaa0f41511da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_request_log.html#a0c3689513745a5cfa48dbaa0f41511da">save</a> ()</td></tr>
+<tr class="memdesc:a0c3689513745a5cfa48dbaa0f41511da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the request log to a file.  <br /></td></tr>
 <tr class="separator:a0c3689513745a5cfa48dbaa0f41511da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f44eb691c1654a85cdc3f80f9aff944" id="r_a7f44eb691c1654a85cdc3f80f9aff944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_request_log.html#a7f44eb691c1654a85cdc3f80f9aff944">undo</a> ()</td></tr>
+<tr class="memdesc:a7f44eb691c1654a85cdc3f80f9aff944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undoes the most recent operation in the operations list.  <br /></td></tr>
 <tr class="separator:a7f44eb691c1654a85cdc3f80f9aff944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -164,7 +166,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Records and logs a request with a student and class/UC code. </p>
-<p>This function records a request action and logs it with a student and class/UC code.</p>
+<p>@detail This function records a request action and logs it with a student and class/UC code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The action to be logged. </td></tr>
@@ -210,7 +212,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Records and logs a request with a new <a class="el" href="class_u_c.html">UC</a>. </p>
-<p>This function records a request action and logs it with a new <a class="el" href="class_u_c.html">UC</a>.</p>
+<p>@detail This function records a request action and logs it with a new <a class="el" href="class_u_c.html">UC</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The action to be logged. </td></tr>
@@ -262,7 +264,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Records and logs a request with a new and old <a class="el" href="class_u_c.html">UC</a>. </p>
-<p>This function records a request action and logs it with both a new and old <a class="el" href="class_u_c.html">UC</a>.</p>
+<p>@detail This function records a request action and logs it with both a new and old <a class="el" href="class_u_c.html">UC</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The action to be logged. </td></tr>
@@ -291,6 +293,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Save the request log to a file. </p>
+<p>@detail This function is responsible for saving the request log to a text file named "log.txt" located in the "../schedule" directory. The request log includes details of each operation performed, such as the action type, new and old course and class codes, the class_Uc_Code, and the student's code. The function begins by opening the file for writing and checks if the file opening was successful. If the file cannot be opened, it reports an error to the standard error stream and returns without saving the log. For each operation in the log, the function writes the relevant information to the file, including the action type and associated data. After recording the operation in the log file, the <code>saveToData()</code> method is called on the operation to update the data as needed. Finally, the function prints a success message to the standard output.</p>
+<p>Time Complexity: O(n), where n is the number of elements in the queue 'operations_' </p>
+
 </div>
 </div>
 <a id="a7f44eb691c1654a85cdc3f80f9aff944" name="a7f44eb691c1654a85cdc3f80f9aff944"></a>
@@ -307,6 +313,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Undoes the most recent operation in the operations list. </p>
+<p>@detail This function undoes the most recent operation stored in the operations list. The list of operations is implemented as a queue, where the oldest operation is at the front (position 0), and the most recent operation is at the back. The function removes the most recent operation, shifting all remaining operations towards the front of the queue.</p>
+<dl class="section note"><dt>Note</dt><dd>This function will only have an effect if the operations list is not empty.</dd></dl>
+<p>Time Complexity: The average time complexity is O(n), where n is the number of operations in the list. </p>
 
 </div>
 </div>

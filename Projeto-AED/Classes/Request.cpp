@@ -11,7 +11,7 @@ RequestLog::RequestLog() {}
 /**
  * @brief Records and logs a request with a new UC.
  *
- * This function records a request action and logs it with a new UC.
+ * @detail This function records a request action and logs it with a new UC.
  *
  * @param action The action to be logged.
  * @param student The student involved in the request.
@@ -30,7 +30,7 @@ void RequestLog::requestAndLog(const std::string& action,const Student& student,
 /**
  * @brief Records and logs a request with a new and old UC.
  *
- * This function records a request action and logs it with both a new and old UC.
+ * @detail This function records a request action and logs it with both a new and old UC.
  *
  * @param action The action to be logged.
  * @param student The student involved in the request.
@@ -51,7 +51,7 @@ void RequestLog::requestAndLog(const std::string& action, const Student& student
 /**
  * @brief Records and logs a request with a student and class/UC code.
  *
- * This function records a request action and logs it with a student and class/UC code.
+ * @detail This function records a request action and logs it with a student and class/UC code.
  *
  * @param action The action to be logged.
  * @param student The student involved in the request.
@@ -67,6 +67,19 @@ void RequestLog::requestAndLog(const std::string& action,const Student& student,
     operations_.push(operation);
 }
 
+/**
+ * @brief Save the request log to a file.
+ *
+ * @detail This function is responsible for saving the request log to a text file named "log.txt" located in the "../schedule" directory.
+ * The request log includes details of each operation performed, such as the action type, new and old course and class codes,
+ * the class_Uc_Code, and the student's code. The function begins by opening the file for writing and checks if the file opening was successful.
+ * If the file cannot be opened, it reports an error to the standard error stream and returns without saving the log. For each operation in the log,
+ * the function writes the relevant information to the file, including the action type and associated data.
+ * After recording the operation in the log file, the `saveToData()` method is called on the operation to update the data as needed.
+ * Finally, the function prints a success message to the standard output.
+ *
+ * Time Complexity: O(n), where n is the number of elements in the queue 'operations_'
+ */
 void RequestLog::save() {
     string f = "../schedule/log.txt";
     ofstream out(f);
@@ -93,6 +106,15 @@ void RequestLog::save() {
     out.close();
 }
 
+/**
+ * @brief Save operation details to a data file.
+ *
+ * @detail This function saves operation details to a data file based on the type of action.
+ * The action type is used to determine how the data should be saved in the file.
+ * The supported actions include "AddUc," "RemoveUc," "RemoveClass," "SwitchUc," and "SwitchClass."
+ *
+ * Time Complexity: The time complexity of this function is O(N), where N is the number of lines in the file.
+ */
 void RequestLog::Operation::saveToData() {
     map<string, int> m = {
             {"AddUc", 1},
@@ -272,6 +294,19 @@ void RequestLog::Operation::saveToData() {
     };
 }
 
+/**
+ * @brief Undoes the most recent operation in the operations list.
+ *
+ * @detail This function undoes the most recent operation stored in the operations list.
+ * The list of operations is implemented as a queue, where the oldest operation
+ * is at the front (position 0), and the most recent operation is at the back.
+ * The function removes the most recent operation, shifting all remaining operations
+ * towards the front of the queue.
+ *
+ * @note This function will only have an effect if the operations list is not empty.
+ *
+ * Time Complexity: The average time complexity is O(n), where n is the number of operations in the list.
+ */
 void RequestLog::undo() {
     if (!operations_.empty()){
         for(int i=0;i<operations_.size()-1;i++){
@@ -286,7 +321,7 @@ void RequestLog::undo() {
 /**
  * @brief Default constructor for the Request class.
  *
- * This constructor initializes an instance of the Request class.
+ * @detail This constructor initializes an instance of the Request class.
  *
  * Time Complexity: O(1)
  */
@@ -295,7 +330,7 @@ Request::Request(){}
 /**
  * @brief Adds an UC to a student's schedule.
  *
- * This function adds a UC to a student's schedule if certain conditions are met. The conditions include
+ * @detail This function adds a UC to a student's schedule if certain conditions are met. The conditions include
  * checking the student's UC count, ensuring there are no schedule conflicts, and checking the UC's capacity.
  *
  * @param s The student for whom the UC is being added.
@@ -357,7 +392,7 @@ bool Request::addUC(const Student& s, const string& ucc, const string& cc, list<
 /**
  * @brief Switches a student's UC from an old UC to a new UC.
  *
- * This function switches a student's UC from an old UC to a new UC if certain conditions are met.
+ * @detail This function switches a student's UC from an old UC to a new UC if certain conditions are met.
  *
  * @param s The student for whom the UC is being switched.
  * @param oldUC The old UC to be removed.
@@ -389,7 +424,7 @@ bool Request::switchUC(const Student& s, const UC& oldUC, const UC& newUC, list<
 /**
  * @brief Removes a UC from a student's schedule.
  *
- * This function removes a UC from a student's schedule.
+ * @detail This function removes a UC from a student's schedule.
  *
  * @param s The student from whom the UC is being removed.
  * @param uc The UC to be removed.
@@ -419,7 +454,7 @@ bool Request::removeUC(const Student& s, const UC& uc, list<pair<Student, UC>>& 
 /**
  * @brief Switches a student's class within a UC.
  *
- * This function switches a student's class within a UC if certain conditions are met.
+ * @detail This function switches a student's class within a UC if certain conditions are met.
  *
  * @param s The student for whom the class is being switched.
  * @param oldUC The old UC containing the class to be removed.
@@ -453,7 +488,7 @@ bool Request::switchClass(const Student& s, const UC& oldUC, const UC& newUC, li
 /**
  * @brief Removes a student from a specific class.
  *
- * This function removes a student from a specific class within a UC.
+ * @detail This function removes a student from a specific class within a UC.
  *
  * @param s The student to be removed from the class.
  * @param cc The class code of the class to be removed from.

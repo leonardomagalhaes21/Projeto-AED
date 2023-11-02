@@ -3,7 +3,7 @@ using namespace std;
 /**
  * @brief Default constructor for the UC class.
  *
- * This constructor initializes a UC object with default values. It does not perform any significant operations.
+ * @detail This constructor initializes a UC object with default values. It does not perform any significant operations.
  *
  * Time Complexity: O(1), constant time for object initialization.
  */
@@ -14,7 +14,7 @@ UC::UC(){
 /**
  * @brief Static attribute 'capacity_' for the UC class.
  *
- * This is a static attribute that has a fixed value of 26, representing the capacity of UCs.
+ * @detail This is a static attribute that has a fixed value of 26, representing the capacity of UCs.
  *
  * Time Complexity: O(1), constant time for static attribute initialization.
  */
@@ -23,7 +23,7 @@ int UC::capacity_ = 26;
 /**
  * @brief Constructor for the UC class with a specified UC code.
  *
- * This constructor creates a UC object with the given UC code and initializes the attributes accordingly.
+ * @detail This constructor creates a UC object with the given UC code and initializes the attributes accordingly.
  *
  *@param ucCode: The unique code for the UC.
  *
@@ -40,7 +40,7 @@ UC::UC(string ucCode){
 /**
  * @brief Constructor for the UC class with specified UC code and class code.
  *
- * This constructor creates a UC object with the given UC code and class code, initializing the attributes accordingly.
+ * @detail This constructor creates a UC object with the given UC code and class code, initializing the attributes accordingly.
  *
  * Time Complexity: O(1), constant time for object initialization and attribute assignment.
  */
@@ -53,7 +53,7 @@ UC::UC(string ucCode,string classCode){
 /**
  * @brief Constructor for the UC class with specified UC code, class code, and a list of lessons.
  *
- * This constructor creates a UC object with the given UC code, class code, and a list of lessons. It initializes the attributes accordingly.
+ * @detail This constructor creates a UC object with the given UC code, class code, and a list of lessons. It initializes the attributes accordingly.
  *
  * @param ucCode: The unique code for the UC.
  * @param classCode: The class code for the UC.
@@ -68,7 +68,7 @@ UC::UC(string ucCode, string classCode, list<Lesson> lesson) : ucCode_(ucCode), 
 /**
  * @brief Get the UC code of the UC.
  *
- * This function returns the UC code of the UC.
+ * @detail This function returns the UC code of the UC.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -79,7 +79,7 @@ string UC::getUCCode() const {
 /**
  * @brief Get the class code of the UC.
  *
- * This function returns the class code of the UC.
+ * @detail This function returns the class code of the UC.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -90,7 +90,7 @@ string UC::getClassCode() const {
 /**
  * @brief Get the number of students registered for the UC.
  *
- * This function returns the number of students registered for the UC.
+ * @detail This function returns the number of students registered for the UC.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -101,7 +101,7 @@ int UC::getNumberStudents() const {
 /**
  * @brief Set the number of students registered for the UC.
  *
- * This function sets the number of students registered for the UC to the specified value.
+ * @detail This function sets the number of students registered for the UC to the specified value.
  *
  * @param newValue: The new number of students registered for the UC.
  *
@@ -114,7 +114,7 @@ void UC::setNumberStudents(int newValue){
 /**
  * @brief Add a lesson to the UC.
  *
- * This function adds a lesson to the list of lessons associated with the UC. It appends the lesson to the list.
+ * @detail This function adds a lesson to the list of lessons associated with the UC. It appends the lesson to the list.
  *
  * @param lesson: The lesson to be added to the UC.
  *
@@ -127,7 +127,7 @@ void UC::addLesson(const Lesson& lesson) {
 /**
  * @brief Get the list of lessons associated with the UC.
  *
- * This function returns the list of lessons associated with the UC.
+ * @detail This function returns the list of lessons associated with the UC.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -138,7 +138,7 @@ list<Lesson> UC::getLessons() const{
 /**
  * @brief Compare two UCs for ordering based on their UC code and class code.
  *
- * This function compares two UC objects based on their UC code and class code. It is used for sorting and ordering purposes.
+ * @detail This function compares two UC objects based on their UC code and class code. It is used for sorting and ordering purposes.
  *
  * @param UC: The UC object to be compared to.
  *
@@ -162,7 +162,7 @@ bool UC::operator<(const UC& UC) const{
 /**
  * @brief Add lessons to the UC based on a list of UC-lesson pairs.
  *
- * This function adds lessons to the UC based on the provided list of UC-lesson pairs. It checks if the UC code and class code match and adds the corresponding lessons.
+ * @detail This function adds lessons to the UC based on the provided list of UC-lesson pairs. It checks if the UC code and class code match and adds the corresponding lessons.
  *
  * @param l1: A list of UC-lesson pairs to add to the UC.
  *
@@ -179,7 +179,7 @@ void UC::addClassLessons(const std::list<std::pair<UC, Lesson>>& l1){
 /**
  * @brief Print the list of lessons for the UC.
  *
- * This function prints the list of lessons for the UC, including details such as weekday, start time, duration, and lesson type.
+ * @detail This function prints the list of lessons for the UC, including details such as weekday, start time, duration, and lesson type.
  *
  * @param None
  *
@@ -239,7 +239,7 @@ void UC::printLessons() const {
 /**
  * @brief Convert a floating-point hour value to a string representation.
  *
- * This function converts a floating-point hour value to a string representation in the format "HH:MM".
+ * @detail This function converts a floating-point hour value to a string representation in the format "HH:MM".
  *
  * @param hour: The hour value to be converted.
  *
@@ -261,7 +261,7 @@ std::string UC::toTime(float hour) {
 /**
  * @brief Get the schedule of lessons for the UC based on a list of UC-lesson pairs.
  *
- * This function creates a schedule of lessons for the UC based on a list of UC-lesson pairs. Lessons are added to the schedule if they match the UC code.
+ * @detail This function creates a schedule of lessons for the UC based on a list of UC-lesson pairs. Lessons are added to the schedule if they match the UC code.
  *
  * @param l1: A list of UC-lesson pairs used to create the schedule.
  * @return A Schedule object containing the lessons scheduled for the UC.

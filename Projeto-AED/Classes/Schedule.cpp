@@ -36,7 +36,7 @@ vector<pair<UC,Lesson>> Schedule::getSchedule() {
 /**
  * @brief Set the class schedule vector.
  *
- * This function replaces the current class schedule with a new one provided as an argument.
+ * @detail This function replaces the current class schedule with a new one provided as an argument.
  *
  * @param schedule Vector of pairs (UC, Lesson) representing the class schedule.
  *
@@ -49,7 +49,7 @@ void Schedule::setSchedule(vector<pair<UC,Lesson>> schedule) {
 /**
  * @brief Add a Lesson to the schedule of a UC.
  *
- * This function adds a new lesson to the class schedule by creating a pair of UC and Lesson and pushing it
+ * @detail This function adds a new lesson to the class schedule by creating a pair of UC and Lesson and pushing it
  * to the schedule vector.
  *
  * @param uc UC object representing the course.
@@ -65,7 +65,7 @@ void Schedule::addLesson(const UC& uc,const Lesson& lesson) {
 /**
  * @brief Comparison function used to sort classes by weekday and start time.
  *
- * This function is used to sort the vector of classes.
+ * @detail This function is used to sort the vector of classes.
  *
  * @param a First pair (UC, Lesson) to be compared.
  * @param b Second pair (UC, Lesson) to be compared.
@@ -88,7 +88,7 @@ struct compareLessons {
 /**
  * @brief Print the class schedule in a tabular format.
  *
- * This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday,
+ * @detail This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday,
  * UC (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the
  * schedule based on weekday and start hour before printing.
  *
@@ -159,7 +159,7 @@ void Schedule::printSchedule() {
 /**
  * @brief Convert a floating-point hour value to a formatted string (hh:mm).
  *
- * This function takes a floating-point hour value, such as 9.5 (9:30), and converts it to a formatted time string
+ * @detail This function takes a floating-point hour value, such as 9.5 (9:30), and converts it to a formatted time string
  * in the "hh:mm" format. It ensures that minutes are zero-padded if less than 10.
  *
  * @param hour The floating-point hour value.

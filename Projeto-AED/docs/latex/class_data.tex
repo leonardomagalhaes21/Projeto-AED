@@ -107,7 +107,7 @@ static int \mbox{\hyperlink{class_data_ad563fa57a8c6ef08147824be0eec4d6b}{number
 
 Constructor for the \doxylink{class_data}{Data} class. Initializes various data structures. 
 
-This constructor executes all the necessary methods to populate the data base.
+@detail This constructor executes all the necessary methods to populate the data base.
 
 Time Complexity\+: O(1) 
 
@@ -267,7 +267,7 @@ Time Complexity\+: O(1) \Hypertarget{class_data_a42cc11b1cb42c1b7f3ea3b6996863d9
 
 Retrieves the map that groups students by their admission year. 
 
-This function returns the map year\+To\+Students\+Map\+\_\+, which associates each admission year with a set of students who started in that year. You can use this map to access the grouped students by their admission year.
+@detail This function returns the map year\+To\+Students\+Map\+\_\+, which associates each admission year with a set of students who started in that year. You can use this map to access the grouped students by their admission year.
 
 \begin{DoxyReturn}{Returns}
 A map where the keys are admission years and the values are sets of students.
@@ -282,7 +282,7 @@ Time complexity\+: O(1) \Hypertarget{class_data_ab15198dd425d5fd67b7d38dd990907f
 
 Get the number of students in a specific year. 
 
-This function retrieves the number of students in a given academic year based on a map that associates years with sets of students.
+@detail This function retrieves the number of students in a given academic year based on a map that associates years with sets of students.
 
 
 \begin{DoxyParams}{Parameters}
@@ -459,7 +459,7 @@ Prints the list of students in ascending order of their student codes. Each line
 
 Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students and sorted by the operator \texorpdfstring{$<$}{<} defined in the class \doxylink{class_student}{Student}.
 
-This function iterates through the set of students and prints their student codes along with their names. The students are printed in ascending order of their student codes. \Hypertarget{class_data_adab6bbba433b198f76e40d143f67c162}\label{class_data_adab6bbba433b198f76e40d143f67c162} 
+@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in ascending order of their student codes. \Hypertarget{class_data_adab6bbba433b198f76e40d143f67c162}\label{class_data_adab6bbba433b198f76e40d143f67c162} 
 \index{Data@{Data}!printStudentsAscendingName@{printStudentsAscendingName}}
 \index{printStudentsAscendingName@{printStudentsAscendingName}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{printStudentsAscendingName()}{printStudentsAscendingName()}}
@@ -469,7 +469,7 @@ This function iterates through the set of students and prints their student code
 
 Prints the list of students in ascending order of their student codes. 
 
-This function iterates through the set of students and prints each student\textquotesingle{}s code followed by their name. The list is sorted in ascending order based on student codes.
+@detail This function iterates through the set of students and prints each student\textquotesingle{}s code followed by their name. The list is sorted in ascending order based on student codes.
 
 Time complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students. \Hypertarget{class_data_a553c6a609d8d23364d80f808d2b14dbd}\label{class_data_a553c6a609d8d23364d80f808d2b14dbd} 
 \index{Data@{Data}!printStudentsByClass@{printStudentsByClass}}
@@ -500,7 +500,7 @@ Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the numb
 
 Prints the students who started in a specific admission year. 
 
-This function prints the names and student codes of the students who were admitted in the given admission year. If there are no students admitted in that year, it will not display anything.
+@detail This function prints the names and student codes of the students who were admitted in the given admission year. If there are no students admitted in that year, it will not display anything.
 
 
 \begin{DoxyParams}{Parameters}
@@ -521,7 +521,7 @@ Prints the list of students in descending order of their student codes. Each lin
 
 Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students and sorted by the operator \texorpdfstring{$<$}{<} defined in the class \doxylink{class_student}{Student}.
 
-This function iterates through the set of students and prints their student codes along with their names. The students are printed in descending order of their student codes. \Hypertarget{class_data_a7d91d7a9e35fecdbe22a147c6860008c}\label{class_data_a7d91d7a9e35fecdbe22a147c6860008c} 
+@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in descending order of their student codes. \Hypertarget{class_data_a7d91d7a9e35fecdbe22a147c6860008c}\label{class_data_a7d91d7a9e35fecdbe22a147c6860008c} 
 \index{Data@{Data}!printStudentsDescendingName@{printStudentsDescendingName}}
 \index{printStudentsDescendingName@{printStudentsDescendingName}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{printStudentsDescendingName()}{printStudentsDescendingName()}}
@@ -531,7 +531,7 @@ This function iterates through the set of students and prints their student code
 
 Prints the list of students in descending order of their names. Each line displays the student name followed by the student code. 
 
-This function creates a sorted set of students based on their names in descending order, and then iterates through the set, printing the student names followed by their codes.
+@detail This function creates a sorted set of students based on their names in descending order, and then iterates through the set, printing the student names followed by their codes.
 
 Time Complexity\+: O(\+N \texorpdfstring{$\ast$}{*} log(\+N)), where N is the number of students. \Hypertarget{class_data_a6fed2d8f965ee0f10d7cd39c10ac8ea6}\label{class_data_a6fed2d8f965ee0f10d7cd39c10ac8ea6} 
 \index{Data@{Data}!printStudentsInUC@{printStudentsInUC}}
@@ -641,7 +641,7 @@ Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the numb
 
 Reads classes and their schedules from the CSV file \textquotesingle{}classes.\+csv\textquotesingle{} and populates the data structures. 
 
-This function reads class information from a CSV file and populates the internal data structures. It creates a list of pairs, each containing a \doxylink{class_u_c}{UC} (course) and a \doxylink{class_lesson}{Lesson}, representing the class details, such as day of the week, start time, and duration.
+@detail This function reads class information from a CSV file and populates the internal data structures. It creates a list of pairs, each containing a \doxylink{class_u_c}{UC} (course) and a \doxylink{class_lesson}{Lesson}, representing the class details, such as day of the week, start time, and duration.
 
 Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
 
@@ -658,7 +658,7 @@ This function assumes that the file format is well-\/formed and doesn\textquotes
 
 Reads all the classes and the corresponding \doxylink{class_u_c}{UC}\textquotesingle{}s from the CSV file \textquotesingle{}classes\+\_\+per\+\_\+uc.\+csv\textquotesingle{} and populates the data structures. 
 
-This function reads class per \doxylink{class_u_c}{UC} information from a CSV file and populates the internal data structures. It creates a list of UCs associated with their corresponding classes.
+@detail This function reads class per \doxylink{class_u_c}{UC} information from a CSV file and populates the internal data structures. It creates a list of UCs associated with their corresponding classes.
 
 Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
 
@@ -675,7 +675,7 @@ This function assumes that the file format is well-\/formed and doesn\textquotes
 
 Reads student classes data from the CSV file \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} and populates the data structures. 
 
-This function reads student-\/class relationships from a CSV file and populates the internal data structures. It creates pairs of students and their associated classes (\doxylink{class_u_c}{UC}) and also keeps track of unique students. Each student have at least an \doxylink{class_u_c}{UC} and a class.
+@detail This function reads student-\/class relationships from a CSV file and populates the internal data structures. It creates pairs of students and their associated classes (\doxylink{class_u_c}{UC}) and also keeps track of unique students. Each student have at least an \doxylink{class_u_c}{UC} and a class.
 
 Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
 
@@ -707,7 +707,7 @@ Time Complexity\+: O(1) \Hypertarget{class_data_a1ee0c0a69f2fe4498352772c2b5544a
 
 Initialize a map associating class codes with sets of students. 
 
-This function iterates through the list of student-\/class pairs and populates a map that associates class codes with sets of students enrolled in each class.
+@detail This function iterates through the list of student-\/class pairs and populates a map that associates class codes with sets of students enrolled in each class.
 
 Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a35601ddf05866e84bd89f9e1533fac1c}\label{class_data_a35601ddf05866e84bd89f9e1533fac1c} 
 \index{Data@{Data}!startClassToUCMap@{startClassToUCMap}}
@@ -779,7 +779,7 @@ Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the numb
 
 Initializes a map that groups students by their admission year. 
 
-This function processes the list of students and creates a mapping where each admission year corresponds to a set of students who started in that year. The map year\+To\+Students\+Map\+\_\+ is populated with this information.
+@detail This function processes the list of students and creates a mapping where each admission year corresponds to a set of students who started in that year. The map year\+To\+Students\+Map\+\_\+ is populated with this information.
 
 Time complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students. 
 

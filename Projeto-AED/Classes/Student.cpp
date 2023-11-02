@@ -7,7 +7,7 @@ using namespace std;
 /**
  * @brief Default constructor for the Student class.
  *
- * This constructor initializes a Student object with default values. It does not perform any significant operations.
+ * @detail This constructor initializes a Student object with default values. It does not perform any significant operations.
  *
  * Time Complexity: O(1), constant time for object initialization.
  */
@@ -18,7 +18,7 @@ Student::Student(){
 /**
  * @brief Constructor for the Student class with a specified student code, student name, and list of UCs.
  *
- * This constructor creates a Student object with the given student code, student name, and list of UCs. It initializes the attributes accordingly.
+ * @detail This constructor creates a Student object with the given student code, student name, and list of UCs. It initializes the attributes accordingly.
  *
  * Time Complexity: O(1), constant time for object initialization and attribute assignment.
  */
@@ -31,7 +31,7 @@ Student::Student(int studentCode, string studentName, list<UC> ucs){
 /**
  * @brief Constructor for the Student class with a specified student code and student name.
  *
- * This constructor creates a Student object with the given student code and student name. It initializes the attributes accordingly.
+ * @detail This constructor creates a Student object with the given student code and student name. It initializes the attributes accordingly.
  *
  * Time Complexity: O(1), constant time for object initialization and attribute assignment.
  */
@@ -43,7 +43,7 @@ Student::Student(int studentCode, string studentName){
 /**
  * @brief Constructor for the Student class with a specified student code.
  *
- * This constructor creates a Student object with the given student code. It initializes the attributes accordingly.
+ * @detail This constructor creates a Student object with the given student code. It initializes the attributes accordingly.
  *
  * Time Complexity: O(1), constant time for object initialization and attribute assignment.
  */
@@ -54,7 +54,7 @@ Student::Student(int studentCode){
 /**
  * @brief Get the student's unique code.
  *
- * This function returns the student's unique code.
+ * @detail This function returns the student's unique code.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -65,7 +65,7 @@ int Student::getStudentCode() const {
 /**
  * @brief Get the student's name.
  *
- * This function returns the student's name.
+ * @detail This function returns the student's name.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -76,7 +76,7 @@ string Student::getStudentName() const {
 /**
  * @brief Find the name of a student by their student code in a list of students and UCs.
  *
- * This function searches for the name of a student with the specified student code in the given list of student-UC pairs.
+ * @detail This function searches for the name of a student with the specified student code in the given list of student-UC pairs.
  *
  * Time Complexity: O(n), linear time complexity where 'n' is the number of elements in the 'listStudents_Classes'.
  */
@@ -92,7 +92,7 @@ string Student::findName(const list<pair<Student, UC>>& listStudents_Classes , i
 /**
  * @brief Get the list of UCs associated with the student.
  *
- * This function returns the list of UCs associated with the student.
+ * @detail This function returns the list of UCs associated with the student.
  *
  * Time Complexity: O(1), constant time to return the attribute.
  */
@@ -103,7 +103,7 @@ list<UC> Student::getUCs() const {
 /**
  * @brief Set the student's unique code.
  *
- * This function sets the student's unique code to the specified value.
+ * @detail This function sets the student's unique code to the specified value.
  *
  * Time Complexity: O(1), constant time to assign the attribute.
  */
@@ -114,7 +114,7 @@ void Student::setStudentCode(int StudentCode) {
 /**
  * @brief Set the student's name.
  *
- * This function sets the student's name to the specified value.
+ * @detail This function sets the student's name to the specified value.
  *
  * Time Complexity: O(1), constant time to assign the attribute.
  */
@@ -125,7 +125,7 @@ void Student::setStudentName(string StudentName) {
 /**
  * @brief Set the list of UCs associated with the student.
  *
- * This function sets the list of UCs associated with the student.
+ * @detail This function sets the list of UCs associated with the student.
  *
  * Time Complexity: O(1), constant time to assign the attribute.
  */
@@ -136,7 +136,7 @@ void Student::setUCs(list<UC> ucs) {
 /**
  * @brief Compare two students for ordering based on their student code and name.
  *
- * This function compares two Student objects based on their student code and name. It is used for sorting and ordering purposes.
+ * @detail This function compares two Student objects based on their student code and name. It is used for sorting and ordering purposes.
  *
  * Time Complexity: O(1), constant time for comparison.
  */
@@ -147,7 +147,7 @@ bool Student::operator<(const Student &other) const {
 /**
  * @brief Add a UC to the list of UCs associated with the student.
  *
- * This function adds a UC to the list of UCs associated with the student. It appends the UC to the list.
+ * @detail This function adds a UC to the list of UCs associated with the student. It appends the UC to the list.
  *
  * Time Complexity: O(1), constant time to append a UC to the list.
  */
@@ -158,7 +158,7 @@ void Student::addUC(const UC& uc) {
 /**
  * @brief Check if the student has a class with a specified class code.
  *
- * This function checks if the student has a class with the specified class code by iterating through the list of UCs.
+ * @detail This function checks if the student has a class with the specified class code by iterating through the list of UCs.
  *
  * Time Complexity: O(n), linear time complexity where 'n' is the number of UCs in the list.
  */
@@ -174,7 +174,7 @@ bool Student::hasClass(string classCode) const {
 /**
  * @brief Check if the student has a UC with a specified UC code.
  *
- * This function checks if the student has a UC with the specified UC code by iterating through the list of UCs.
+ * @detail This function checks if the student has a UC with the specified UC code by iterating through the list of UCs.
  *
  * Time Complexity: O(n), linear time complexity where 'n' is the number of UCs in the list.
  */
@@ -190,7 +190,7 @@ bool Student::hasUC(const string& ucCode) const {
 /**
  * @brief Create a schedule for the student based on a list of student-UC pairs and UC-lesson pairs.
  *
- * This function creates a schedule for the student based on the provided lists of student-UC pairs and UC-lesson pairs.
+ * @detail This function creates a schedule for the student based on the provided lists of student-UC pairs and UC-lesson pairs.
  * It collects the UCs associated with the student and adds the corresponding lessons to the schedule.
  *
  * Time Complexity: O(n), linear time complexity where 'n' is the number of student-UC pairs and UC-lesson pairs in the input lists.
@@ -218,7 +218,7 @@ Schedule Student::getStudentSchedule(const std::list<std::pair<Student, UC>>& l1
 /**
  * @brief Prints the schedule of a student to the console.
  *
- * This function prints the weekly schedule of a student, including the hours, days of the week, and the lessons they are attending.
+ * @detail This function prints the weekly schedule of a student, including the hours, days of the week, and the lessons they are attending.
  *
  * @param studentCode The code of the student for whom the schedule should be printed.
  * @param l1 A list of pairs containing students and their corresponding classes.
