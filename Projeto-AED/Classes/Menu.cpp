@@ -505,7 +505,7 @@ void Menu::showMenu() {
                         list<pair<Student, UC>> l = d.getListStudentsClasses_();
                         if(r.switchUC(s,a,b,l,d.getListClasses_(),d.getUCClasstoStudentsMap())) {
                             d.setListStudentsClasses_(l);
-                            log.requestAndLog("AddUc", s, a);
+                            log.requestAndLog("SwitchUc", s, b, a);
                             cout << "Operation successful!";
                         }
                         else{
@@ -542,7 +542,7 @@ void Menu::showMenu() {
                         list<pair<Student, UC>> l = d.getListStudentsClasses_();
                         if(r.switchClass(s,a,b,l,d.getListClasses_(),d.getUCClasstoStudentsMap())) {
                             d.setListStudentsClasses_(l);
-                            log.requestAndLog("AddUc", s, a);
+                            log.requestAndLog("SwitchClass", s, b,a);
                             cout << "Operation successful!";
                         }
                         else{
@@ -569,13 +569,11 @@ void Menu::showMenu() {
                 cin >> key;
                 switch (key) {
                     case '1': {
-                        RequestLog r;
-                        r.save();
+                        log.save();
                         break;
                     }
                     case '2':{
-                        RequestLog r;
-                        r.undo();
+                        log.undo();
                         break;
                     }
 

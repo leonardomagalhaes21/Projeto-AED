@@ -15,8 +15,8 @@ struct RequestLog {
     RequestLog();
     std::queue<Operation> operations_;
     void requestAndLog(const std::string& action,const Student& student, UC newUc);
-    void requestAndLog(const std::string& action, Student student,UC newUc, UC oldUc);
-    void requestAndLog(const std::string& action,Student student, std::string class_uc_Code);
+    void requestAndLog(const std::string& action,const Student& student,UC newUc, UC oldUc);
+    void requestAndLog(const std::string& action,const Student& student, std::string class_uc_Code);
     void save();
     void undo();
 };

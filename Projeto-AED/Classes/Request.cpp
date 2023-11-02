@@ -38,7 +38,7 @@ void RequestLog::requestAndLog(const std::string& action,const Student& student,
  *
  * Time Complexity: O(1)
  */
-void RequestLog::requestAndLog(const std::string& action, Student student,UC newUc,UC oldUc) {
+void RequestLog::requestAndLog(const std::string& action, const Student& student,UC newUc,UC oldUc) {
     Operation operation;
     operation.action_ = action;
     operation.student_=student;
@@ -58,7 +58,7 @@ void RequestLog::requestAndLog(const std::string& action, Student student,UC new
  *
  * Time Complexity: O(1)
  */
-void RequestLog::requestAndLog(const std::string& action,Student student, std::string class_uc_Code){
+void RequestLog::requestAndLog(const std::string& action,const Student& student, std::string class_uc_Code){
     Operation operation;
     operation.action_ = action;
     operation.student_=student;
@@ -78,7 +78,7 @@ void RequestLog::save() {
     out << "Request Log:" << endl;
     while (!operations_.empty()) {
         const Operation& operation = operations_.front();
-        out << operation.action_ << " ";
+        out << operation.action_ << " " ;
         out << operation.newUc_.getUCCode() << " ";
         out << operation.newUc_.getClassCode() << " ";
         out << operation.oldUc_.getUCCode() << " ";
