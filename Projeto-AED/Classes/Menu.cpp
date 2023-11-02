@@ -438,6 +438,7 @@ void Menu::showMenu() {
                         if(r.removeUC(s,ucc,l)) {
                             d.setListStudentsClasses_(l);
                             log.requestAndLog("RemoveUc", s, ucc);
+                            cout << "Operation successful!";
                         }
                         else{
                             cout << "Operation failed!";

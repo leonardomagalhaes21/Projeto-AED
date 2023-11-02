@@ -3,6 +3,7 @@
 
 #include "Student.h"
 #include <fstream>
+#include <sstream>
 #include <queue>
 struct RequestLog {
     struct Operation {
@@ -11,6 +12,8 @@ struct RequestLog {
         UC oldUc_;
         std::string class_Uc_Code_;
         Student student_;
+
+        void saveToData();
     };
     RequestLog();
     std::queue<Operation> operations_;

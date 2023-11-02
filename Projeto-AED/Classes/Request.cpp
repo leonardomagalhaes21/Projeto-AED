@@ -22,6 +22,7 @@ RequestLog::RequestLog() {}
 void RequestLog::requestAndLog(const std::string& action,const Student& student, UC newUc) {
     Operation operation;
     operation.action_ = action;
+    operation.student_ = student;
     operation.newUc_ = newUc;
     operations_.push(operation);
 }
@@ -77,7 +78,7 @@ void RequestLog::save() {
 
     out << "Request Log:" << endl;
     while (!operations_.empty()) {
-        const Operation& operation = operations_.front();
+        Operation operation = operations_.front();
         out << operation.action_ << " " ;
         out << operation.newUc_.getUCCode() << " ";
         out << operation.newUc_.getClassCode() << " ";
@@ -85,9 +86,190 @@ void RequestLog::save() {
         out << operation.oldUc_.getClassCode() << " ";
         out << operation.class_Uc_Code_ << " ";
         out << operation.student_.getStudentCode() << endl;
+        operation.saveToData();
         operations_.pop();
     }
     out.close();
+}
+
+void RequestLog::Operation::saveToData() {
+    map<string, int> m = {
+            {"AddUc", 1},
+            {"RemoveUc", 2},
+            {"RemoveClass", 3},
+            {"SwitchUc", 4},
+            {"SwitchClass", 5}
+    };
+    int a = m[action_];
+    switch(a) {
+        case 1: {
+            string f = "../schedule/students_classes.csv";
+            ifstream iff(f);
+            if (!iff.is_open() || !iff.good()) {
+                cerr << "Failed to open file: " << f << endl;
+            }
+
+            string StName, StCode, UcCode, ClassCode, line;
+            stringstream ss;
+            bool flag = false;
+            while (getline(iff, line)) {
+                istringstream inn(line);
+                getline(inn, StCode, ',');
+                getline(inn, StName, ',');
+                getline(inn, UcCode, ',');
+                inn >> ClassCode;
+                string c = to_string(student_.getStudentCode());
+                // adicionar metodo para saber nome a partir de stcode
+                if (StCode == c && !(flag)) {
+                    string s = c + "," + StName + "," + newUc_.getUCCode() + "," + newUc_.getClassCode();
+                    ss << s << endl;
+                    ss << line << endl;
+                    flag = true;
+                }
+                else {
+                    ss << line << endl;
+                }
+            }
+            if (!flag){
+                string c = to_string(student_.getStudentCode());
+                string s = c + "," + student_.getStudentName() + "," + newUc_.getUCCode() + "," + newUc_.getClassCode();
+                ss << s;
+            }
+
+            iff.close();
+            ofstream out(f);
+
+            out << ss.str();
+            out.close();
+            break;
+        }
+        case 2: {
+            string f = "../schedule/students_classes.csv";
+            ifstream iff(f);
+            if (!iff.is_open() || !iff.good()) {
+                cerr << "Failed to open file: " << f << endl;
+            }
+
+            string StName, StCode, UcCode, ClassCode, line;
+            stringstream ss;
+
+            while (getline(iff, line)) {
+                istringstream inn(line);
+                getline(inn, StCode, ',');
+                getline(inn, StName, ',');
+                getline(inn, UcCode, ',');
+                inn >> ClassCode;
+                string c = to_string(student_.getStudentCode());
+                if (StCode != c || class_Uc_Code_ != UcCode) {
+                    ss << line << endl;
+                }
+            }
+
+            iff.close();
+            ofstream out(f);
+
+            out << ss.str();
+            out.close();
+            break;
+        }
+        case 3: {
+            string f = "../schedule/students_classes.csv";
+            ifstream iff(f);
+            if (!iff.is_open() || !iff.good()) {
+                cerr << "Failed to open file: " << f << endl;
+            }
+
+            string StName, StCode, UcCode, ClassCode, line;
+            stringstream ss;
+
+            while (getline(iff, line)) {
+                istringstream inn(line);
+                getline(inn, StCode, ',');
+                getline(inn, StName, ',');
+                getline(inn, UcCode, ',');
+                inn >> ClassCode;
+                string c = to_string(student_.getStudentCode());
+                if (StCode != c || class_Uc_Code_ != ClassCode) {
+                    ss << line << endl;
+                }
+            }
+
+            iff.close();
+            ofstream out(f);
+
+            out << ss.str();
+            out.close();
+            break;
+        }
+        case 4: {
+            string f = "../schedule/students_classes.csv";
+            ifstream iff(f);
+            if (!iff.is_open() || !iff.good()) {
+                cerr << "Failed to open file: " << f << endl;
+            }
+
+            string StName, StCode, UcCode, ClassCode, line;
+            stringstream ss;
+
+            while (getline(iff, line)) {
+                istringstream inn(line);
+                getline(inn, StCode, ',');
+                getline(inn, StName, ',');
+                getline(inn, UcCode, ',');
+                inn >> ClassCode;
+                string c = to_string(student_.getStudentCode());
+                if (StCode == c && oldUc_.getUCCode() == UcCode && oldUc_.getClassCode() == ClassCode) {
+                    string s = c + "," + StName + "," + newUc_.getUCCode() + "," + newUc_.getClassCode();
+                    ss << s << endl;
+                }
+                else {
+                    ss << line << endl;
+                }
+            }
+
+            iff.close();
+            ofstream out(f);
+
+            out << ss.str();
+            out.close();
+            break;
+        }
+        case 5: {
+            string f = "../schedule/students_classes.csv";
+            ifstream iff(f);
+            if (!iff.is_open() || !iff.good()) {
+                cerr << "Failed to open file: " << f << endl;
+            }
+
+            string StName, StCode, UcCode, ClassCode, line;
+            stringstream ss;
+
+            while (getline(iff, line)) {
+                istringstream inn(line);
+                getline(inn, StCode, ',');
+                getline(inn, StName, ',');
+                getline(inn, UcCode, ',');
+                inn >> ClassCode;
+                string c = to_string(student_.getStudentCode());
+                if (StCode == c && oldUc_.getUCCode() == UcCode && oldUc_.getClassCode() == ClassCode) {
+                    string s = c + "," + StName + "," + newUc_.getUCCode() + "," + newUc_.getClassCode();
+                    ss << s << endl;
+                }
+                else {
+                    ss << line << endl;
+                }
+            }
+
+            iff.close();
+            ofstream out(f);
+
+            out << ss.str();
+            out.close();
+            break;
+        }
+        default:
+            break;
+    };
 }
 
 void RequestLog::undo() {
