@@ -89,6 +89,7 @@ void RequestLog::save() {
         operation.saveToData();
         operations_.pop();
     }
+    cout << "Save successful!";
     out.close();
 }
 
@@ -119,7 +120,6 @@ void RequestLog::Operation::saveToData() {
                 getline(inn, UcCode, ',');
                 inn >> ClassCode;
                 string c = to_string(student_.getStudentCode());
-                // adicionar metodo para saber nome a partir de stcode
                 if (StCode == c && !(flag)) {
                     string s = c + "," + StName + "," + newUc_.getUCCode() + "," + newUc_.getClassCode();
                     ss << s << endl;
