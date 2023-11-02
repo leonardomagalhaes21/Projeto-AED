@@ -1,0 +1,186 @@
+\doxysection{Request Class Reference}
+\hypertarget{class_request}{}\label{class_request}\index{Request@{Request}}
+
+
+{\ttfamily \#include $<$Request.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_request}{Request} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_request_a90fc2ab5d3425dbb087dbaa41ac50392}{add\+UC}} (const \mbox{\hyperlink{class_student}{Student}} \&s, const std\+::string \&ucc, const std\+::string \&cc, std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&val, const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&val2, const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Adds an \doxylink{class_u_c}{UC} to a student\textquotesingle{}s schedule. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_request_aab9894ce7102e7443efb2f08678932db}{switch\+UC}} (const \mbox{\hyperlink{class_student}{Student}} \&s, const \mbox{\hyperlink{class_u_c}{UC}} \&old\+UC, const \mbox{\hyperlink{class_u_c}{UC}} \&new\+UC, std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&val, const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&val2, const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Switches a student\textquotesingle{}s \doxylink{class_u_c}{UC} from an old \doxylink{class_u_c}{UC} to a new \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_request_a6bd3fc4a050b5a180914e22df43a5178}{remove\+UC}} (const \mbox{\hyperlink{class_student}{Student}} \&s, const \mbox{\hyperlink{class_u_c}{UC}} \&uc, std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&val)
+\begin{DoxyCompactList}\small\item\em Removes a \doxylink{class_u_c}{UC} from a student\textquotesingle{}s schedule. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_request_a026e79ba1bfbba6f8606b87d882b160a}{switch\+Class}} (const \mbox{\hyperlink{class_student}{Student}} \&s, const \mbox{\hyperlink{class_u_c}{UC}} \&old\+UC, const \mbox{\hyperlink{class_u_c}{UC}} \&new\+UC, std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&val, const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&val2, const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Switches a student\textquotesingle{}s class within a \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_request_a9f21ac6c2ae258a37cb188d2f4761929}{remove\+Class}} (const \mbox{\hyperlink{class_student}{Student}} \&s, const std\+::string \&uc, std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&val)
+\begin{DoxyCompactList}\small\item\em Removes a student from a specific class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_afaf8d8928de7ffff8a3767589489bd33}\label{class_request_afaf8d8928de7ffff8a3767589489bd33} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_request}{Request} class. 
+
+This constructor initializes an instance of the \doxylink{class_request}{Request} class.
+
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_a90fc2ab5d3425dbb087dbaa41ac50392}\label{class_request_a90fc2ab5d3425dbb087dbaa41ac50392} 
+\index{Request@{Request}!addUC@{addUC}}
+\index{addUC@{addUC}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{addUC()}{addUC()}}
+{\footnotesize\ttfamily bool Request\+::add\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{s,  }\item[{const std\+::string \&}]{ucc,  }\item[{const std\+::string \&}]{cc,  }\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&}]{val,  }\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{val2,  }\item[{const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds an \doxylink{class_u_c}{UC} to a student\textquotesingle{}s schedule. 
+
+This function adds a \doxylink{class_u_c}{UC} to a student\textquotesingle{}s schedule if certain conditions are met. The conditions include checking the student\textquotesingle{}s \doxylink{class_u_c}{UC} count, ensuring there are no schedule conflicts, and checking the \doxylink{class_u_c}{UC}\textquotesingle{}s capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The student for whom the \doxylink{class_u_c}{UC} is being added. \\
+\hline
+{\em ucc} & The \doxylink{class_u_c}{UC} code to add. \\
+\hline
+{\em cc} & The class code of the \doxylink{class_u_c}{UC}. \\
+\hline
+{\em val} & The list of student-\/\+UC pairs. \\
+\hline
+{\em val2} & The list of UC-\/lesson pairs. \\
+\hline
+{\em m} & The map of UCs to students. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{class_u_c}{UC} is added successfully, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n²) where n is the number of student-\/\+UC pairs in \textquotesingle{}val\textquotesingle{}. \Hypertarget{class_request_a9f21ac6c2ae258a37cb188d2f4761929}\label{class_request_a9f21ac6c2ae258a37cb188d2f4761929} 
+\index{Request@{Request}!removeClass@{removeClass}}
+\index{removeClass@{removeClass}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{removeClass()}{removeClass()}}
+{\footnotesize\ttfamily bool Request\+::remove\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{s,  }\item[{const std\+::string \&}]{uc,  }\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a student from a specific class. 
+
+This function removes a student from a specific class within a \doxylink{class_u_c}{UC}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The student to be removed from the class. \\
+\hline
+{\em cc} & The class code of the class to be removed from. \\
+\hline
+{\em val} & The list of student-\/\+UC pairs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student is removed from the class successfully, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n) where n is the number of student-\/\+UC pairs in \textquotesingle{}val\textquotesingle{}. \Hypertarget{class_request_a6bd3fc4a050b5a180914e22df43a5178}\label{class_request_a6bd3fc4a050b5a180914e22df43a5178} 
+\index{Request@{Request}!removeUC@{removeUC}}
+\index{removeUC@{removeUC}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{removeUC()}{removeUC()}}
+{\footnotesize\ttfamily bool Request\+::remove\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{s,  }\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{uc,  }\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a \doxylink{class_u_c}{UC} from a student\textquotesingle{}s schedule. 
+
+This function removes a \doxylink{class_u_c}{UC} from a student\textquotesingle{}s schedule.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The student from whom the \doxylink{class_u_c}{UC} is being removed. \\
+\hline
+{\em uc} & The \doxylink{class_u_c}{UC} to be removed. \\
+\hline
+{\em val} & The list of student-\/\+UC pairs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{class_u_c}{UC} is removed successfully, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n) where n is the number of student-\/\+UC pairs in \textquotesingle{}val\textquotesingle{}. \Hypertarget{class_request_a026e79ba1bfbba6f8606b87d882b160a}\label{class_request_a026e79ba1bfbba6f8606b87d882b160a} 
+\index{Request@{Request}!switchClass@{switchClass}}
+\index{switchClass@{switchClass}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{switchClass()}{switchClass()}}
+{\footnotesize\ttfamily bool Request\+::switch\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{s,  }\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{old\+UC,  }\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{new\+UC,  }\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&}]{val,  }\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{val2,  }\item[{const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Switches a student\textquotesingle{}s class within a \doxylink{class_u_c}{UC}. 
+
+This function switches a student\textquotesingle{}s class within a \doxylink{class_u_c}{UC} if certain conditions are met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The student for whom the class is being switched. \\
+\hline
+{\em old\+UC} & The old \doxylink{class_u_c}{UC} containing the class to be removed. \\
+\hline
+{\em new\+UC} & The new \doxylink{class_u_c}{UC} containing the class to be added. \\
+\hline
+{\em val} & The list of student-\/\+UC pairs. \\
+\hline
+{\em val2} & The list of UC-\/lesson pairs. \\
+\hline
+{\em m} & The map of UCs to students. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the class switch is successful, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n) where n is the number of student-\/\+UC pairs in \textquotesingle{}val\textquotesingle{}. \Hypertarget{class_request_aab9894ce7102e7443efb2f08678932db}\label{class_request_aab9894ce7102e7443efb2f08678932db} 
+\index{Request@{Request}!switchUC@{switchUC}}
+\index{switchUC@{switchUC}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{switchUC()}{switchUC()}}
+{\footnotesize\ttfamily bool Request\+::switch\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{s,  }\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{old\+UC,  }\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{new\+UC,  }\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \&}]{val,  }\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{val2,  }\item[{const std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Switches a student\textquotesingle{}s \doxylink{class_u_c}{UC} from an old \doxylink{class_u_c}{UC} to a new \doxylink{class_u_c}{UC}. 
+
+This function switches a student\textquotesingle{}s \doxylink{class_u_c}{UC} from an old \doxylink{class_u_c}{UC} to a new \doxylink{class_u_c}{UC} if certain conditions are met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The student for whom the \doxylink{class_u_c}{UC} is being switched. \\
+\hline
+{\em old\+UC} & The old \doxylink{class_u_c}{UC} to be removed. \\
+\hline
+{\em new\+UC} & The new \doxylink{class_u_c}{UC} to be added. \\
+\hline
+{\em val} & The list of student-\/\+UC pairs. \\
+\hline
+{\em val2} & The list of UC-\/lesson pairs. \\
+\hline
+{\em m} & The map of UCs to students. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{class_u_c}{UC} switch is successful, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n) where n is the number of student-\/\+UC pairs in \textquotesingle{}val\textquotesingle{}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_request_8h}{Request.\+h}}\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_request_8cpp}{Request.\+cpp}}\end{DoxyCompactItemize}

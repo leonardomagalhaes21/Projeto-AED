@@ -1,0 +1,48 @@
+\doxysection{UC.\+h}
+\hypertarget{_u_c_8h_source}{}\label{_u_c_8h_source}\index{Projeto-\/AED/Projeto-\/AED/Classes/UC.h@{Projeto-\/AED/Projeto-\/AED/Classes/UC.h}}
+\mbox{\hyperlink{_u_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROJECT\_UC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROJECT\_UC\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_lesson_8h}{Lesson.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_schedule_8h}{Schedule.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_schedule}{Schedule}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_u_c}{UC}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_u_c_a8a5e0317c98de9e04ad84157af5684a1}{UC}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_u_c_a10844f65f7f923409e79712e2224c403}{UC}}(std::string\ ucCode,\ std::string\ classCode,\ std::list<Lesson>\ lesson);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_u_c_a25aae3b71aeaa29ff29417f266a27c36}{UC}}(std::string\ ucCode,\ std::string\ classCode);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_u_c_a7f2474a9645d38a886856439c3cbc4d9}{UC}}(std::string\ ucCode);}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \mbox{\hyperlink{class_u_c_a265914898404026b77c0f52b130469d5}{getUCCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{class_u_c_a7f482a42dbd5ac7b6f2d89917865290d}{getClassCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_u_c_a95af4373c8a2adea622fbd835cafff23}{getNumberStudents}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_c_aa125acf09417472f976fdc91e9a9d8c6}{setNumberStudents}}(\textcolor{keywordtype}{int}\ newValue);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_c_ad3b1da384c4c25d23fd0b200f0f9d61a}{addLesson}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_lesson}{Lesson}}\&\ lesson);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_u_c_a104053b39c27b527eb7e818209a2433e}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_u_c}{UC}}\&\ Uc)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_c_abff7156a7b552c66771dda7712fec4ae}{printLessons}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_u_c_ac4d4947ba89ca3bc0416199aedcecffa}{toTime}}(\textcolor{keywordtype}{float}\ hour);}
+\DoxyCodeLine{00029\ \ \ \ \ std::list<Lesson>\ \mbox{\hyperlink{class_u_c_a85925ae96f24fe56114c8d728e5fdf67}{getLessons}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_c_adaa59a434bf8e6a93a08bcfdeb4e581a}{addClassLessons}}(\textcolor{keyword}{const}\ std::list<std::pair<UC,\ Lesson>>\&\ l1);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_schedule}{Schedule}}\ \mbox{\hyperlink{class_u_c_a96eaa845aa047989e75e79bb0acfc780}{getSchedule}}(\textcolor{keyword}{const}\ std::list<std::pair<UC,\ Lesson>>\&\ l1);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_u_c_a910a59cdb23abff1433e87cf423654b8}{capacity\_}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ ucCode\_;}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ classCode\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ numberStudents\_;}
+\DoxyCodeLine{00038\ \ \ \ \ std::list<Lesson>\ lesson\_;}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECT\_UC\_H}}
+
+\end{DoxyCode}

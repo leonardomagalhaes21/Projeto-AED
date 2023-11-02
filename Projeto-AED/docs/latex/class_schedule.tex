@@ -1,0 +1,135 @@
+\doxysection{Schedule Class Reference}
+\hypertarget{class_schedule}{}\label{class_schedule}\index{Schedule@{Schedule}}
+
+
+{\ttfamily \#include $<$Schedule.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_schedule_a878716f4043a016224a14f78974edf1d}{Schedule}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_schedule}{Schedule} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_schedule_a159c9bade73c7788e2523bbc7d24cd53}{Schedule}} (std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ schedule)
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \mbox{\hyperlink{class_schedule_aa95c9ac553334d71af39524fac094fcf}{get\+Schedule}} ()
+\begin{DoxyCompactList}\small\item\em Get the class schedule vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_schedule_a207f94cc2af1e34dece0cabbc77861fb}{set\+Schedule}} (std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ schedule)
+\begin{DoxyCompactList}\small\item\em Set the class schedule vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_schedule_ad34e1793a4fe4b0f877fad2b97018013}{add\+Lesson}} (const \mbox{\hyperlink{class_u_c}{UC}} \&uc, const \mbox{\hyperlink{class_lesson}{Lesson}} \&lesson)
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{class_lesson}{Lesson} to the schedule of a \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_schedule_abd815da87ce7b7f35f531aedcac55b32}{print\+Schedule}} ()
+\begin{DoxyCompactList}\small\item\em Print the class schedule in a tabular format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_schedule_a079dbf527c04fb74d9a252c73f36c196}{to\+Time}} (float hour)
+\begin{DoxyCompactList}\small\item\em Convert a floating-\/point hour value to a formatted string (hh\+:mm). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_schedule_a878716f4043a016224a14f78974edf1d}\label{class_schedule_a878716f4043a016224a14f78974edf1d} 
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Schedule\+::\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_schedule}{Schedule} class. 
+
+Time Complexity\+: O(1), constant time for object initialization. \Hypertarget{class_schedule_a159c9bade73c7788e2523bbc7d24cd53}\label{class_schedule_a159c9bade73c7788e2523bbc7d24cd53} 
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Schedule\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$}]{schedule }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_schedule_ad34e1793a4fe4b0f877fad2b97018013}\label{class_schedule_ad34e1793a4fe4b0f877fad2b97018013} 
+\index{Schedule@{Schedule}!addLesson@{addLesson}}
+\index{addLesson@{addLesson}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{addLesson()}{addLesson()}}
+{\footnotesize\ttfamily void Schedule\+::add\+Lesson (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{uc,  }\item[{const \mbox{\hyperlink{class_lesson}{Lesson}} \&}]{lesson }\end{DoxyParamCaption})}
+
+
+
+Add a \doxylink{class_lesson}{Lesson} to the schedule of a \doxylink{class_u_c}{UC}. 
+
+This function adds a new lesson to the class schedule by creating a pair of \doxylink{class_u_c}{UC} and \doxylink{class_lesson}{Lesson} and pushing it to the schedule vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc} & \doxylink{class_u_c}{UC} object representing the course. \\
+\hline
+{\em lesson} & \doxylink{class_lesson}{Lesson} object representing the class.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) as it simply adds an element to the end of the vector. \Hypertarget{class_schedule_aa95c9ac553334d71af39524fac094fcf}\label{class_schedule_aa95c9ac553334d71af39524fac094fcf} 
+\index{Schedule@{Schedule}!getSchedule@{getSchedule}}
+\index{getSchedule@{getSchedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{getSchedule()}{getSchedule()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ Schedule\+::get\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the class schedule vector. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pairs (\doxylink{class_u_c}{UC}, \doxylink{class_lesson}{Lesson}) representing the class schedule.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_schedule_abd815da87ce7b7f35f531aedcac55b32}\label{class_schedule_abd815da87ce7b7f35f531aedcac55b32} 
+\index{Schedule@{Schedule}!printSchedule@{printSchedule}}
+\index{printSchedule@{printSchedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{printSchedule()}{printSchedule()}}
+{\footnotesize\ttfamily void Schedule\+::print\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the class schedule in a tabular format. 
+
+This function prints the class schedule, organized by weekday, in a tabular format with columns for weekday, \doxylink{class_u_c}{UC} (University Course) code and name, class code, class time with duration, and the type of the class. It sorts the schedule based on weekday and start hour before printing.
+
+Time Complexity\+: O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of lessons in the schedule, due to the sorting operation. \Hypertarget{class_schedule_a207f94cc2af1e34dece0cabbc77861fb}\label{class_schedule_a207f94cc2af1e34dece0cabbc77861fb} 
+\index{Schedule@{Schedule}!setSchedule@{setSchedule}}
+\index{setSchedule@{setSchedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{setSchedule()}{setSchedule()}}
+{\footnotesize\ttfamily void Schedule\+::set\+Schedule (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$}]{schedule }\end{DoxyParamCaption})}
+
+
+
+Set the class schedule vector. 
+
+This function replaces the current class schedule with a new one provided as an argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em schedule} & Vector of pairs (\doxylink{class_u_c}{UC}, \doxylink{class_lesson}{Lesson}) representing the class schedule.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of elements in the input vector. \Hypertarget{class_schedule_a079dbf527c04fb74d9a252c73f36c196}\label{class_schedule_a079dbf527c04fb74d9a252c73f36c196} 
+\index{Schedule@{Schedule}!toTime@{toTime}}
+\index{toTime@{toTime}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{toTime()}{toTime()}}
+{\footnotesize\ttfamily std\+::string Schedule\+::to\+Time (\begin{DoxyParamCaption}\item[{float}]{hour }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a floating-\/point hour value to a formatted string (hh\+:mm). 
+
+This function takes a floating-\/point hour value, such as 9.\+5 (9\+:30), and converts it to a formatted time string in the "{}hh\+:mm"{} format. It ensures that minutes are zero-\/padded if less than 10.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The floating-\/point hour value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string in the "{}hh\+:mm"{} format.
+\end{DoxyReturn}
+Time Complexity\+: O(1) as it performs a fixed number of operations. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_schedule_8h}{Schedule.\+h}}\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_schedule_8cpp}{Schedule.\+cpp}}\end{DoxyCompactItemize}
