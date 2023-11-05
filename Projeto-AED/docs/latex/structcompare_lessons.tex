@@ -1,0 +1,43 @@
+\doxysection{compare\+Lessons Struct Reference}
+\hypertarget{structcompare_lessons}{}\label{structcompare_lessons}\index{compareLessons@{compareLessons}}
+
+
+Comparison function used to sort classes by weekday and start time.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structcompare_lessons_a9f62db35047816f3fdb2b7262fa90b9e}{operator()}} (const pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ \&a, const pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Comparison function used to sort classes by weekday and start time. 
+
+@detail This function is used to sort the vector of classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First pair (\doxylink{class_u_c}{UC}, \doxylink{class_lesson}{Lesson}) to be compared. \\
+\hline
+{\em b} & Second pair (\doxylink{class_u_c}{UC}, \doxylink{class_lesson}{Lesson}) to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if class \textquotesingle{}a\textquotesingle{} occurs before class \textquotesingle{}b\textquotesingle{}, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structcompare_lessons_a9f62db35047816f3fdb2b7262fa90b9e}\label{structcompare_lessons_a9f62db35047816f3fdb2b7262fa90b9e} 
+\index{compareLessons@{compareLessons}!operator()@{operator()}}
+\index{operator()@{operator()}!compareLessons@{compareLessons}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool compare\+Lessons\+::operator() (\begin{DoxyParamCaption}\item[{const pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ \&}]{a,  }\item[{const pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_schedule_8cpp}{Schedule.\+cpp}}\end{DoxyCompactItemize}

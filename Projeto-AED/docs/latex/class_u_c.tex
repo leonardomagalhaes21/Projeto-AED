@@ -1,0 +1,277 @@
+\doxysection{UC Class Reference}
+\hypertarget{class_u_c}{}\label{class_u_c}\index{UC@{UC}}
+
+
+{\ttfamily \#include $<$UC.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_u_c_a8a5e0317c98de9e04ad84157af5684a1}{UC}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_u_c}{UC} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_u_c_a10844f65f7f923409e79712e2224c403}{UC}} (std\+::string uc\+Code, std\+::string class\+Code, std\+::list$<$ \mbox{\hyperlink{class_lesson}{Lesson}} $>$ lesson)
+\item 
+\mbox{\hyperlink{class_u_c_a25aae3b71aeaa29ff29417f266a27c36}{UC}} (std\+::string uc\+Code, std\+::string class\+Code)
+\item 
+\mbox{\hyperlink{class_u_c_a7f2474a9645d38a886856439c3cbc4d9}{UC}} (std\+::string uc\+Code)
+\item 
+std\+::string \mbox{\hyperlink{class_u_c_a265914898404026b77c0f52b130469d5}{get\+UCCode}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_u_c}{UC} code of the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_u_c_a7f482a42dbd5ac7b6f2d89917865290d}{get\+Class\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Get the class code of the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_u_c_a95af4373c8a2adea622fbd835cafff23}{get\+Number\+Students}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of students registered for the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_c_aa125acf09417472f976fdc91e9a9d8c6}{set\+Number\+Students}} (int new\+Value)
+\begin{DoxyCompactList}\small\item\em Set the number of students registered for the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_c_ad3b1da384c4c25d23fd0b200f0f9d61a}{add\+Lesson}} (const \mbox{\hyperlink{class_lesson}{Lesson}} \&lesson)
+\begin{DoxyCompactList}\small\item\em Add a lesson to the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_c_a104053b39c27b527eb7e818209a2433e}{operator$<$}} (const \mbox{\hyperlink{class_u_c}{UC}} \&Uc) const
+\begin{DoxyCompactList}\small\item\em Compare two UCs for ordering based on their \doxylink{class_u_c}{UC} code and class code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_c_abff7156a7b552c66771dda7712fec4ae}{print\+Lessons}} () const
+\begin{DoxyCompactList}\small\item\em Print the list of lessons for the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_lesson}{Lesson}} $>$ \mbox{\hyperlink{class_u_c_a85925ae96f24fe56114c8d728e5fdf67}{get\+Lessons}} () const
+\begin{DoxyCompactList}\small\item\em Get the list of lessons associated with the \doxylink{class_u_c}{UC}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_c_adaa59a434bf8e6a93a08bcfdeb4e581a}{add\+Class\+Lessons}} (const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&l1)
+\begin{DoxyCompactList}\small\item\em Add lessons to the \doxylink{class_u_c}{UC} based on a list of UC-\/lesson pairs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_schedule}{Schedule}} \mbox{\hyperlink{class_u_c_a96eaa845aa047989e75e79bb0acfc780}{get\+Schedule}} (const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&l1)
+\begin{DoxyCompactList}\small\item\em Get the schedule of lessons for the \doxylink{class_u_c}{UC} based on a list of UC-\/lesson pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_u_c_ac4d4947ba89ca3bc0416199aedcecffa}{to\+Time}} (float hour)
+\begin{DoxyCompactList}\small\item\em Convert a floating-\/point hour value to a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_u_c_a910a59cdb23abff1433e87cf423654b8}{capacity\+\_\+}} = 26
+\begin{DoxyCompactList}\small\item\em Static attribute \textquotesingle{}capacity\+\_\+\textquotesingle{} for the \doxylink{class_u_c}{UC} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_u_c_a8a5e0317c98de9e04ad84157af5684a1}\label{class_u_c_a8a5e0317c98de9e04ad84157af5684a1} 
+\index{UC@{UC}!UC@{UC}}
+\index{UC@{UC}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{UC()}{UC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily UC\+::\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_u_c}{UC} class. 
+
+@detail This constructor initializes a \doxylink{class_u_c}{UC} object with default values. It does not perform any significant operations.
+
+Time Complexity\+: O(1), constant time for object initialization. \Hypertarget{class_u_c_a10844f65f7f923409e79712e2224c403}\label{class_u_c_a10844f65f7f923409e79712e2224c403} 
+\index{UC@{UC}!UC@{UC}}
+\index{UC@{UC}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{UC()}{UC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily UC\+::\+UC (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{class\+Code,  }\item[{std\+::list$<$ \mbox{\hyperlink{class_lesson}{Lesson}} $>$}]{lesson }\end{DoxyParamCaption})}
+
+\Hypertarget{class_u_c_a25aae3b71aeaa29ff29417f266a27c36}\label{class_u_c_a25aae3b71aeaa29ff29417f266a27c36} 
+\index{UC@{UC}!UC@{UC}}
+\index{UC@{UC}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{UC()}{UC()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily UC\+::\+UC (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{class\+Code }\end{DoxyParamCaption})}
+
+\Hypertarget{class_u_c_a7f2474a9645d38a886856439c3cbc4d9}\label{class_u_c_a7f2474a9645d38a886856439c3cbc4d9} 
+\index{UC@{UC}!UC@{UC}}
+\index{UC@{UC}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{UC()}{UC()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily UC\+::\+UC (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_c_adaa59a434bf8e6a93a08bcfdeb4e581a}\label{class_u_c_adaa59a434bf8e6a93a08bcfdeb4e581a} 
+\index{UC@{UC}!addClassLessons@{addClassLessons}}
+\index{addClassLessons@{addClassLessons}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{addClassLessons()}{addClassLessons()}}
+{\footnotesize\ttfamily void UC\+::add\+Class\+Lessons (\begin{DoxyParamCaption}\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{l1 }\end{DoxyParamCaption})}
+
+
+
+Add lessons to the \doxylink{class_u_c}{UC} based on a list of UC-\/lesson pairs. 
+
+@detail This function adds lessons to the \doxylink{class_u_c}{UC} based on the provided list of UC-\/lesson pairs. It checks if the \doxylink{class_u_c}{UC} code and class code match and adds the corresponding lessons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l1} & A list of UC-\/lesson pairs to add to the \doxylink{class_u_c}{UC}.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), linear time complexity where \textquotesingle{}n\textquotesingle{} is the number of UC-\/lesson pairs in the input list. \Hypertarget{class_u_c_ad3b1da384c4c25d23fd0b200f0f9d61a}\label{class_u_c_ad3b1da384c4c25d23fd0b200f0f9d61a} 
+\index{UC@{UC}!addLesson@{addLesson}}
+\index{addLesson@{addLesson}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{addLesson()}{addLesson()}}
+{\footnotesize\ttfamily void UC\+::add\+Lesson (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_lesson}{Lesson}} \&}]{lesson }\end{DoxyParamCaption})}
+
+
+
+Add a lesson to the \doxylink{class_u_c}{UC}. 
+
+@detail This function adds a lesson to the list of lessons associated with the \doxylink{class_u_c}{UC}. It appends the lesson to the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lesson} & The lesson to be added to the \doxylink{class_u_c}{UC}.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1), constant time to append a lesson to the list. \Hypertarget{class_u_c_a7f482a42dbd5ac7b6f2d89917865290d}\label{class_u_c_a7f482a42dbd5ac7b6f2d89917865290d} 
+\index{UC@{UC}!getClassCode@{getClassCode}}
+\index{getClassCode@{getClassCode}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{getClassCode()}{getClassCode()}}
+{\footnotesize\ttfamily string UC\+::get\+Class\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the class code of the \doxylink{class_u_c}{UC}. 
+
+@detail This function returns the class code of the \doxylink{class_u_c}{UC}.
+
+Time Complexity\+: O(1), constant time to return the attribute. \Hypertarget{class_u_c_a85925ae96f24fe56114c8d728e5fdf67}\label{class_u_c_a85925ae96f24fe56114c8d728e5fdf67} 
+\index{UC@{UC}!getLessons@{getLessons}}
+\index{getLessons@{getLessons}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{getLessons()}{getLessons()}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_lesson}{Lesson}} $>$ UC\+::get\+Lessons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the list of lessons associated with the \doxylink{class_u_c}{UC}. 
+
+@detail This function returns the list of lessons associated with the \doxylink{class_u_c}{UC}.
+
+Time Complexity\+: O(1), constant time to return the attribute. \Hypertarget{class_u_c_a95af4373c8a2adea622fbd835cafff23}\label{class_u_c_a95af4373c8a2adea622fbd835cafff23} 
+\index{UC@{UC}!getNumberStudents@{getNumberStudents}}
+\index{getNumberStudents@{getNumberStudents}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{getNumberStudents()}{getNumberStudents()}}
+{\footnotesize\ttfamily int UC\+::get\+Number\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of students registered for the \doxylink{class_u_c}{UC}. 
+
+@detail This function returns the number of students registered for the \doxylink{class_u_c}{UC}.
+
+Time Complexity\+: O(1), constant time to return the attribute. \Hypertarget{class_u_c_a96eaa845aa047989e75e79bb0acfc780}\label{class_u_c_a96eaa845aa047989e75e79bb0acfc780} 
+\index{UC@{UC}!getSchedule@{getSchedule}}
+\index{getSchedule@{getSchedule}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{getSchedule()}{getSchedule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_schedule}{Schedule}} UC\+::get\+Schedule (\begin{DoxyParamCaption}\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{l1 }\end{DoxyParamCaption})}
+
+
+
+Get the schedule of lessons for the \doxylink{class_u_c}{UC} based on a list of UC-\/lesson pairs. 
+
+@detail This function creates a schedule of lessons for the \doxylink{class_u_c}{UC} based on a list of UC-\/lesson pairs. Lessons are added to the schedule if they match the \doxylink{class_u_c}{UC} code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l1} & A list of UC-\/lesson pairs used to create the schedule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_schedule}{Schedule} object containing the lessons scheduled for the \doxylink{class_u_c}{UC}.
+\end{DoxyReturn}
+Time Complexity\+: O(n), linear time complexity where \textquotesingle{}n\textquotesingle{} is the number of UC-\/lesson pairs in the input list. \Hypertarget{class_u_c_a265914898404026b77c0f52b130469d5}\label{class_u_c_a265914898404026b77c0f52b130469d5} 
+\index{UC@{UC}!getUCCode@{getUCCode}}
+\index{getUCCode@{getUCCode}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{getUCCode()}{getUCCode()}}
+{\footnotesize\ttfamily string UC\+::get\+UCCode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{class_u_c}{UC} code of the \doxylink{class_u_c}{UC}. 
+
+@detail This function returns the \doxylink{class_u_c}{UC} code of the \doxylink{class_u_c}{UC}.
+
+Time Complexity\+: O(1), constant time to return the attribute. \Hypertarget{class_u_c_a104053b39c27b527eb7e818209a2433e}\label{class_u_c_a104053b39c27b527eb7e818209a2433e} 
+\index{UC@{UC}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool UC\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_u_c}{UC}} \&}]{UC }\end{DoxyParamCaption}) const}
+
+
+
+Compare two UCs for ordering based on their \doxylink{class_u_c}{UC} code and class code. 
+
+@detail This function compares two \doxylink{class_u_c}{UC} objects based on their \doxylink{class_u_c}{UC} code and class code. It is used for sorting and ordering purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_u_c}{UC}} & The \doxylink{class_u_c}{UC} object to be compared to.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1), constant time for comparison. \Hypertarget{class_u_c_abff7156a7b552c66771dda7712fec4ae}\label{class_u_c_abff7156a7b552c66771dda7712fec4ae} 
+\index{UC@{UC}!printLessons@{printLessons}}
+\index{printLessons@{printLessons}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{printLessons()}{printLessons()}}
+{\footnotesize\ttfamily void UC\+::print\+Lessons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print the list of lessons for the \doxylink{class_u_c}{UC}. 
+
+@detail This function prints the list of lessons for the \doxylink{class_u_c}{UC}, including details such as weekday, start time, duration, and lesson type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), linear time complexity where \textquotesingle{}n\textquotesingle{} is the number of lessons in the list. \Hypertarget{class_u_c_aa125acf09417472f976fdc91e9a9d8c6}\label{class_u_c_aa125acf09417472f976fdc91e9a9d8c6} 
+\index{UC@{UC}!setNumberStudents@{setNumberStudents}}
+\index{setNumberStudents@{setNumberStudents}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{setNumberStudents()}{setNumberStudents()}}
+{\footnotesize\ttfamily void UC\+::set\+Number\+Students (\begin{DoxyParamCaption}\item[{int}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+Set the number of students registered for the \doxylink{class_u_c}{UC}. 
+
+@detail This function sets the number of students registered for the \doxylink{class_u_c}{UC} to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & The new number of students registered for the \doxylink{class_u_c}{UC}.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1), constant time to assign the attribute. \Hypertarget{class_u_c_ac4d4947ba89ca3bc0416199aedcecffa}\label{class_u_c_ac4d4947ba89ca3bc0416199aedcecffa} 
+\index{UC@{UC}!toTime@{toTime}}
+\index{toTime@{toTime}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{toTime()}{toTime()}}
+{\footnotesize\ttfamily std\+::string UC\+::to\+Time (\begin{DoxyParamCaption}\item[{float}]{hour }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a floating-\/point hour value to a string representation. 
+
+@detail This function converts a floating-\/point hour value to a string representation in the format "{}\+HH\+:\+MM"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour value to be converted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the hour in "{}\+HH\+:\+MM"{} format.
+\end{DoxyReturn}
+Time Complexity\+: O(1), constant time to perform the conversion. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_u_c_a910a59cdb23abff1433e87cf423654b8}\label{class_u_c_a910a59cdb23abff1433e87cf423654b8} 
+\index{UC@{UC}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!UC@{UC}}
+\doxysubsubsection{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily int UC\+::capacity\+\_\+ = 26\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static attribute \textquotesingle{}capacity\+\_\+\textquotesingle{} for the \doxylink{class_u_c}{UC} class. 
+
+@detail This is a static attribute that has a fixed value of 26, representing the capacity of UCs.
+
+Time Complexity\+: O(1), constant time for static attribute initialization. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_u_c_8h}{UC.\+h}}\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_u_c_8cpp}{UC.\+cpp}}\end{DoxyCompactItemize}

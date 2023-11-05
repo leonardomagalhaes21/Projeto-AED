@@ -1,0 +1,789 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_data}{Data} class. Initializes various data structures. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \mbox{\hyperlink{class_data_ae5e227bdf072101bea6821ebc0a8fc14}{get\+List\+Classes\+\_\+}} () const
+\begin{DoxyCompactList}\small\item\em Gets the list of class data, containing the schedule of each class. It was defined in \doxylink{class_data_a0fb0c5542951619779f9a309995b2623}{read\+Classes()}. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_u_c}{UC}} $>$ \mbox{\hyperlink{class_data_a49460e34db538dd29293f2e344e381ef}{get\+List\+Classes\+Per\+UC\+\_\+}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of classes per \doxylink{class_u_c}{UC}, containing all the classes and corresponding \doxylink{class_u_c}{UC}\textquotesingle{}s.\+It was defined in \doxylink{class_data_a23bc137d82a365a5b09986d10d27008d}{read\+Classes\+Per\+UC()}. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ \mbox{\hyperlink{class_data_acab303140e802186abf4fc5754df5fae}{get\+List\+Students\+Classes\+\_\+}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of students on each class. It was defined in \doxylink{class_data_a23bc137d82a365a5b09986d10d27008d}{read\+Classes\+Per\+UC()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_ac2ff75d3a4e1afa2dd3d9f74ef2cf792}{set\+List\+Students\+Classes\+\_\+}} (std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ l)
+\begin{DoxyCompactList}\small\item\em Sets the list of student-\/class associations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a0b4291bd46c8b127fd6c979baac852b2}{start\+NUCs\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating the number of UCs to a list of students. \end{DoxyCompactList}\item 
+std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \mbox{\hyperlink{class_data_af8d9b2785fba7bf81c46dd11f21672fe}{get\+NUCs\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve a map associating the number of UCs to a list of students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a17be6df4b0286d5d77b83f6aaf3234c4}{start\+UCTo\+Class\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating \doxylink{class_u_c}{UC} codes with sets of class codes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a35601ddf05866e84bd89f9e1533fac1c}{start\+Class\+To\+UCMap}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating class codes with sets of \doxylink{class_u_c}{UC} codes. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_data_af0d86ababf62f68d8c9da1341a6e8d70}{get\+UCTo\+Class\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get the map associating \doxylink{class_u_c}{UC} codes with sets of class codes. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_data_ad2b1ac1d9951bff355a9b579dd0be9a4}{get\+Class\+To\+Uc\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get the map associating class codes with sets of \doxylink{class_u_c}{UC} codes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a678beb714ba7c42ac88141e710f87b0d}{start\+UCTo\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \mbox{\hyperlink{class_data_ac67e0d603800ffd2df60ed18845b80a5}{get\+UCTo\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get a map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a1ee0c0a69f2fe4498352772c2b5544a5}{start\+Class\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating class codes with sets of students. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \mbox{\hyperlink{class_data_a636cf8e4af46bd2ac0612cd6f9bf59f0}{get\+Class\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the map associating class codes with sets of students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a956c4ab15aadb4dbec3b819e8c6340ef}{start\+Year\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a map that groups students by their admission year. \end{DoxyCompactList}\item 
+std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \mbox{\hyperlink{class_data_a42cc11b1cb42c1b7f3ea3b6996863d97}{get\+Year\+To\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the map that groups students by their admission year. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a84a2aae6a33364bc08ad04f36b3fc07a}{start\+UCClassto\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize a map associating UC-\/\+Classes with sets of students. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \mbox{\hyperlink{class_data_a15d9480c747fc653730bd357616560a4}{get\+UCClassto\+Students\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get a map associating UC-\/\+Classes with sets of students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a0fb0c5542951619779f9a309995b2623}{read\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em Reads classes and their schedules from the CSV file \textquotesingle{}classes.\+csv\textquotesingle{} and populates the data structures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a23bc137d82a365a5b09986d10d27008d}{read\+Classes\+Per\+UC}} ()
+\begin{DoxyCompactList}\small\item\em Reads all the classes and the corresponding \doxylink{class_u_c}{UC}\textquotesingle{}s from the CSV file \textquotesingle{}classes\+\_\+per\+\_\+uc.\+csv\textquotesingle{} and populates the data structures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a2cf2ffdaf20e7b517fdd8a94156fc6bc}{read\+Students\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em Reads student classes data from the CSV file \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} and populates the data structures. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_data_a4ddb1c7f068b14b9fca2110184f54927}{get\+Students}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of all the students. It was defined in \doxylink{class_data_a2cf2ffdaf20e7b517fdd8a94156fc6bc}{read\+Students\+Classes()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_abf71161b352d007607e793c75b3b39fe}{print\+Students\+Ascending\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Prints the list of students in ascending order of their student codes. Each line displays the student code followed by the student name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a51573ea9538955b9240bdac13b3e0c7a}{print\+Students\+Descending\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Prints the list of students in descending order of their student codes. Each line displays the student code followed by the student name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_adab6bbba433b198f76e40d143f67c162}{print\+Students\+Ascending\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Prints the list of students in ascending order of their student codes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a7d91d7a9e35fecdbe22a147c6860008c}{print\+Students\+Descending\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Prints the list of students in descending order of their names. Each line displays the student name followed by the student code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_ad456b76fafc4a90cae2d37d4b42916ec}{print\+Class\+Table\+Schedule}} (const std\+::string \&class\+Code) const
+\begin{DoxyCompactList}\small\item\em Print the schedule of a class based on its class code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_data_aff17dceea7fbcfbda7840cb4edf144b3}{print\+Students\+By\+Year}} (int x, const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Prints the students who started in a specific admission year. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a553c6a609d8d23364d80f808d2b14dbd}{print\+Students\+By\+Class}} (const std\+::string \&x, const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Print the list of students in a specific class. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_data_ab15198dd425d5fd67b7d38dd990907ff}{number\+Of\+Students\+By\+Year}} (int x, const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Get the number of students in a specific year. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_data_aaf9f96ef3d0c5d02bf8a4527b57d1e07}{number\+Of\+Students\+In\+Class}} (const std\+::string \&x, const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Get the number of students in a specific class. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_ad38b85c052b3e44624ce4fb11f87a3fc}{print\+Students\+With\+NUCs}} (int x, const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Print students with a specific number of enrolled UCs. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_data_a516f7054e9891bdd5ef670ca1e5ca930}{number\+Students\+With\+NUCs}} (int n, const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Get the number of students with a specific number of enrolled UCs. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a6fed2d8f965ee0f10d7cd39c10ac8ea6}{print\+Students\+In\+UC}} (const std\+::string \&x, const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&uc\+To\+Students\+Map)
+\begin{DoxyCompactList}\small\item\em Print the list of students in a specific \doxylink{class_u_c}{UC} along with their names and student codes. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_data_a0b5975caa9d8966067021f5cd347327d}{number\+Of\+Students\+In\+UC}} (const std\+::string \&x, const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Get the number of students in a specific \doxylink{class_u_c}{UC} (Course). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_ac41a4fac242918793dd9f8afd6987d69}{print\+UCs\+By\+Class}} (const std\+::string \&Ccode, std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$)
+\begin{DoxyCompactList}\small\item\em Print the \doxylink{class_u_c}{UC} codes associated with a specific class code. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a99164487b7c92d0a35d187d9bcda0df8}{print\+Class\+By\+UCs}} (const std\+::string \&UCcode, std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$)
+\begin{DoxyCompactList}\small\item\em Print the class codes associated with a specific \doxylink{class_u_c}{UC} code. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a2382af9b5fce460446ea0547e09d5845}{print\+Class\+Schedule}} (const std\+::string \&class\+Code, const std\+::list$<$ \mbox{\hyperlink{class_u_c}{UC}} $>$ \&classes\+\_\+per\+\_\+uc, const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&get\+List\+Classes)
+\begin{DoxyCompactList}\small\item\em Print the schedule of a specific class. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a2303e1c89ab4a0ffe24251331eefa4ad}{print\+Top5\+UCs}} (const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Print the top 5 Undergraduate Courses (UCs) with the most students. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_data_a10dd4ddd4ef12d0615debc8a3078cb82}{print\+Students\+In\+UCClass}} (const std\+::string \&uc\+Code, const std\+::string \&class\+Code, std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ m)
+\begin{DoxyCompactList}\small\item\em Print the list of students in a specific UC-\/\+Class. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_data_ad563fa57a8c6ef08147824be0eec4d6b}{number\+Of\+Students\+In\+UCClass}} (const std\+::string \&uc\+Code, const std\+::string \&class\+Code, std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ m)
+\begin{DoxyCompactList}\small\item\em Get the number of students in a specific UC-\/\+Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}\label{class_data_af11f741cb7f587e2e495452a8905a22a} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_data}{Data} class. Initializes various data structures. 
+
+@detail This constructor executes all the necessary methods to populate the data base.
+
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_a636cf8e4af46bd2ac0612cd6f9bf59f0}\label{class_data_a636cf8e4af46bd2ac0612cd6f9bf59f0} 
+\index{Data@{Data}!getClassToStudentsMap@{getClassToStudentsMap}}
+\index{getClassToStudentsMap@{getClassToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getClassToStudentsMap()}{getClassToStudentsMap()}}
+{\footnotesize\ttfamily map$<$ string, set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ Data\+::get\+Class\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the map associating class codes with sets of students. 
+
+This function returns the map that associates class codes with sets of students enrolled in each class. Make sure to call \doxylink{class_data_a1ee0c0a69f2fe4498352772c2b5544a5}{Data\+::start\+Class\+To\+Students\+Map} before using this function to ensure the map is properly initialized.
+
+\begin{DoxyReturn}{Returns}
+A map where class codes are keys, and sets of students are values.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_ad2b1ac1d9951bff355a9b579dd0be9a4}\label{class_data_ad2b1ac1d9951bff355a9b579dd0be9a4} 
+\index{Data@{Data}!getClassToUcMap@{getClassToUcMap}}
+\index{getClassToUcMap@{getClassToUcMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getClassToUcMap()}{getClassToUcMap()}}
+{\footnotesize\ttfamily map$<$ string, set$<$ string $>$ $>$ Data\+::get\+Class\+To\+Uc\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the map associating class codes with sets of \doxylink{class_u_c}{UC} codes. 
+
+This function returns the map that associates class codes with sets of \doxylink{class_u_c}{UC} codes for each class.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+A map that associates class codes with sets of \doxylink{class_u_c}{UC} Codes for each class.
+\end{DoxyReturn}
+Time Complexity\+: O(1) 
+\end{DoxyItemize}\Hypertarget{class_data_ae5e227bdf072101bea6821ebc0a8fc14}\label{class_data_ae5e227bdf072101bea6821ebc0a8fc14} 
+\index{Data@{Data}!getListClasses\_@{getListClasses\_}}
+\index{getListClasses\_@{getListClasses\_}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getListClasses\_()}{getListClasses\_()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ Data\+::get\+List\+Classes\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the list of class data, containing the schedule of each class. It was defined in \doxylink{class_data_a0fb0c5542951619779f9a309995b2623}{read\+Classes()}. 
+
+\begin{DoxyReturn}{Returns}
+A list of pairs, each containing \doxylink{class_u_c}{UC} and \doxylink{class_lesson}{Lesson} information. Time Complexity\+: O(1) 
+\end{DoxyReturn}
+\Hypertarget{class_data_a49460e34db538dd29293f2e344e381ef}\label{class_data_a49460e34db538dd29293f2e344e381ef} 
+\index{Data@{Data}!getListClassesPerUC\_@{getListClassesPerUC\_}}
+\index{getListClassesPerUC\_@{getListClassesPerUC\_}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getListClassesPerUC\_()}{getListClassesPerUC\_()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_u_c}{UC}} $>$ Data\+::get\+List\+Classes\+Per\+UC\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the list of classes per \doxylink{class_u_c}{UC}, containing all the classes and corresponding \doxylink{class_u_c}{UC}\textquotesingle{}s.\+It was defined in \doxylink{class_data_a23bc137d82a365a5b09986d10d27008d}{read\+Classes\+Per\+UC()}. 
+
+\begin{DoxyReturn}{Returns}
+A list of \doxylink{class_u_c}{UC} objects representing classes per \doxylink{class_u_c}{UC}.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_acab303140e802186abf4fc5754df5fae}\label{class_data_acab303140e802186abf4fc5754df5fae} 
+\index{Data@{Data}!getListStudentsClasses\_@{getListStudentsClasses\_}}
+\index{getListStudentsClasses\_@{getListStudentsClasses\_}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getListStudentsClasses\_()}{getListStudentsClasses\_()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$ Data\+::get\+List\+Students\+Classes\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the list of students on each class. It was defined in \doxylink{class_data_a23bc137d82a365a5b09986d10d27008d}{read\+Classes\+Per\+UC()}. 
+
+\begin{DoxyReturn}{Returns}
+A list of pairs, each containing \doxylink{class_lesson}{Lesson} and \doxylink{class_u_c}{UC} information.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_af8d9b2785fba7bf81c46dd11f21672fe}\label{class_data_af8d9b2785fba7bf81c46dd11f21672fe} 
+\index{Data@{Data}!getNUCsToStudentsMap@{getNUCsToStudentsMap}}
+\index{getNUCsToStudentsMap@{getNUCsToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getNUCsToStudentsMap()}{getNUCsToStudentsMap()}}
+{\footnotesize\ttfamily map$<$ int, set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ Data\+::get\+NUCs\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve a map associating the number of UCs to a list of students. 
+
+This function returns a map that associates the number of UCs (Courses) with a list of students who are enrolled in that many UCs.
+
+\begin{DoxyReturn}{Returns}
+A map where the keys represent the number of UCs and the values are lists of students.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_a4ddb1c7f068b14b9fca2110184f54927}\label{class_data_a4ddb1c7f068b14b9fca2110184f54927} 
+\index{Data@{Data}!getStudents@{getStudents}}
+\index{getStudents@{getStudents}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getStudents()}{getStudents()}}
+{\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Data\+::get\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the list of all the students. It was defined in \doxylink{class_data_a2cf2ffdaf20e7b517fdd8a94156fc6bc}{read\+Students\+Classes()}. 
+
+\begin{DoxyReturn}{Returns}
+A set of students, containing all the students.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_a15d9480c747fc653730bd357616560a4}\label{class_data_a15d9480c747fc653730bd357616560a4} 
+\index{Data@{Data}!getUCClasstoStudentsMap@{getUCClasstoStudentsMap}}
+\index{getUCClasstoStudentsMap@{getUCClasstoStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getUCClasstoStudentsMap()}{getUCClasstoStudentsMap()}}
+{\footnotesize\ttfamily std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ Data\+::get\+UCClassto\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a map associating UC-\/\+Classes with sets of students. 
+
+This function returns a map that associates UC-\/\+Classes with sets of students enrolled in each UC-\/\+Class.
+
+\begin{DoxyReturn}{Returns}
+A map where each UC-\/\+Class (\doxylink{class_u_c}{UC}) is mapped to a set of students (\doxylink{class_student}{Student}) enrolled in that UC-\/\+Class.
+\end{DoxyReturn}
+Time Complexity\+: O(1). \Hypertarget{class_data_af0d86ababf62f68d8c9da1341a6e8d70}\label{class_data_af0d86ababf62f68d8c9da1341a6e8d70} 
+\index{Data@{Data}!getUCToClassMap@{getUCToClassMap}}
+\index{getUCToClassMap@{getUCToClassMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getUCToClassMap()}{getUCToClassMap()}}
+{\footnotesize\ttfamily map$<$ string, set$<$ string $>$ $>$ Data\+::get\+UCTo\+Class\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the map associating \doxylink{class_u_c}{UC} codes with sets of class codes. 
+
+This function returns the map that associates \doxylink{class_u_c}{UC} codes with sets of class codes for each \doxylink{class_u_c}{UC}.
+
+\begin{DoxyReturn}{Returns}
+A map that associates \doxylink{class_u_c}{UC} codes with sets of class Codes for each \doxylink{class_u_c}{UC}.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_ac67e0d603800ffd2df60ed18845b80a5}\label{class_data_ac67e0d603800ffd2df60ed18845b80a5} 
+\index{Data@{Data}!getUCToStudentsMap@{getUCToStudentsMap}}
+\index{getUCToStudentsMap@{getUCToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getUCToStudentsMap()}{getUCToStudentsMap()}}
+{\footnotesize\ttfamily map$<$ string, set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ Data\+::get\+UCTo\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students. 
+
+This function returns a map that associates \doxylink{class_u_c}{UC} (Course) codes with sets of students enrolled in each \doxylink{class_u_c}{UC}.
+
+\begin{DoxyReturn}{Returns}
+A map where each key is a \doxylink{class_u_c}{UC} (Course) code, and the associated value is a set of students in that \doxylink{class_u_c}{UC}.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_data_a42cc11b1cb42c1b7f3ea3b6996863d97}\label{class_data_a42cc11b1cb42c1b7f3ea3b6996863d97} 
+\index{Data@{Data}!getYearToStudentsMap@{getYearToStudentsMap}}
+\index{getYearToStudentsMap@{getYearToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getYearToStudentsMap()}{getYearToStudentsMap()}}
+{\footnotesize\ttfamily map$<$ int, set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ Data\+::get\+Year\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the map that groups students by their admission year. 
+
+@detail This function returns the map year\+To\+Students\+Map\+\_\+, which associates each admission year with a set of students who started in that year. You can use this map to access the grouped students by their admission year.
+
+\begin{DoxyReturn}{Returns}
+A map where the keys are admission years and the values are sets of students.
+\end{DoxyReturn}
+Time complexity\+: O(1) \Hypertarget{class_data_ab15198dd425d5fd67b7d38dd990907ff}\label{class_data_ab15198dd425d5fd67b7d38dd990907ff} 
+\index{Data@{Data}!numberOfStudentsByYear@{numberOfStudentsByYear}}
+\index{numberOfStudentsByYear@{numberOfStudentsByYear}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{numberOfStudentsByYear()}{numberOfStudentsByYear()}}
+{\footnotesize\ttfamily int Data\+::number\+Of\+Students\+By\+Year (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the number of students in a specific year. 
+
+@detail This function retrieves the number of students in a given academic year based on a map that associates years with sets of students.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The academic year for which to count the students. \\
+\hline
+{\em m} & A map that associates academic years with sets of students. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students in the specified academic year.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The function returns 0 if the specified academic year is not found in the map.
+\end{DoxyNote}
+Time Complexity\+: O(1) \Hypertarget{class_data_aaf9f96ef3d0c5d02bf8a4527b57d1e07}\label{class_data_aaf9f96ef3d0c5d02bf8a4527b57d1e07} 
+\index{Data@{Data}!numberOfStudentsInClass@{numberOfStudentsInClass}}
+\index{numberOfStudentsInClass@{numberOfStudentsInClass}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{numberOfStudentsInClass()}{numberOfStudentsInClass()}}
+{\footnotesize\ttfamily int Data\+::number\+Of\+Students\+In\+Class (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the number of students in a specific class. 
+
+This function returns the number of students in a class identified by the given class code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The class code for which to retrieve the number of students. \\
+\hline
+{\em m} & A map associating class codes with sets of students.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students in the specified class.
+\end{DoxyReturn}
+Time Complexity\+: O(1) -\/ Constant time, as it involves a single map lookup operation. \Hypertarget{class_data_a0b5975caa9d8966067021f5cd347327d}\label{class_data_a0b5975caa9d8966067021f5cd347327d} 
+\index{Data@{Data}!numberOfStudentsInUC@{numberOfStudentsInUC}}
+\index{numberOfStudentsInUC@{numberOfStudentsInUC}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{numberOfStudentsInUC()}{numberOfStudentsInUC()}}
+{\footnotesize\ttfamily int Data\+::number\+Of\+Students\+In\+UC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the number of students in a specific \doxylink{class_u_c}{UC} (Course). 
+
+This function returns the number of students in a specific \doxylink{class_u_c}{UC} (Course) based on the provided \doxylink{class_u_c}{UC} code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The \doxylink{class_u_c}{UC} (Course) code for which to retrieve the number of students. \\
+\hline
+{\em m} & A map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students in the specified \doxylink{class_u_c}{UC}.
+\end{DoxyReturn}
+Time Complexity\+: O(1) on average, assuming constant-\/time map lookup. \Hypertarget{class_data_ad563fa57a8c6ef08147824be0eec4d6b}\label{class_data_ad563fa57a8c6ef08147824be0eec4d6b} 
+\index{Data@{Data}!numberOfStudentsInUCClass@{numberOfStudentsInUCClass}}
+\index{numberOfStudentsInUCClass@{numberOfStudentsInUCClass}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{numberOfStudentsInUCClass()}{numberOfStudentsInUCClass()}}
+{\footnotesize\ttfamily int Data\+::number\+Of\+Students\+In\+UCClass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uc\+Code,  }\item[{const std\+::string \&}]{class\+Code,  }\item[{std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the number of students in a specific UC-\/\+Class. 
+
+This function returns the number of students enrolled in a specific UC-\/\+Class specified by the provided \doxylink{class_u_c}{UC} code and Class code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The \doxylink{class_u_c}{UC} code (e.\+g., "{}\+UC001"{}) of the target \doxylink{class_u_c}{UC}. \\
+\hline
+{\em class\+Code} & The Class code (e.\+g., "{}\+C101"{}) of the target Class. \\
+\hline
+{\em m} & A map that associates UC-\/\+Classes (\doxylink{class_u_c}{UC}) with sets of students (\doxylink{class_student}{Student}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students in the specified UC-\/\+Class.
+\end{DoxyReturn}
+Time Complexity\+: O(1). \Hypertarget{class_data_a516f7054e9891bdd5ef670ca1e5ca930}\label{class_data_a516f7054e9891bdd5ef670ca1e5ca930} 
+\index{Data@{Data}!numberStudentsWithNUCs@{numberStudentsWithNUCs}}
+\index{numberStudentsWithNUCs@{numberStudentsWithNUCs}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{numberStudentsWithNUCs()}{numberStudentsWithNUCs()}}
+{\footnotesize\ttfamily int Data\+::number\+Students\+With\+NUCs (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the number of students with a specific number of enrolled UCs. 
+
+This function returns the number of students who are enrolled in a specific number of UCs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of UCs for which to retrieve the number of students. \\
+\hline
+{\em m} & A map where the keys represent the number of UCs, and the values are lists of students.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students with the specified number of UCs.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item Time Complexity\+: O(1) for finding the list of students with the specified number of UCs. 
+\end{DoxyItemize}\Hypertarget{class_data_a99164487b7c92d0a35d187d9bcda0df8}\label{class_data_a99164487b7c92d0a35d187d9bcda0df8} 
+\index{Data@{Data}!printClassByUCs@{printClassByUCs}}
+\index{printClassByUCs@{printClassByUCs}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printClassByUCs()}{printClassByUCs()}}
+{\footnotesize\ttfamily void Data\+::print\+Class\+By\+UCs (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{UCcode,  }\item[{std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the class codes associated with a specific \doxylink{class_u_c}{UC} code. 
+
+This function prints the class codes associated with a specific \doxylink{class_u_c}{UC} code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em UCCode} & The \doxylink{class_u_c}{UC} code for which class codes are to be printed. \\
+\hline
+{\em m} & The map associating \doxylink{class_u_c}{UC} codes with sets of class codes.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_u_c}{UC} code to class code associations. \Hypertarget{class_data_a2382af9b5fce460446ea0547e09d5845}\label{class_data_a2382af9b5fce460446ea0547e09d5845} 
+\index{Data@{Data}!printClassSchedule@{printClassSchedule}}
+\index{printClassSchedule@{printClassSchedule}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printClassSchedule()}{printClassSchedule()}}
+{\footnotesize\ttfamily void Data\+::print\+Class\+Schedule (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Code,  }\item[{const std\+::list$<$ \mbox{\hyperlink{class_u_c}{UC}} $>$ \&}]{classes\+\_\+per\+\_\+uc,  }\item[{const std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_u_c}{UC}}, \mbox{\hyperlink{class_lesson}{Lesson}} $>$ $>$ \&}]{get\+List\+Classes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the schedule of a specific class. 
+
+This function prints the schedule of a specific class identified by its class code. It collects the relevant class schedules and then calls the {\ttfamily print\+Schedule} function to display the class\textquotesingle{}s schedule.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & The class code for which the schedule is to be printed. \\
+\hline
+{\em classes\+\_\+per\+\_\+uc} & The list of classes per \doxylink{class_u_c}{UC}. \\
+\hline
+{\em get\+List\+Classes} & The list of classes with their lessons.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the total number of class-\/lesson pairs in the \textquotesingle{}get\+List\+Classes\textquotesingle{} list. \Hypertarget{class_data_ad456b76fafc4a90cae2d37d4b42916ec}\label{class_data_ad456b76fafc4a90cae2d37d4b42916ec} 
+\index{Data@{Data}!printClassTableSchedule@{printClassTableSchedule}}
+\index{printClassTableSchedule@{printClassTableSchedule}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printClassTableSchedule()}{printClassTableSchedule()}}
+{\footnotesize\ttfamily void Data\+::print\+Class\+Table\+Schedule (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Code }\end{DoxyParamCaption}) const}
+
+
+
+Print the schedule of a class based on its class code. 
+
+This function prints the class schedule for a specific class identified by its class code. The schedule displays class hours and days of the week with associated UCs and lesson types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & The class code for which the schedule is to be printed.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes in the list of classes. \Hypertarget{class_data_abf71161b352d007607e793c75b3b39fe}\label{class_data_abf71161b352d007607e793c75b3b39fe} 
+\index{Data@{Data}!printStudentsAscendingCode@{printStudentsAscendingCode}}
+\index{printStudentsAscendingCode@{printStudentsAscendingCode}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsAscendingCode()}{printStudentsAscendingCode()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+Ascending\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the list of students in ascending order of their student codes. Each line displays the student code followed by the student name. 
+
+Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students and sorted by the operator \texorpdfstring{$<$}{<} defined in the class \doxylink{class_student}{Student}.
+
+@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in ascending order of their student codes. \Hypertarget{class_data_adab6bbba433b198f76e40d143f67c162}\label{class_data_adab6bbba433b198f76e40d143f67c162} 
+\index{Data@{Data}!printStudentsAscendingName@{printStudentsAscendingName}}
+\index{printStudentsAscendingName@{printStudentsAscendingName}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsAscendingName()}{printStudentsAscendingName()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+Ascending\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the list of students in ascending order of their student codes. 
+
+@detail This function iterates through the set of students and prints each student\textquotesingle{}s code followed by their name. The list is sorted in ascending order based on student codes.
+
+Time complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students. \Hypertarget{class_data_a553c6a609d8d23364d80f808d2b14dbd}\label{class_data_a553c6a609d8d23364d80f808d2b14dbd} 
+\index{Data@{Data}!printStudentsByClass@{printStudentsByClass}}
+\index{printStudentsByClass@{printStudentsByClass}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsByClass()}{printStudentsByClass()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+By\+Class (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the list of students in a specific class. 
+
+This function prints the list of students in a class identified by the given class code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The class code for which to print the list of students. \\
+\hline
+{\em m} & A map associating class codes with sets of students.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the specified class. \Hypertarget{class_data_aff17dceea7fbcfbda7840cb4edf144b3}\label{class_data_aff17dceea7fbcfbda7840cb4edf144b3} 
+\index{Data@{Data}!printStudentsByYear@{printStudentsByYear}}
+\index{printStudentsByYear@{printStudentsByYear}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsByYear()}{printStudentsByYear()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+By\+Year (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the students who started in a specific admission year. 
+
+@detail This function prints the names and student codes of the students who were admitted in the given admission year. If there are no students admitted in that year, it will not display anything.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The admission year for which you want to print students. \\
+\hline
+{\em m} & The map associating admission years with sets of students.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students. \Hypertarget{class_data_a51573ea9538955b9240bdac13b3e0c7a}\label{class_data_a51573ea9538955b9240bdac13b3e0c7a} 
+\index{Data@{Data}!printStudentsDescendingCode@{printStudentsDescendingCode}}
+\index{printStudentsDescendingCode@{printStudentsDescendingCode}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsDescendingCode()}{printStudentsDescendingCode()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+Descending\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the list of students in descending order of their student codes. Each line displays the student code followed by the student name. 
+
+Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of students and sorted by the operator \texorpdfstring{$<$}{<} defined in the class \doxylink{class_student}{Student}.
+
+@detail This function iterates through the set of students and prints their student codes along with their names. The students are printed in descending order of their student codes. \Hypertarget{class_data_a7d91d7a9e35fecdbe22a147c6860008c}\label{class_data_a7d91d7a9e35fecdbe22a147c6860008c} 
+\index{Data@{Data}!printStudentsDescendingName@{printStudentsDescendingName}}
+\index{printStudentsDescendingName@{printStudentsDescendingName}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsDescendingName()}{printStudentsDescendingName()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+Descending\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the list of students in descending order of their names. Each line displays the student name followed by the student code. 
+
+@detail This function creates a sorted set of students based on their names in descending order, and then iterates through the set, printing the student names followed by their codes.
+
+Time Complexity\+: O(\+N \texorpdfstring{$\ast$}{*} log(\+N)), where N is the number of students. \Hypertarget{class_data_a6fed2d8f965ee0f10d7cd39c10ac8ea6}\label{class_data_a6fed2d8f965ee0f10d7cd39c10ac8ea6} 
+\index{Data@{Data}!printStudentsInUC@{printStudentsInUC}}
+\index{printStudentsInUC@{printStudentsInUC}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsInUC()}{printStudentsInUC()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+In\+UC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{uc\+To\+Students\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the list of students in a specific \doxylink{class_u_c}{UC} along with their names and student codes. 
+
+This function prints the list of students in a specific \doxylink{class_u_c}{UC} along with their names and student codes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The \doxylink{class_u_c}{UC} code for which to print the students. \\
+\hline
+{\em m} & A map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the specified \doxylink{class_u_c}{UC}. \Hypertarget{class_data_a10dd4ddd4ef12d0615debc8a3078cb82}\label{class_data_a10dd4ddd4ef12d0615debc8a3078cb82} 
+\index{Data@{Data}!printStudentsInUCClass@{printStudentsInUCClass}}
+\index{printStudentsInUCClass@{printStudentsInUCClass}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsInUCClass()}{printStudentsInUCClass()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+In\+UCClass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uc\+Code,  }\item[{const std\+::string \&}]{class\+Code,  }\item[{std\+::map$<$ \mbox{\hyperlink{class_u_c}{UC}}, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the list of students in a specific UC-\/\+Class. 
+
+This function prints the list of students enrolled in a specific UC-\/\+Class specified by the provided \doxylink{class_u_c}{UC} code and Class code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The \doxylink{class_u_c}{UC} code (e.\+g., "{}\+UC001"{}) of the target \doxylink{class_u_c}{UC}. \\
+\hline
+{\em class\+Code} & The Class code (e.\+g., "{}\+C101"{}) of the target Class. \\
+\hline
+{\em m} & A map that associates UC-\/\+Classes (\doxylink{class_u_c}{UC}) with sets of students (\doxylink{class_student}{Student}).\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the specified UC-\/\+Class. \Hypertarget{class_data_ad38b85c052b3e44624ce4fb11f87a3fc}\label{class_data_ad38b85c052b3e44624ce4fb11f87a3fc} 
+\index{Data@{Data}!printStudentsWithNUCs@{printStudentsWithNUCs}}
+\index{printStudentsWithNUCs@{printStudentsWithNUCs}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printStudentsWithNUCs()}{printStudentsWithNUCs()}}
+{\footnotesize\ttfamily void Data\+::print\+Students\+With\+NUCs (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{const std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print students with a specific number of enrolled UCs. 
+
+This function prints the list of students who are enrolled in a specific number of UCs. If there are no students with the given number of UCs, nothing will be printed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of UCs for which to retrieve and print students. \\
+\hline
+{\em m} & A map where the keys represent the number of UCs, and the values are lists of students.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Time Complexity\+: O(1) for finding the list of students with the specified number of UCs. 
+\end{DoxyItemize}\Hypertarget{class_data_a2303e1c89ab4a0ffe24251331eefa4ad}\label{class_data_a2303e1c89ab4a0ffe24251331eefa4ad} 
+\index{Data@{Data}!printTop5UCs@{printTop5UCs}}
+\index{printTop5UCs@{printTop5UCs}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printTop5UCs()}{printTop5UCs()}}
+{\footnotesize\ttfamily void Data\+::print\+Top5\+UCs (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, std\+::set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the top 5 Undergraduate Courses (UCs) with the most students. 
+
+This function prints the top 5 UCs with the most students enrolled in them.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & A map that associates \doxylink{class_u_c}{UC} codes with sets of students.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n)), where \textquotesingle{}n\textquotesingle{} is the number of distinct UCs. \Hypertarget{class_data_ac41a4fac242918793dd9f8afd6987d69}\label{class_data_ac41a4fac242918793dd9f8afd6987d69} 
+\index{Data@{Data}!printUCsByClass@{printUCsByClass}}
+\index{printUCsByClass@{printUCsByClass}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{printUCsByClass()}{printUCsByClass()}}
+{\footnotesize\ttfamily void Data\+::print\+UCs\+By\+Class (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Ccode,  }\item[{std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the \doxylink{class_u_c}{UC} codes associated with a specific class code. 
+
+This function prints the \doxylink{class_u_c}{UC} codes associated with a specific class code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em CCode} & The class code for which \doxylink{class_u_c}{UC} codes are to be printed. \\
+\hline
+{\em m} & The map associating class codes with sets of \doxylink{class_u_c}{UC} codes.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of class code to \doxylink{class_u_c}{UC} code associations. \Hypertarget{class_data_a0fb0c5542951619779f9a309995b2623}\label{class_data_a0fb0c5542951619779f9a309995b2623} 
+\index{Data@{Data}!readClasses@{readClasses}}
+\index{readClasses@{readClasses}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readClasses()}{readClasses()}}
+{\footnotesize\ttfamily void Data\+::read\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads classes and their schedules from the CSV file \textquotesingle{}classes.\+csv\textquotesingle{} and populates the data structures. 
+
+@detail This function reads class information from a CSV file and populates the internal data structures. It creates a list of pairs, each containing a \doxylink{class_u_c}{UC} (course) and a \doxylink{class_lesson}{Lesson}, representing the class details, such as day of the week, start time, and duration.
+
+Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
+
+\begin{DoxyNote}{Note}
+This function assumes that the file format is well-\/formed and doesn\textquotesingle{}t perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. 
+\end{DoxyNote}
+\Hypertarget{class_data_a23bc137d82a365a5b09986d10d27008d}\label{class_data_a23bc137d82a365a5b09986d10d27008d} 
+\index{Data@{Data}!readClassesPerUC@{readClassesPerUC}}
+\index{readClassesPerUC@{readClassesPerUC}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readClassesPerUC()}{readClassesPerUC()}}
+{\footnotesize\ttfamily void Data\+::read\+Classes\+Per\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads all the classes and the corresponding \doxylink{class_u_c}{UC}\textquotesingle{}s from the CSV file \textquotesingle{}classes\+\_\+per\+\_\+uc.\+csv\textquotesingle{} and populates the data structures. 
+
+@detail This function reads class per \doxylink{class_u_c}{UC} information from a CSV file and populates the internal data structures. It creates a list of UCs associated with their corresponding classes.
+
+Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
+
+\begin{DoxyNote}{Note}
+This function assumes that the file format is well-\/formed and doesn\textquotesingle{}t perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. 
+\end{DoxyNote}
+\Hypertarget{class_data_a2cf2ffdaf20e7b517fdd8a94156fc6bc}\label{class_data_a2cf2ffdaf20e7b517fdd8a94156fc6bc} 
+\index{Data@{Data}!readStudentsClasses@{readStudentsClasses}}
+\index{readStudentsClasses@{readStudentsClasses}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readStudentsClasses()}{readStudentsClasses()}}
+{\footnotesize\ttfamily void Data\+::read\+Students\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads student classes data from the CSV file \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} and populates the data structures. 
+
+@detail This function reads student-\/class relationships from a CSV file and populates the internal data structures. It creates pairs of students and their associated classes (\doxylink{class_u_c}{UC}) and also keeps track of unique students. Each student have at least an \doxylink{class_u_c}{UC} and a class.
+
+Time Complexity\+: O(\+N), where N is the number of lines in the CSV file.
+
+\begin{DoxyNote}{Note}
+This function assumes that the file format is well-\/formed and doesn\textquotesingle{}t perform extensive error checking for simplicity. Ensure that the file exists and has the correct format. 
+\end{DoxyNote}
+\Hypertarget{class_data_ac2ff75d3a4e1afa2dd3d9f74ef2cf792}\label{class_data_ac2ff75d3a4e1afa2dd3d9f74ef2cf792} 
+\index{Data@{Data}!setListStudentsClasses\_@{setListStudentsClasses\_}}
+\index{setListStudentsClasses\_@{setListStudentsClasses\_}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setListStudentsClasses\_()}{setListStudentsClasses\_()}}
+{\footnotesize\ttfamily void Data\+::set\+List\+Students\+Classes\+\_\+ (\begin{DoxyParamCaption}\item[{std\+::list$<$ std\+::pair$<$ \mbox{\hyperlink{class_student}{Student}}, \mbox{\hyperlink{class_u_c}{UC}} $>$ $>$}]{l }\end{DoxyParamCaption})}
+
+
+
+Sets the list of student-\/class associations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & The new list of pairs, each containing \doxylink{class_student}{Student} and \doxylink{class_u_c}{UC} information.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \Hypertarget{class_data_a1ee0c0a69f2fe4498352772c2b5544a5}\label{class_data_a1ee0c0a69f2fe4498352772c2b5544a5} 
+\index{Data@{Data}!startClassToStudentsMap@{startClassToStudentsMap}}
+\index{startClassToStudentsMap@{startClassToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startClassToStudentsMap()}{startClassToStudentsMap()}}
+{\footnotesize\ttfamily void Data\+::start\+Class\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating class codes with sets of students. 
+
+@detail This function iterates through the list of student-\/class pairs and populates a map that associates class codes with sets of students enrolled in each class.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a35601ddf05866e84bd89f9e1533fac1c}\label{class_data_a35601ddf05866e84bd89f9e1533fac1c} 
+\index{Data@{Data}!startClassToUCMap@{startClassToUCMap}}
+\index{startClassToUCMap@{startClassToUCMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startClassToUCMap()}{startClassToUCMap()}}
+{\footnotesize\ttfamily void Data\+::start\+Class\+To\+UCMap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating class codes with sets of \doxylink{class_u_c}{UC} codes. 
+
+This function iterates through the list of student-\/class pairs and populates a map that associates class codes with sets of \doxylink{class_u_c}{UC} codes for each class.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a0b4291bd46c8b127fd6c979baac852b2}\label{class_data_a0b4291bd46c8b127fd6c979baac852b2} 
+\index{Data@{Data}!startNUCsToStudentsMap@{startNUCsToStudentsMap}}
+\index{startNUCsToStudentsMap@{startNUCsToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startNUCsToStudentsMap()}{startNUCsToStudentsMap()}}
+{\footnotesize\ttfamily void Data\+::start\+NUCs\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating the number of UCs to a list of students. 
+
+This function calculates the number of UCs (Courses) associated with each student and populates a map that associates the number of UCs to a list of students who are enrolled in that many UCs.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a84a2aae6a33364bc08ad04f36b3fc07a}\label{class_data_a84a2aae6a33364bc08ad04f36b3fc07a} 
+\index{Data@{Data}!startUCClasstoStudentsMap@{startUCClasstoStudentsMap}}
+\index{startUCClasstoStudentsMap@{startUCClasstoStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startUCClasstoStudentsMap()}{startUCClasstoStudentsMap()}}
+{\footnotesize\ttfamily void Data\+::start\+UCClassto\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating UC-\/\+Classes with sets of students. 
+
+This function iterates through the list of student-\/class pairs and populates a map that associates UC-\/\+Classes with sets of students enrolled in each UC-\/\+Class. If the UC-\/\+Class is not already in the map, it is added with an empty set of students.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a17be6df4b0286d5d77b83f6aaf3234c4}\label{class_data_a17be6df4b0286d5d77b83f6aaf3234c4} 
+\index{Data@{Data}!startUCToClassMap@{startUCToClassMap}}
+\index{startUCToClassMap@{startUCToClassMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startUCToClassMap()}{startUCToClassMap()}}
+{\footnotesize\ttfamily void Data\+::start\+UCTo\+Class\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating \doxylink{class_u_c}{UC} codes with sets of class codes. 
+
+This function iterates through the list of student-\/class pairs and populates a map that associates \doxylink{class_u_c}{UC} codes with sets of class codes in which students are enrolled.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a678beb714ba7c42ac88141e710f87b0d}\label{class_data_a678beb714ba7c42ac88141e710f87b0d} 
+\index{Data@{Data}!startUCToStudentsMap@{startUCToStudentsMap}}
+\index{startUCToStudentsMap@{startUCToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startUCToStudentsMap()}{startUCToStudentsMap()}}
+{\footnotesize\ttfamily void Data\+::start\+UCTo\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize a map associating \doxylink{class_u_c}{UC} (Course) codes with sets of students. 
+
+This function iterates through the list of student-\/class pairs and populates a map that associates \doxylink{class_u_c}{UC} (Course) codes with sets of students enrolled in each \doxylink{class_u_c}{UC}.
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of student-\/class pairs. \Hypertarget{class_data_a956c4ab15aadb4dbec3b819e8c6340ef}\label{class_data_a956c4ab15aadb4dbec3b819e8c6340ef} 
+\index{Data@{Data}!startYearToStudentsMap@{startYearToStudentsMap}}
+\index{startYearToStudentsMap@{startYearToStudentsMap}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{startYearToStudentsMap()}{startYearToStudentsMap()}}
+{\footnotesize\ttfamily void Data\+::start\+Year\+To\+Students\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a map that groups students by their admission year. 
+
+@detail This function processes the list of students and creates a mapping where each admission year corresponds to a set of students who started in that year. The map year\+To\+Students\+Map\+\_\+ is populated with this information.
+
+Time complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of students. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_data_8h}{Data.\+h}}\item 
+Projeto-\/\+AED/\+Projeto-\/\+AED/\+Classes/\mbox{\hyperlink{_data_8cpp}{Data.\+cpp}}\end{DoxyCompactItemize}
